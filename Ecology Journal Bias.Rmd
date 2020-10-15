@@ -1,0 +1,7 @@
+---
+title: "Ecology Journal Bias"
+authors: Odalys Barrientos, Brianna Cirillo, Veronica Marquez
+output: html_notebook
+---
+
+ 
