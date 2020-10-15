@@ -1,0 +1,16 @@
+---
+title: "Scratch Work"
+author: "Brianna Cirillo"
+output: html_notebook
+---
+
+```{r}
+library(readxl)
+EcologyBias_Daneshgar_Popo_2_ <- read_excel("Documents/Stat Consulting/Journal Bias/EcologyBias.Daneshgar.Popo (2).xlsx")
+View(EcologyBias_Daneshgar_Popo_2_)
+```
+
+```{r}
+EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+```
+
