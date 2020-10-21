@@ -4,4 +4,17 @@ author: Veronica Marquez
 output: html_notebook
 ---
 
+get file location
+```{r}
+getwd()
+```
 
+```{r}
+library(readxl)
+EcologyBias_Daneshgar_Popo_2_ <- read_excel("/Users/veronicamarquez/Desktop/Dr.D Ecology Bias SC/MA321-Daneshgar/EcologyBias.Daneshgar.Popo.xlsx")
+View(EcologyBias_Daneshgar_Popo_2_)
+```
+
+```{r}
+EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+```
