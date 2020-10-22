@@ -5,12 +5,102 @@ output: html_notebook
 ---
 
 ```{r}
-library(readxl)
-EcologyBias_Daneshgar_Popo_2_ <- read_excel("Documents/Stat Consulting/Journal Bias/EcologyBias.Daneshgar.Popo (2).xlsx")
-View(EcologyBias_Daneshgar_Popo_2_)
+EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
 ```
 
 ```{r}
-EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+cat('Number of Journal Entries in Marine: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Marine"), '\n')
+cat('Number of Journal Entries in Terrestrial: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Terrestrial"), '\n')
+cat('Number of Journal Entries in Freshwater: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Freshwater"), '\n')
+cat('Number of Journal Entries in Mixed: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Mixed"), '\n')
 ```
+
+```{r}
+cat('Number of Journal Enties by Region:' , '\n', '\n')
+cat('Number of Journal Entries in East-North Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "East-North Central"), '\n')
+cat('Number of Journal Entries in Mid-Atlantic: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Mid-Atlantic"), '\n')
+cat('Number of Journal Entries in Mid-South: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "MidSouth"), '\n')
+cat('Number of Journal Entries in Mountain: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Mountain"), '\n')
+cat('Number of Journal Entries in New England: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "New England"), '\n')
+cat('Number of Journal Entries in North West: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "NW"), '\n')
+cat('Number of Journal Entries in Pacific: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Pacific"), '\n')
+cat('Number of Journal Entries in South Atlantic: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "South Atlantic"), '\n')
+cat('Number of Journal Entries in West North Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "West North Central"), '\n')
+cat('Number of Journal Entries in West South Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "West South Central"), '\n')
+cat('Number of Journal Entries in META ANALYSIS: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "META ANALYSIS"), '\n')
+cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Multiple"), '\n')
+cat('Number of Journal Entries in Multiple Ranges: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Multiple Ranges"), '\n')
+```
+
+
+```{r}
+cat('Number of Journal Enties by Ecosystem:' , '\n', '\n')
+cat('Number of Journal Entries in Coastal Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coastal Ecosystems"), '\n')
+cat('Number of Journal Entries in Coniferous Forestss: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coniferous Forests"), '\n')
+cat('Number of Journal Entries in Deciduous and Evergreens: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Deciduous and Evergreen"), '\n')
+cat('Number of Journal Entries in Ecosystems of the Deep Ocean: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Ecosystems of the Deep Ocean"), '\n')
+cat('Number of Journal Entries in Inland Aquatic Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Inland Aquatic Ecosystems"), '\n')
+cat('Number of Journal Entries in CLakes and Reservoirs Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Lakes and Reservoirs Ecosystems"), '\n')
+cat('Number of Journal Entries in Managed Terrestrial Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Managed Terrestrial Ecosystems"), '\n')
+cat('Number of Journal Entries in Polar & Alpine Tundra: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Polar & Alpine Tundra"), '\n')
+cat('Number of Journal Entries in Shrublands: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Shrublands"), '\n')
+cat('Number of Journal Entries in Temperate Deciduous Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Deciduous Forests"), '\n')
+cat('Number of Journal Entries in Tropical Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Tropical Forests"), '\n')
+cat('Number of Journal Entries in CWetland Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Wetland Forests"), '\n')
+cat('Number of Journal Entries in Coniferous and Hardwood: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coniferous and Hardwood"), '\n')
+cat('Number of Journal Entries in Coral Reefs: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coral Reefs"), '\n')
+cat('Number of Journal Entries in Ecosystems of the Continental Shelves: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Ecosystems of the Continental Shelves"), '\n')
+cat('Number of Journal Entries in Estuaries and Enclosed Seas: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Estuaries and Enclosed Seas"), '\n')
+cat('Number of Journal Entries in Intertidal and Littoral Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Intertidal and Littoral Ecosystems"), '\n')
+cat('Number of Journal Entries in Managed Aquatic Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Managed Aquatic Ecosystems"), '\n')
+cat('Number of Journal Entries in Natural Grasslands: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Natural Grasslands"), '\n')
+cat('Number of Journal Entries in River and Stream Ecosystem: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "River and Stream Ecosystem"), '\n')
+cat('Number of Journal Entries in Temperate Broad Leaved Evergreen: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Broad Leaved Evergreen"), '\n')
+cat('Number of Journal Entries in Temperate Deserts and Semi Deserts: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Deserts and Semi Deserts"), '\n')
+cat('Number of Journal Entries in Tropical Savannas: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "CTropical Savannas"), '\n')
+cat('Number of Journal Entries in Multiple Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Multiple"), '\n')
+cat('Number of Journal Entries in META-ANALYSIS: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "META-ANALYSIS"), '\n')
+```
+
+```{r}
+cat('Number of Journal Enties by Phylum:' , '\n', '\n')
+cat('Number of Journal Entries in Annelida: ' , count(EcologyBias$Phylum == "Annelida"), '\n')
+cat('Number of Journal Entries in Anthophyta: ' , count(EcologyBias$Phylum == "Anthophyta"), '\n')
+cat('Number of Journal Entries in Arthropoda: ' , count(EcologyBias$Phylum == "Arthropoda"), '\n')
+cat('Number of Journal Entries in Chordata: ' , count(EcologyBias$Phylum == "Chordata"), '\n')
+cat('Number of Journal Entries in Cnidaria: ' , count(EcologyBias$Phylum == "Cnidaria"), '\n')
+cat('Number of Journal Entries in Coniferophyta: ' , count(EcologyBias$Phylum == "Coniferophyta"), '\n')
+cat('Number of Journal Entries in Echinodermata: ' , count(EcologyBias$Phylum == "Echinodermata"), '\n')
+cat('Number of Journal Entries in Magnoliophyta: ' , count(EcologyBias$Phylum == "Magnoliophyta"), '\n')
+cat('Number of Journal Entries in Mollusca: ' , count(EcologyBias$Phylum == "Mollusca"), '\n')
+cat('Number of Journal Entries in Ochrophyta: ' , count(EcologyBias$Phylum == "Ochrophyta"), '\n')
+cat('Number of Journal Entries in Oomycota: ' , count(EcologyBias$Phylum == "Oomycota"), '\n')
+cat('Number of Journal Entries in Spermatophyta: ' , count(EcologyBias$Phylum == "Spermatophyta"), '\n')
+cat('Number of Journal Entries in Tracheophyta: ' , count(EcologyBias$Phylum == "Tracheophyta"), '\n')
+cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Multiple"), '\n')
+```
+
+```{r}
+if (EcologyBias$Phylum == "Spermatophyta"){
+  count(EcologyBias$`Genus (only if single species)`)
+}
+
+with(EcologyBias$`Genus (only if single species)`, ftable(EcologyBias$Phylum =="Spermatophyta"))
+
+cat('Number of Journal Enties by Phylum & Genus:' , '\n', '\n')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
