@@ -94,8 +94,52 @@ classes
 # Taking away NA of Classes
 ```{r}
 class.clean <- na.omit(classes)
-class.clean
+
+Spermatophyta.G<- vector()
+Spermatophyta.S <- vector()
+for(i in 1:59){
+ if(class.clean[i,1]== "Spermatophyta"){
+   Spermatophyta.G[i] <- class.clean[i,2]
+   Spermatophyta.S[i] <- class.clean[i,3]
+ }}
+Spermatophyta.G.2 <- Spermatophyta.G[-which(sapply(Spermatophyta.G, is.null))]
+Spermatophyta.G.2
+
+Spermatophyta.S.2 <- Spermatophyta.S[-which(sapply(Spermatophyta.S, is.null))]
+Spermatophyta.S.2
 
 ```
 These are now the only ones where we have all 3 classes. There are 59 rows so we lost a lot of data. 
+```{r}
+mult.G<- vector()
+mult.S <- vector()
+for(i in 1:59){
+ if(class.clean[i,1]== "Multiple"){
+   mult.G[i] <- class.clean[i,2]
+   mult.S[i] <- class.clean[i,3]
+ }}
+mult.G.2 <- mult.G[-which(sapply(mult.G, is.null))]
+mult.G.2
+
+mult.S.2 <- mult.S[-which(sapply(mult.S, is.null))]
+mult.S.2
+
+```
+
+```{r}
+
+Chordata.G<- vector()
+Chordata.S <- vector()
+for(i in 1:59){
+ if(class.clean[i,1]== "Chordata"){
+   Chordata.G[i] <- class.clean[i,2]
+   Chordata.S[i] <- class.clean[i,3]
+ }}
+Chordata.G.2 <- Chordata.G[-which(sapply(Chordata.G, is.null))]
+Chordata.G.2
+
+Chordata.S.2 <- Chordata.S[-which(sapply(Chordata.S, is.null))]
+Chordata.S.2
+
+```
 
