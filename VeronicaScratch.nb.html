@@ -1762,6 +1762,51 @@ summary {
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>run library</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtb3NhaWMpXG5gYGAifQ== -->
+<pre class="r"><code>library(mosaic)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2h0bWx3aWRnZXRzJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWx3aWRnZXQgdG9vbHM6cnN0dWRpb1xuUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ21vc2FpYyc6XG4gIG1ldGhvZCAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyb20gICBcbiAgZm9ydGlmeS5TcGF0aWFsUG9seWdvbnNEYXRhRnJhbWUgZ2dwbG90MlxuXG5UaGUgJ21vc2FpYycgcGFja2FnZSBtYXNrcyBzZXZlcmFsIGZ1bmN0aW9ucyBmcm9tIGNvcmUgcGFja2FnZXMgaW4gb3JkZXIgdG8gYWRkIFxuYWRkaXRpb25hbCBmZWF0dXJlcy4gIFRoZSBvcmlnaW5hbCBiZWhhdmlvciBvZiB0aGVzZSBmdW5jdGlvbnMgc2hvdWxkIG5vdCBiZSBhZmZlY3RlZCBieSB0aGlzLlxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYbW9zYWlj4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpkcGx5cuKAmTpcblxuICAgIGNvdW50LCBkbywgdGFsbHlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpNYXRyaXjigJk6XG5cbiAgICBtZWFuXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6Z2dwbG90MuKAmTpcblxuICAgIHN0YXRcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgYmlub20udGVzdCwgY29yLCBjb3IudGVzdCwgY292LFxuICAgIGZpdmVudW0sIElRUiwgbWVkaWFuLFxuICAgIHByb3AudGVzdCwgcXVhbnRpbGUsIHNkLFxuICAgIHQudGVzdCwgdmFyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpiYXNl4oCZOlxuXG4gICAgbWF4LCBtZWFuLCBtaW4sIHByb2QsIHJhbmdlLFxuICAgIHNhbXBsZSwgc3VtXG4ifQ== -->
+<pre><code>Registered S3 method overwritten by &#39;htmlwidgets&#39;:
+  method           from         
+  print.htmlwidget tools:rstudio
+Registered S3 method overwritten by &#39;mosaic&#39;:
+  method                           from   
+  fortify.SpatialPolygonsDataFrame ggplot2
+
+The &#39;mosaic&#39; package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.
+
+Attaching package: ‘mosaic’
+
+The following objects are masked from ‘package:dplyr’:
+
+    count, do, tally
+
+The following object is masked from ‘package:Matrix’:
+
+    mean
+
+The following object is masked from ‘package:ggplot2’:
+
+    stat
+
+The following objects are masked from ‘package:stats’:
+
+    binom.test, cor, cor.test, cov,
+    fivenum, IQR, median,
+    prop.test, quantile, sd,
+    t.test, var
+
+The following objects are masked from ‘package:base’:
+
+    max, mean, min, prod, range,
+    sample, sum</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkeGwpXG5FY29sb2d5Qmlhc19EYW5lc2hnYXJfUG9wb18yXyA8LSByZWFkX2V4Y2VsKFwiL1VzZXJzL3Zlcm9uaWNhbWFycXVlei9EZXNrdG9wL0RyLkQgRWNvbG9neSBCaWFzIFNDL01BMzIxLURhbmVzaGdhci9FY29sb2d5Qmlhcy5EYW5lc2hnYXIuUG9wby54bHN4XCIpXG5WaWV3KEVjb2xvZ3lCaWFzX0RhbmVzaGdhcl9Qb3BvXzJfKVxuYGBgIn0= -->
@@ -1777,8 +1822,451 @@ View(EcologyBias_Daneshgar_Popo_2_)</code></pre>
 <pre class="r"><code>EcologyBias &lt;- EcologyBias_Daneshgar_Popo_2_[1:175, ]</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Looking to see how many of each ecosystem exists in the data set</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNYXJpbmU6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTWFyaW5lLCBUZXJyZXN0cmlhbCwgRnJlc2h3YXRlciwgTWl4ZWRgID09IFwiTWFyaW5lXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in Marine: &quot;, count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == &quot;Marine&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNYXJpbmU6ICAyMCBcbiJ9 -->
+<pre><code># of Journals in Marine:  20 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBUZXJyZXN0cmlhbDogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBNYXJpbmUsIFRlcnJlc3RyaWFsLCBGcmVzaHdhdGVyLCBNaXhlZGAgPT0gXCJUZXJyZXN0cmlhbFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Terrestrial: &quot;, count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == &quot;Terrestrial&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBUZXJyZXN0cmlhbDogIDEyNyBcbiJ9 -->
+<pre><code># of Journals in Terrestrial:  127 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBGcnNod2F0ZXI6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTWFyaW5lLCBUZXJyZXN0cmlhbCwgRnJlc2h3YXRlciwgTWl4ZWRgID09IFwiRnJlc2h3YXRlclwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Frshwater: &quot;, count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == &quot;Freshwater&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBGcnNod2F0ZXI6ICAxMiBcbiJ9 -->
+<pre><code># of Journals in Frshwater:  12 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNaXhlZDogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBNYXJpbmUsIFRlcnJlc3RyaWFsLCBGcmVzaHdhdGVyLCBNaXhlZGAgPT0gXCJNaXhlZFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Mixed: &quot;, count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == &quot;Mixed&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNaXhlZDogIDE2IFxuIn0= -->
+<pre><code># of Journals in Mixed:  16 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Notice here that there is a significant difference in the amount of articles that contain each ecosystem. Is this a glimpse into the “Sexy” type of ecosystem? Should I take it a step closer and analyze the ecosystems based on specif regions? If we take just this information, then we definitely some form of bias between these ecosystem in itself.</p>
+<p>##Location of First Author (Region)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIkVhc3QtTm9ydGggQ2VudHJhbFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in East-North Central: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;East-North Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6ICAxNiBcbiJ9 -->
+<pre><code># of Journals in East-North Central:  16 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNaWQtQXRsYW50aWM6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIk1pZC1BdGxhbnRpY1wiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Mid-Atlantic: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Mid-Atlantic&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNaWQtQXRsYW50aWM6ICA1IFxuIn0= -->
+<pre><code># of Journals in Mid-Atlantic:  5 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNaWQtU291dGg6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIk1pZC1Tb3V0aFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Mid-South: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Mid-South&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNaWQtU291dGg6ICAwIFxuIn0= -->
+<pre><code># of Journals in Mid-South:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNb3VudGFpbjogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09IFwiTW91bnRhaW5cIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in Mountain: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Mountain&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNb3VudGFpbjogIDE1IFxuIn0= -->
+<pre><code># of Journals in Mountain:  15 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBOZXcgRW5nbGFuZDogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09IFwiTmV3IEVuZ2xhbmRcIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in New England: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;New England&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBOZXcgRW5nbGFuZDogIDggXG4ifQ== -->
+<pre><code># of Journals in New England:  8 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBOb3J0aCBXZXN0OiBcIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gXCJOb3J0aCBXZXN0XCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in North West: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;North West&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBOb3J0aCBXZXN0OiAgMCBcbiJ9 -->
+<pre><code># of Journals in North West:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBQYWNpZmljOiBcIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gXCJQYWNpZmljXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in Pacific: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Pacific&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBQYWNpZmljOiAgMjMgXG4ifQ== -->
+<pre><code># of Journals in Pacific:  23 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBTb3V0aCBBdGxhbnRpYzogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09IFwiU291dGggQXRsYW50aWNcIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in South Atlantic: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;South Atlantic&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBTb3V0aCBBdGxhbnRpYzogIDE3IFxuIn0= -->
+<pre><code># of Journals in South Atlantic:  17 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIldlc3QgTm9ydGggQ2VudHJhbFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in West North Central: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;West North Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6ICA0IFxuIn0= -->
+<pre><code># of Journals in West North Central:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBXZXN0IFNvdXRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIldlc3QgU291dGggQ2VudHJhbFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in West South Central: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;West South Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBXZXN0IFNvdXRoIENlbnRyYWw6ICA0IFxuIn0= -->
+<pre><code># of Journals in West South Central:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNRVRBIEFOQUxZU0lTOiBcIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gXCJFTUVUQSBBTkFMWVNJU1wiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in META ANALYSIS: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;EMETA ANALYSIS&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNRVRBIEFOQUxZU0lTOiAgMCBcbiJ9 -->
+<pre><code># of Journals in META ANALYSIS:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09IFwiTXVsdGlwbGVcIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in Multiple: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Multiple&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogIDAgXG4ifQ== -->
+<pre><code># of Journals in Multiple:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZSBSYW5nZXM6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSBcIk11bHRpcGxlIFJhbmdlc1wiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Multiple Ranges: &quot;, count(EcologyBias$`Location of first author (region)` == &quot;Multiple Ranges&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZSBSYW5nZXM6ICAwIFxuIn0= -->
+<pre><code># of Journals in Multiple Ranges:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="regions-where-the-work-was-done-popo-defines" class="section level2">
+<h2>Regions where the work was done (Popo defines)</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiRWFzdC1Ob3J0aCBDZW50cmFsXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in East-North Central: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;East-North Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6ICA3IFxuIn0= -->
+<pre><code># of Journals in East-North Central:  7 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNaWQtQXRsYW50aWM6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiTWlkLUF0bGFudGljXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in Mid-Atlantic: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Mid-Atlantic&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNaWQtQXRsYW50aWM6ICAzIFxuIn0= -->
+<pre><code># of Journals in Mid-Atlantic:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNaWQtU291dGg6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiTWlkLVNvdXRoXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in Mid-South: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Mid-South&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNaWQtU291dGg6ICAwIFxuIn0= -->
+<pre><code># of Journals in Mid-South:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNb3VudGFpbjogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gXCJNb3VudGFpblwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Mountain: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Mountain&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNb3VudGFpbjogIDEyIFxuIn0= -->
+<pre><code># of Journals in Mountain:  12 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBOZXcgRW5nbGFuZDogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gXCJOZXcgRW5nbGFuZFwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in New England: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;New England&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBOZXcgRW5nbGFuZDogIDMgXG4ifQ== -->
+<pre><code># of Journals in New England:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBOb3J0aCBXZXN0OiBcIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSBcIk5vcnRoIFdlc3RcIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in North West: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;North West&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBOb3J0aCBXZXN0OiAgMCBcbiJ9 -->
+<pre><code># of Journals in North West:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBQYWNpZmljOiBcIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSBcIlBhY2lmaWNcIiksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;# of Journals in Pacific: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Pacific&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBQYWNpZmljOiAgMjQgXG4ifQ== -->
+<pre><code># of Journals in Pacific:  24 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBTb3V0aCBBdGxhbnRpYzogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gXCJTb3V0aCBBdGxhbnRpY1wiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in South Atlantic: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;South Atlantic&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBTb3V0aCBBdGxhbnRpYzogIDEwIFxuIn0= -->
+<pre><code># of Journals in South Atlantic:  10 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiV2VzdCBOb3J0aCBDZW50cmFsXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in West North Central: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;West North Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6ICAzIFxuIn0= -->
+<pre><code># of Journals in West North Central:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBXZXN0IFNvdXRoIENlbnRyYWw6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiV2VzdCBTb3V0aCBDZW50cmFsXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in West South Central: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;West South Central&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBXZXN0IFNvdXRoIENlbnRyYWw6ICAzIFxuIn0= -->
+<pre><code># of Journals in West South Central:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNRVRBIEFOQUxZU0lTOiBcIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSBcIkVNRVRBIEFOQUxZU0lTXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in META ANALYSIS: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;EMETA ANALYSIS&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNRVRBIEFOQUxZU0lTOiAgMCBcbiJ9 -->
+<pre><code># of Journals in META ANALYSIS:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogXCIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gXCJNdWx0aXBsZVwiKSwgXCJcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code>cat(&quot;# of Journals in Multiple: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Multiple&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogIDIgXG4ifQ== -->
+<pre><code># of Journals in Multiple:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZSBSYW5nZXM6IFwiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09IFwiTXVsdGlwbGUgUmFuZ2VzXCIpLCBcIlxcblwiKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;# of Journals in Multiple Ranges: &quot;, count(EcologyBias$`Regions where the work was done  (Popo defines)` == &quot;Multiple Ranges&quot;), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZSBSYW5nZXM6ICAxIFxuIn0= -->
+<pre><code># of Journals in Multiple Ranges:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5jYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvYXN0YWwgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJDb2FzdGFsIEVjb3N5c3RlbXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>
+cat(&#39;# of Journal Entries in Coastal Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Coastal Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29hc3RhbCBFY29zeXN0ZW1zOiAgMTAgXG4ifQ== -->
+<pre><code># of Journal Entries in Coastal Ecosystems:  10 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDb25pZmVyb3VzIEZvcmVzdHNzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIkNvbmlmZXJvdXMgRm9yZXN0c1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Coniferous Forestss: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Coniferous Forests&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBGb3Jlc3RzczogIDYgXG4ifQ== -->
+<pre><code># of Journal Entries in Coniferous Forestss:  6 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBEZWNpZHVvdXMgYW5kIEV2ZXJncmVlbnM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiRGVjaWR1b3VzIGFuZCBFdmVyZ3JlZW5cIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Deciduous and Evergreens: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Deciduous and Evergreen&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRGVjaWR1b3VzIGFuZCBFdmVyZ3JlZW5zOiAgMSBcbiJ9 -->
+<pre><code># of Journal Entries in Deciduous and Evergreens:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY29zeXN0ZW1zIG9mIHRoZSBEZWVwIE9jZWFuOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIkVjb3N5c3RlbXMgb2YgdGhlIERlZXAgT2NlYW5cIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Ecosystems of the Deep Ocean: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Ecosystems of the Deep Ocean&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNvc3lzdGVtcyBvZiB0aGUgRGVlcCBPY2VhbjogIDEgXG4ifQ== -->
+<pre><code># of Journal Entries in Ecosystems of the Deep Ocean:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBJbmxhbmQgQXF1YXRpYyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIklubGFuZCBBcXVhdGljIEVjb3N5c3RlbXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Inland Aquatic Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Inland Aquatic Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gSW5sYW5kIEFxdWF0aWMgRWNvc3lzdGVtczogIDMgXG4ifQ== -->
+<pre><code># of Journal Entries in Inland Aquatic Ecosystems:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDTGFrZXMgYW5kIFJlc2Vydm9pcnMgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJMYWtlcyBhbmQgUmVzZXJ2b2lycyBFY29zeXN0ZW1zXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in CLakes and Reservoirs Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Lakes and Reservoirs Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ0xha2VzIGFuZCBSZXNlcnZvaXJzIEVjb3N5c3RlbXM6ICA4IFxuIn0= -->
+<pre><code># of Journal Entries in CLakes and Reservoirs Ecosystems:  8 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNYW5hZ2VkIFRlcnJlc3RyaWFsIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiTWFuYWdlZCBUZXJyZXN0cmlhbCBFY29zeXN0ZW1zXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Managed Terrestrial Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Managed Terrestrial Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFuYWdlZCBUZXJyZXN0cmlhbCBFY29zeXN0ZW1zOiAgMTYgXG4ifQ== -->
+<pre><code># of Journal Entries in Managed Terrestrial Ecosystems:  16 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBQb2xhciAmIEFscGluZSBUdW5kcmE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiUG9sYXIgJiBBbHBpbmUgVHVuZHJhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Polar &amp; Alpine Tundra: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Polar &amp; Alpine Tundra&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gUG9sYXIgJiBBbHBpbmUgVHVuZHJhOiAgNiBcbiJ9 -->
+<pre><code># of Journal Entries in Polar &amp; Alpine Tundra:  6 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTaHJ1YmxhbmRzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIlNocnVibGFuZHNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Shrublands: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Shrublands&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gU2hydWJsYW5kczogIDYgXG4ifQ== -->
+<pre><code># of Journal Entries in Shrublands:  6 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgRGVjaWR1b3VzIEZvcmVzdHM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Temperate Deciduous Forests: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Temperate Deciduous Forests&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzOiAgMjMgXG4ifQ== -->
+<pre><code># of Journal Entries in Temperate Deciduous Forests:  23 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcm9waWNhbCBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIlRyb3BpY2FsIEZvcmVzdHNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Tropical Forests: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Tropical Forests&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJvcGljYWwgRm9yZXN0czogIDI3IFxuIn0= -->
+<pre><code># of Journal Entries in Tropical Forests:  27 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDV2V0bGFuZCBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIldldGxhbmQgRm9yZXN0c1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in CWetland Forests: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Wetland Forests&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ1dldGxhbmQgRm9yZXN0czogIDQgXG4ifQ== -->
+<pre><code># of Journal Entries in CWetland Forests:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDb25pZmVyb3VzIGFuZCBIYXJkd29vZDogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJDb25pZmVyb3VzIGFuZCBIYXJkd29vZFwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Coniferous and Hardwood: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Coniferous and Hardwood&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBhbmQgSGFyZHdvb2Q6ICAxIFxuIn0= -->
+<pre><code># of Journal Entries in Coniferous and Hardwood:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDb3JhbCBSZWVmczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJDb3JhbCBSZWVmc1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Coral Reefs: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Coral Reefs&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29yYWwgUmVlZnM6ICA0IFxuIn0= -->
+<pre><code># of Journal Entries in Coral Reefs:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY29zeXN0ZW1zIG9mIHRoZSBDb250aW5lbnRhbCBTaGVsdmVzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIkVjb3N5c3RlbXMgb2YgdGhlIENvbnRpbmVudGFsIFNoZWx2ZXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Ecosystems of the Continental Shelves: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Ecosystems of the Continental Shelves&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNvc3lzdGVtcyBvZiB0aGUgQ29udGluZW50YWwgU2hlbHZlczogIDMgXG4ifQ== -->
+<pre><code># of Journal Entries in Ecosystems of the Continental Shelves:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFc3R1YXJpZXMgYW5kIEVuY2xvc2VkIFNlYXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiRXN0dWFyaWVzIGFuZCBFbmNsb3NlZCBTZWFzXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Estuaries and Enclosed Seas: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Estuaries and Enclosed Seas&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRXN0dWFyaWVzIGFuZCBFbmNsb3NlZCBTZWFzOiAgMiBcbiJ9 -->
+<pre><code># of Journal Entries in Estuaries and Enclosed Seas:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBJbnRlcnRpZGFsIGFuZCBMaXR0b3JhbCBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIkludGVydGlkYWwgYW5kIExpdHRvcmFsIEVjb3N5c3RlbXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Intertidal and Littoral Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Intertidal and Littoral Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gSW50ZXJ0aWRhbCBhbmQgTGl0dG9yYWwgRWNvc3lzdGVtczogIDYgXG4ifQ== -->
+<pre><code># of Journal Entries in Intertidal and Littoral Ecosystems:  6 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNYW5hZ2VkIEFxdWF0aWMgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJNYW5hZ2VkIEFxdWF0aWMgRWNvc3lzdGVtc1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Managed Aquatic Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Managed Aquatic Ecosystems&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFuYWdlZCBBcXVhdGljIEVjb3N5c3RlbXM6ICAyIFxuIn0= -->
+<pre><code># of Journal Entries in Managed Aquatic Ecosystems:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBOYXR1cmFsIEdyYXNzbGFuZHM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09IFwiTmF0dXJhbCBHcmFzc2xhbmRzXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Natural Grasslands: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Natural Grasslands&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTmF0dXJhbCBHcmFzc2xhbmRzOiAgMjAgXG4ifQ== -->
+<pre><code># of Journal Entries in Natural Grasslands:  20 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBSaXZlciBhbmQgU3RyZWFtIEVjb3N5c3RlbTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJSaXZlciBhbmQgU3RyZWFtIEVjb3N5c3RlbVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in River and Stream Ecosystem: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;River and Stream Ecosystem&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gUml2ZXIgYW5kIFN0cmVhbSBFY29zeXN0ZW06ICA4IFxuIn0= -->
+<pre><code># of Journal Entries in River and Stream Ecosystem:  8 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgQnJvYWQgTGVhdmVkIEV2ZXJncmVlbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJUZW1wZXJhdGUgQnJvYWQgTGVhdmVkIEV2ZXJncmVlblwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Temperate Broad Leaved Evergreen: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Temperate Broad Leaved Evergreen&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIEJyb2FkIExlYXZlZCBFdmVyZ3JlZW46ICA0IFxuIn0= -->
+<pre><code># of Journal Entries in Temperate Broad Leaved Evergreen:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgRGVzZXJ0cyBhbmQgU2VtaSBEZXNlcnRzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIlRlbXBlcmF0ZSBEZXNlcnRzIGFuZCBTZW1pIERlc2VydHNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Temperate Deserts and Semi Deserts: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Temperate Deserts and Semi Deserts&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlc2VydHMgYW5kIFNlbWkgRGVzZXJ0czogIDQgXG4ifQ== -->
+<pre><code># of Journal Entries in Temperate Deserts and Semi Deserts:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcm9waWNhbCBTYXZhbm5hczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gXCJDVHJvcGljYWwgU2F2YW5uYXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Tropical Savannas: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;CTropical Savannas&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJvcGljYWwgU2F2YW5uYXM6ICAwIFxuIn0= -->
+<pre><code># of Journal Entries in Tropical Savannas:  0 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZSBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIk11bHRpcGxlXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Multiple Ecosystems: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;Multiple&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTXVsdGlwbGUgRWNvc3lzdGVtczogIDIgXG4ifQ== -->
+<pre><code># of Journal Entries in Multiple Ecosystems:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNRVRBLUFOQUxZU0lTOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSBcIk1FVEEtQU5BTFlTSVNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in META-ANALYSIS: &#39; , count(EcologyBias$`Ecosystem (Ped defines)` == &quot;META-ANALYSIS&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTUVUQS1BTkFMWVNJUzogIDMgXG4ifQ== -->
+<pre><code># of Journal Entries in META-ANALYSIS:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbm5lbGlkYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIkFubmVsaWRhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Annelida: &#39; , count(EcologyBias$Phylum == &quot;Annelida&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQW5uZWxpZGE6ICAxIFxuIn0= -->
+<pre><code># of Journal Entries in Annelida:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbnRob3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiQW50aG9waHl0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Anthophyta: &#39; , count(EcologyBias$Phylum == &quot;Anthophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQW50aG9waHl0YTogIDMgXG4ifQ== -->
+<pre><code># of Journal Entries in Anthophyta:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBcnRocm9wb2RhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiQXJ0aHJvcG9kYVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Arthropoda: &#39; , count(EcologyBias$Phylum == &quot;Arthropoda&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQXJ0aHJvcG9kYTogIDI1IFxuIn0= -->
+<pre><code># of Journal Entries in Arthropoda:  25 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDaG9yZGF0YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIkNob3JkYXRhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Chordata: &#39; , count(EcologyBias$Phylum == &quot;Chordata&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ2hvcmRhdGE6ICAyMiBcbiJ9 -->
+<pre><code># of Journal Entries in Chordata:  22 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDbmlkYXJpYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIkNuaWRhcmlhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Cnidaria: &#39; , count(EcologyBias$Phylum == &quot;Cnidaria&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ25pZGFyaWE6ICAzIFxuIn0= -->
+<pre><code># of Journal Entries in Cnidaria:  3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDb25pZmVyb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiQ29uaWZlcm9waHl0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Coniferophyta: &#39; , count(EcologyBias$Phylum == &quot;Coniferophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm9waHl0YTogIDIgXG4ifQ== -->
+<pre><code># of Journal Entries in Coniferophyta:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY2hpbm9kZXJtYXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiRWNoaW5vZGVybWF0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Echinodermata: &#39; , count(EcologyBias$Phylum == &quot;Echinodermata&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNoaW5vZGVybWF0YTogIDIgXG4ifQ== -->
+<pre><code># of Journal Entries in Echinodermata:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNYWdub2xpb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiTWFnbm9saW9waHl0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Magnoliophyta: &#39; , count(EcologyBias$Phylum == &quot;Magnoliophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFnbm9saW9waHl0YTogIDEgXG4ifQ== -->
+<pre><code># of Journal Entries in Magnoliophyta:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNb2xsdXNjYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIk1vbGx1c2NhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Mollusca: &#39; , count(EcologyBias$Phylum == &quot;Mollusca&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTW9sbHVzY2E6ICA0IFxuIn0= -->
+<pre><code># of Journal Entries in Mollusca:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBPY2hyb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiT2Nocm9waHl0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Ochrophyta: &#39; , count(EcologyBias$Phylum == &quot;Ochrophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gT2Nocm9waHl0YTogIDEgXG4ifQ== -->
+<pre><code># of Journal Entries in Ochrophyta:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBPb215Y290YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIk9vbXljb3RhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Oomycota: &#39; , count(EcologyBias$Phylum == &quot;Oomycota&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gT29teWNvdGE6ICAxIFxuIn0= -->
+<pre><code># of Journal Entries in Oomycota:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTcGVybWF0b3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09IFwiU3Blcm1hdG9waHl0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Spermatophyta: &#39; , count(EcologyBias$Phylum == &quot;Spermatophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gU3Blcm1hdG9waHl0YTogIDM1IFxuIn0= -->
+<pre><code># of Journal Entries in Spermatophyta:  35 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcmFjaGVvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gXCJUcmFjaGVvcGh5dGFcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Tracheophyta: &#39; , count(EcologyBias$Phylum == &quot;Tracheophyta&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJhY2hlb3BoeXRhOiAgNCBcbiJ9 -->
+<pre><code># of Journal Entries in Tracheophyta:  4 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSBcIk11bHRpcGxlXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;# of Journal Entries in Multiple: &#39; , count(EcologyBias$Phylum == &quot;Multiple&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTXVsdGlwbGU6ICA3MSBcbiJ9 -->
+<pre><code># of Journal Entries in Multiple:  71 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRHIuRGFuZXNoZ2FyIERhdGEgQW5hbHlzaXMiCmF1dGhvcjogVmVyb25pY2EgTWFycXVlegpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpnZXQgZmlsZSBsb2NhdGlvbgpgYGB7cn0KZ2V0d2QoKQpgYGAKCmBgYHtyfQpsaWJyYXJ5KHJlYWR4bCkKRWNvbG9neUJpYXNfRGFuZXNoZ2FyX1BvcG9fMl8gPC0gcmVhZF9leGNlbCgiL1VzZXJzL3Zlcm9uaWNhbWFycXVlei9EZXNrdG9wL0RyLkQgRWNvbG9neSBCaWFzIFNDL01BMzIxLURhbmVzaGdhci9FY29sb2d5Qmlhcy5EYW5lc2hnYXIuUG9wby54bHN4IikKVmlldyhFY29sb2d5Qmlhc19EYW5lc2hnYXJfUG9wb18yXykKYGBgCgpgYGB7cn0KRWNvbG9neUJpYXMgPC0gRWNvbG9neUJpYXNfRGFuZXNoZ2FyX1BvcG9fMl9bMToxNzUsIF0KYGBg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRHIuRGFuZXNoZ2FyIERhdGEgQW5hbHlzaXMiCmF1dGhvcjogVmVyb25pY2EgTWFycXVlegpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpnZXQgZmlsZSBsb2NhdGlvbgpgYGB7cn0KZ2V0d2QoKQpgYGAKcnVuIGxpYnJhcnkKYGBge3J9CmxpYnJhcnkobW9zYWljKQpgYGAKCmBgYHtyfQpsaWJyYXJ5KHJlYWR4bCkKRWNvbG9neUJpYXNfRGFuZXNoZ2FyX1BvcG9fMl8gPC0gcmVhZF9leGNlbCgiL1VzZXJzL3Zlcm9uaWNhbWFycXVlei9EZXNrdG9wL0RyLkQgRWNvbG9neSBCaWFzIFNDL01BMzIxLURhbmVzaGdhci9FY29sb2d5Qmlhcy5EYW5lc2hnYXIuUG9wby54bHN4IikKVmlldyhFY29sb2d5Qmlhc19EYW5lc2hnYXJfUG9wb18yXykKYGBgCgpgYGB7cn0KRWNvbG9neUJpYXMgPC0gRWNvbG9neUJpYXNfRGFuZXNoZ2FyX1BvcG9fMl9bMToxNzUsIF0KYGBgCgpMb29raW5nIHRvIHNlZSBob3cgbWFueSBvZiBlYWNoIGVjb3N5c3RlbSBleGlzdHMgaW4gdGhlIGRhdGEgc2V0IApgYGB7cn0KY2F0KCIjIG9mIEpvdXJuYWxzIGluIE1hcmluZTogIiwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiTWFyaW5lIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBUZXJyZXN0cmlhbDogIiwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiVGVycmVzdHJpYWwiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIEZyc2h3YXRlcjogIiwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiRnJlc2h3YXRlciIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTWl4ZWQ6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBNYXJpbmUsIFRlcnJlc3RyaWFsLCBGcmVzaHdhdGVyLCBNaXhlZGAgPT0gIk1peGVkIiksICJcbiIpCmBgYApOb3RpY2UgaGVyZSB0aGF0IHRoZXJlIGlzIGEgc2lnbmlmaWNhbnQgZGlmZmVyZW5jZSBpbiB0aGUgYW1vdW50IG9mIGFydGljbGVzIHRoYXQgY29udGFpbiBlYWNoIGVjb3N5c3RlbS4gSXMgdGhpcyBhIGdsaW1wc2UgaW50byB0aGUgIlNleHkiIHR5cGUgb2YgZWNvc3lzdGVtPyBTaG91bGQgSSB0YWtlIGl0IGEgc3RlcCBjbG9zZXIgYW5kIGFuYWx5emUgdGhlIGVjb3N5c3RlbXMgYmFzZWQgb24gc3BlY2lmIHJlZ2lvbnM/IElmIHdlIHRha2UganVzdCB0aGlzIGluZm9ybWF0aW9uLCB0aGVuIHdlIGRlZmluaXRlbHkgc29tZSBmb3JtIG9mIGJpYXMgYmV0d2VlbiB0aGVzZSBlY29zeXN0ZW0gaW4gaXRzZWxmLiAKCiMjTG9jYXRpb24gb2YgRmlyc3QgQXV0aG9yIChSZWdpb24pCmBgYHtyfQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gRWFzdC1Ob3J0aCBDZW50cmFsOiAiLCBjb3VudChFY29sb2d5QmlhcyRgTG9jYXRpb24gb2YgZmlyc3QgYXV0aG9yIChyZWdpb24pYCA9PSAiRWFzdC1Ob3J0aCBDZW50cmFsIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBNaWQtQXRsYW50aWM6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJNaWQtQXRsYW50aWMiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIE1pZC1Tb3V0aDogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIk1pZC1Tb3V0aCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTW91bnRhaW46ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJNb3VudGFpbiIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTmV3IEVuZ2xhbmQ6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJOZXcgRW5nbGFuZCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTm9ydGggV2VzdDogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIk5vcnRoIFdlc3QiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIFBhY2lmaWM6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJQYWNpZmljIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBTb3V0aCBBdGxhbnRpYzogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIlNvdXRoIEF0bGFudGljIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJXZXN0IE5vcnRoIENlbnRyYWwiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIFdlc3QgU291dGggQ2VudHJhbDogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIldlc3QgU291dGggQ2VudHJhbCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTUVUQSBBTkFMWVNJUzogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIkVNRVRBIEFOQUxZU0lTIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogIiwgY291bnQoRWNvbG9neUJpYXMkYExvY2F0aW9uIG9mIGZpcnN0IGF1dGhvciAocmVnaW9uKWAgPT0gIk11bHRpcGxlIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZSBSYW5nZXM6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBMb2NhdGlvbiBvZiBmaXJzdCBhdXRob3IgKHJlZ2lvbilgID09ICJNdWx0aXBsZSBSYW5nZXMiKSwgIlxuIikKCmBgYAoKCiMjIFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgKFBvcG8gZGVmaW5lcykKYGBge3J9CmNhdCgiIyBvZiBKb3VybmFscyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIkVhc3QtTm9ydGggQ2VudHJhbCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTWlkLUF0bGFudGljOiAiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJNaWQtQXRsYW50aWMiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIE1pZC1Tb3V0aDogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTWlkLVNvdXRoIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBNb3VudGFpbjogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTW91bnRhaW4iKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIE5ldyBFbmdsYW5kOiAiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJOZXcgRW5nbGFuZCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gTm9ydGggV2VzdDogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTm9ydGggV2VzdCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gUGFjaWZpYzogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiUGFjaWZpYyIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gU291dGggQXRsYW50aWM6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIlNvdXRoIEF0bGFudGljIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBXZXN0IE5vcnRoIENlbnRyYWw6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIldlc3QgTm9ydGggQ2VudHJhbCIpLCAiXG4iKQpjYXQoIiMgb2YgSm91cm5hbHMgaW4gV2VzdCBTb3V0aCBDZW50cmFsOiAiLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJXZXN0IFNvdXRoIENlbnRyYWwiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIE1FVEEgQU5BTFlTSVM6ICIsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIkVNRVRBIEFOQUxZU0lTIiksICJcbiIpCmNhdCgiIyBvZiBKb3VybmFscyBpbiBNdWx0aXBsZTogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTXVsdGlwbGUiKSwgIlxuIikKY2F0KCIjIG9mIEpvdXJuYWxzIGluIE11bHRpcGxlIFJhbmdlczogIiwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTXVsdGlwbGUgUmFuZ2VzIiksICJcbiIpCgpgYGAKCgpgYGB7cn0KCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29hc3RhbCBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29hc3RhbCBFY29zeXN0ZW1zIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBGb3Jlc3RzczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNvbmlmZXJvdXMgRm9yZXN0cyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIERlY2lkdW91cyBhbmQgRXZlcmdyZWVuczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkRlY2lkdW91cyBhbmQgRXZlcmdyZWVuIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNvc3lzdGVtcyBvZiB0aGUgRGVlcCBPY2VhbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVjb3N5c3RlbXMgb2YgdGhlIERlZXAgT2NlYW4iKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBJbmxhbmQgQXF1YXRpYyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiSW5sYW5kIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIENMYWtlcyBhbmQgUmVzZXJ2b2lycyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiTGFrZXMgYW5kIFJlc2Vydm9pcnMgRWNvc3lzdGVtcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIFBvbGFyICYgQWxwaW5lIFR1bmRyYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlBvbGFyICYgQWxwaW5lIFR1bmRyYSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIFNocnVibGFuZHM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJTaHJ1YmxhbmRzIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJvcGljYWwgRm9yZXN0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRyb3BpY2FsIEZvcmVzdHMiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDV2V0bGFuZCBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiV2V0bGFuZCBGb3Jlc3RzIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBhbmQgSGFyZHdvb2Q6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJDb25pZmVyb3VzIGFuZCBIYXJkd29vZCIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvcmFsIFJlZWZzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29yYWwgUmVlZnMiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY29zeXN0ZW1zIG9mIHRoZSBDb250aW5lbnRhbCBTaGVsdmVzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiRWNvc3lzdGVtcyBvZiB0aGUgQ29udGluZW50YWwgU2hlbHZlcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIEVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIEludGVydGlkYWwgYW5kIExpdHRvcmFsIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJJbnRlcnRpZGFsIGFuZCBMaXR0b3JhbCBFY29zeXN0ZW1zIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFuYWdlZCBBcXVhdGljIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNYW5hZ2VkIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE5hdHVyYWwgR3Jhc3NsYW5kczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk5hdHVyYWwgR3Jhc3NsYW5kcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIFJpdmVyIGFuZCBTdHJlYW0gRWNvc3lzdGVtOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiUml2ZXIgYW5kIFN0cmVhbSBFY29zeXN0ZW0iKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgQnJvYWQgTGVhdmVkIEV2ZXJncmVlbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBCcm9hZCBMZWF2ZWQgRXZlcmdyZWVuIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlc2VydHMgYW5kIFNlbWkgRGVzZXJ0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBEZXNlcnRzIGFuZCBTZW1pIERlc2VydHMiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcm9waWNhbCBTYXZhbm5hczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNUcm9waWNhbCBTYXZhbm5hcyIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE11bHRpcGxlIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNdWx0aXBsZSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1FVEEtQU5BTFlTSVM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNRVRBLUFOQUxZU0lTIiksICdcbicpCmBgYAoKCmBgYHtyfQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFubmVsaWRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJBbm5lbGlkYSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFudGhvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkFudGhvcGh5dGEiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBcnRocm9wb2RhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJBcnRocm9wb2RhIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ2hvcmRhdGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkNob3JkYXRhIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ25pZGFyaWE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkNuaWRhcmlhIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm9waHl0YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiQ29uaWZlcm9waHl0YSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIEVjaGlub2Rlcm1hdGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkVjaGlub2Rlcm1hdGEiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNYWdub2xpb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJNYWdub2xpb3BoeXRhIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gTW9sbHVzY2E6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIk1vbGx1c2NhIiksICdcbicpCmNhdCgnIyBvZiBKb3VybmFsIEVudHJpZXMgaW4gT2Nocm9waHl0YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiT2Nocm9waHl0YSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE9vbXljb3RhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJPb215Y290YSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIFNwZXJtYXRvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIlNwZXJtYXRvcGh5dGEiKSwgJ1xuJykKY2F0KCcjIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcmFjaGVvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIlRyYWNoZW9waHl0YSIpLCAnXG4nKQpjYXQoJyMgb2YgSm91cm5hbCBFbnRyaWVzIGluIE11bHRpcGxlOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJNdWx0aXBsZSIpLCAnXG4nKQpgYGAKCg==</div>
 
 
 
