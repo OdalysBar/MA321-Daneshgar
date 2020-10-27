@@ -2200,28 +2200,119 @@ The following objects are masked from 㤼㸱package:base㤼㸲:
 <h1>matrix of phylum Genus and species</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NlcyA8LSBFY29sb2d5Qmlhc1ssMTg6MjBdXG5jbGFzc2VzXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NlcyA8LSBFY29sb2d5Qmlhc1ssMTg6MjBdXG5jbGFzc2VzXG5cbiMgVGFraW5nIGF3YXkgTkEgb2YgQ2xhc3Nlc1xuXG5jbGFzcy5jbGVhbiA8LSBuYS5vbWl0KGNsYXNzZXMpXG5gYGAifQ== -->
 <pre class="r"><code>classes &lt;- EcologyBias[,18:20]
-classes</code></pre>
+classes
+
+# Taking away NA of Classes
+
+class.clean &lt;- na.omit(classes)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTc1LCJuY29sIjozfSwicmRmIjoiSDRzSUFBQUFBQUFBQnIxWlVXL2JOaEJXa3ppMmxXWXJzUGNoajl0REE2ekZmb0Ryck8yS3BQV1NEU2oyZHFGbzYxQ0tWRWtxamZlMGY5Ui8yTzRrVTdKRHlaYnNwQXVReHFKSTN0M0g3NzQ3MXBkbjc1K0g3OE1nQ1BhRGcyQXYyTy9SeCtCd1BQbmwyYS9QZ3VCZ2o1NGUwWnRoL3ZlV1p2MVFUQTJDSi9UNzJiMElSOXJHV3FVcUFqY3l1TWlFeFZSdzkzeDhsWEtkZ0ZWcFBMZXdhZEJmR1k2a2pUZk8yTjNXOFZoSm5ITGRzcjBTSWpPc3EvbmE4emhXT29MTzduY0taMnNudnNtbWZtUXRrVFlhclhNbmZNZGk3MGk4amR2NXR1MXpoeDA5SDdaZ1dUZWExMkRZUHNpeHhBZzByajJQZXpLeGRiL1c1N3YrZFFLbTA2VEhmMnBnTWQrODBRWE1wQkxZd3I1ZHR2NWZzdkdCQ2Zjd1B1NmNGTzM4M3pHS3UyTGRkTDZlblBzaC9NWmlsQ29xYk4rUEpqdEYwRmlUdXUzMFRpVnpwcGJ2UjFKeWdWc0lTamN6TlRIMkMzUW5xbXd2Ynp0U3BOMVF4NDNYaEhWWDA3WVBxMk5WL0paWjFNajVoL1JyemFUTmpkVXVCM2RmbFd0VSt5M0xYSU5YOTE3eFFQTFkza3kzdStJWkxtOENRVEQ4U2ovVjM4WGszZ1FaTDFjT2FXK2VvRUh3WnZVdjFUWEtsZUhtellZand3UlBFY3phaVpzM0dGeUNuT1hpMm1xbzVtakx4aTgwR0lPc0xZSndZbmdXQWRObzNNakI2N253NFRnWU1YTFJFWEtpWmtxU3NPdUUzN3F4bzdkY2M4WG14cUx4bGg2K1VNbDF0aXMrL1l2TVdDN3FVVlRzaVhKcWtFTStZR1BGSloyaDdRcll3V3VWcU5McUs2VlJORmoxUWh2bDNkdjJvYTNaN1dXV2dQU1JINzVGS3FDNCtzS2I4RUpsaEpESzJnUHR5Snh6SW5TRVdWSWRvRmJKRmdmb0dER095U21wYUtlU1dJTXpUQzNYODVJMGc2c1V0TVZheUcyTWNhdGZjOEhwZ0NzOW9tWWFHUkcra29uREVZbkliZm4wK05WY1UwVkpZeVNGcjZnTUpLNWNXbVViN0RrdWpBVVVhT3lHNXVNSmFSSlpKWkhUbGVxY1o4bTFScmJXNW9BMGZ3Wnl4V2paVDdGWVdTV2hCY0hCQkVoVitkTGdCQTFrR2h0STFEV2Y5djlpdnBXalFycFpETHFXOUNTeXNrSjUrRTVmaytibStlUWdQWU0wYmhKWHQvaGxBWTJidXhDK1ZpR3VaNEhEbjJpQ2loVWRVZVhRbTB3aWxZd09wQzY1UlJLa1kvS2ErMXpOdDJmK2FEL25sWjZWRmF4L0FUTEtxcTVpK0ZaRm1TZzZ0SFc2d29CVnhQNXVFb01BRXJQVXJsQjNPSWFVSkZka1B2VERLNlpTVEphSEh4ckNuczVVVjJ0N2pOYldnSm9xYmZMMG5DRWQvamFaMlA5YjVRdHJhVHo2eC9MbHRlY0t4QTFodGFURjRSVUtMblBvbmdUcnkvWGhUTUFTdXRCcWpDaGZ3ZGJjVC9NNnBtQ0IzSDJWY0UxYVdqcFdPc2syUUpxODNMeWlKM0dtMnpqZTEzeUd5eXdLYjdpbUFxK0UwdDdFb1FHV3AyVWw0VWNtdTE0NHRPU1B5TGo5d0JzS0RpWXBXT1J5NTVJdDhRYWF5cUlEY1VaVTBSR2lEeHBUQ1RIYW1NNVoyVGVRRm42NngxbEwwWDVZTW9TcFZveDBmQlVvaHlCWXkyWFdkUG9PQXE1eDBjOCtrQ3ZuZEdCVGFrV3FBKy8vTHFrajNxRTFjUTRxd2ZPbWRIc0hTd1NvYTlOM1NPQmVKS0FUS29UTDFuMmlOSFh0R3UycTVwL2pEVGFsbVF2M0RTUkFvaXNOMzlHLy9pV1FGeHRxZW5VZC9KalJMY0NuNmlDbFVzcDRXclVSSUVqL0pFNkZxcW5nUGpVcFpZZVpZR3VPcjh1T2ZrcVptdDliL0tTaHlaQ2c1RDdTZzdHaXRrWlhRQTlCeXFMb1ZOMVl3bVdrTE5ReGRCWmpOQ2wyNEdqcE9IVlNXRC94WTZvbytmV05YaWRKMVptbFNMY2U3TGgxU0Z4R1M1MWtMY2pqWEtlc29mQ2xxVm51QXljd3F6TGFNL3gyaVlaSnN3Um5mRzFYZlpSQ09xY0VCNTFXYTJSbUxRaEJmcnNCdHFZRWh5aUpEd21QbHNZL0tSWFY0eTBiYnRJeElUcTBtQTY5QzlEMW5tODRqdk5lY0ZyZHljS1h4QUNhSjNEWlN6SElpaU82OHlWYVQwSlNRUHNrV0h6blZoaWh2bFZVZXZMakt4STBjL0tUa21KK2d0TVRnbndtK0lsSk9VTnVmbmF6VHE0V3ordm4zVFU4MU9yVGFXbjhtSDczL3FWL0tLUS9mQStab011czg3QWNEUFAvQVRpZEVxOXlDbi94bHZUemRrbmwycnlYZnovWTh4WS8wdDdBOTVuTVBZbWVzamlUSDU0K3p3MFVyeGMveCs3ejU1WFArd3VUZTEvZFZyMFNPazdrbG1YejF4Tnd6VVhaeTFIRVJjQ251WVRZTWhJYU5hZDBDWUZ5SGhWRFVZNFVzUVZmL2dPQ2szUGtGeDBBQUE9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Phylum"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Genus (only if single species)"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Species (only if single species)"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Picea","3":"glauca"},{"1":"Spermatophyta","2":"Artemisia","3":"tridentata"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Anthophyta","2":"Robinia","3":"pseudoacacia"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Asclepias","3":"NA"},{"1":"Coniferophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Mollusca","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Chordata","2":"Rangifer","3":"tarandus"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Artemisia","3":"tridentata"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Brassica","3":"nigra"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Chordata","2":"Pseudacris","3":"regilla"},{"1":"Chordata","2":"Hyla","3":"versicolor"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Acer","3":"saccharum"},{"1":"Arthropoda","2":"Pogonomyrmex","3":"subdentatus"},{"1":"Ochrophyta","2":"Nereocystis","3":"luetkeana"},{"1":"Chordata","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Bombus","3":"impatiens"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Chordata","2":"Mustela","3":"nivalis"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Andropogon","3":"gerardii"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Coenobita","3":"compressus"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Cnidaria","2":"NA","3":"NA"},{"1":"Chordata","2":"Homo","3":"sapiens"},{"1":"Chordata","2":"Gorilla","3":"gorilla"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Chordata","2":"Anolis","3":"NA"},{"1":"Chordata","2":"NA","3":"NA"},{"1":"Chordata","2":"NA","3":"NA"},{"1":"Chordata","2":"NA","3":"NA"},{"1":"Cnidaria","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Tracheophyta","2":"Fumana","3":"procumbens"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Magnoliophyta","2":"Nicotiana","3":"attenuata"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Tracheophyta","2":"Bouteloua","3":"eriopoda"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Lepidium","3":"Latifolium"},{"1":"Spermatophyta","2":"Bromus","3":"Inermis"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Chordata","2":"Chelonoidis","3":"NA"},{"1":"Spermatophyta","2":"Dipteryx","3":"oleifera"},{"1":"Spermatophyta","2":"Spartina","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Bombus","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Mollusca","2":"Heleobia","3":"australis"},{"1":"Arthropoda","2":"Magicicada","3":"NA"},{"1":"Mollusca","2":"Aplexa","3":"marmorata"},{"1":"Chordata","2":"Gyrinophilus","3":"Porphyriticus"},{"1":"Echinodermata","2":"Paracentotus","3":"Lividus"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Tracheophyta","2":"Cladium","3":"Jamaicense"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Coniferophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Oomycota","2":"Phytophthora","3":"Ramorum"},{"1":"Annelida","2":"Lumbricus","3":"NA"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Traganum","3":"Moquinii"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Chordata","2":"Ochotona","3":"princeps"},{"1":"Anthophyta","2":"Spartina","3":"alterniflora"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Chordata","2":"Panthera","3":"leo"},{"1":"Arthropoda","2":"Pisaurina","3":"mira"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Andropogon","3":"gerardii"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Uca","3":"panacea"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Anthocharis","3":"cardamines"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Pinus","3":"Contorta"},{"1":"Cnidaria","2":"Orbicella","3":"annularis"},{"1":"Arthropoda","2":"Daphnia","3":"mendotae"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Ficus","3":"hispida"},{"1":"Arthropoda","2":"Artemia","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"Bouteloua","3":"gracilis"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Echinodermata","2":"Heliocidaris","3":"erythrogramma"},{"1":"Spermatophyta","2":"Juniperus","3":"pingii"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Mollusca","2":"Melarhaphe","3":"neritoides"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Helice","3":"tientsinensis"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Pararge","3":"aegeria"},{"1":"Multiple","2":"Manduca","3":"sexta"},{"1":"Multiple","2":"Nodularia","3":"spumigena"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Tracheophyta","2":"Acacia","3":"papyrocarpa"},{"1":"Chordata","2":"Phalaenoptilus","3":"nuttallii"},{"1":"Chordata","2":"Capreolus","3":"capreolus"},{"1":"Chordata","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Scopimera","3":"intermedia"},{"1":"Chordata","2":"sceloporus","3":"woodi"},{"1":"Chordata","2":"capra","3":"NA"},{"1":"Arthropoda","2":"NA","3":"NA"},{"1":"Chordata","2":"forsterygion","3":"Lapillum"},{"1":"Arthropoda","2":"Bombus","3":"NA"},{"1":"Spermatophyta","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Anthophyta","2":"Zostera","3":"Marina"},{"1":"Multiple","2":"NA","3":"NA"},{"1":"Arthropoda","2":"Azteca","3":"Chartifex"},{"1":"Chordata","2":"Salvelinus","3":"Fontinalis"},{"1":"Spermatophyta","2":"Silene","3":"Acaulis"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[175]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="taking-away-na-of-classes" class="section level1">
-<h1>Taking away NA of Classes</h1>
+<div id="counts-by-genus" class="section level1">
+<h1>counts by genus</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MuY2xlYW4gPC0gbmEub21pdChjbGFzc2VzKVxuXG5TcGVybWF0b3BoeXRhLkc8LSB2ZWN0b3IoKVxuU3Blcm1hdG9waHl0YS5TIDwtIHZlY3RvcigpXG5mb3IoaSBpbiAxOjU5KXtcbiBpZihjbGFzcy5jbGVhbltpLDFdPT0gXCJTcGVybWF0b3BoeXRhXCIpe1xuICAgU3Blcm1hdG9waHl0YS5HW2ldIDwtIGNsYXNzLmNsZWFuW2ksMl1cbiAgIFNwZXJtYXRvcGh5dGEuU1tpXSA8LSBjbGFzcy5jbGVhbltpLDNdXG4gfX1cblNwZXJtYXRvcGh5dGEuRy4yIDwtIFNwZXJtYXRvcGh5dGEuR1std2hpY2goc2FwcGx5KFNwZXJtYXRvcGh5dGEuRywgaXMubnVsbCkpXVxuU3Blcm1hdG9waHl0YS5HLjJcbmBgYCJ9 -->
-<pre class="r"><code>class.clean &lt;- na.omit(classes)
-
-Spermatophyta.G&lt;- vector()
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRpZXMgYnkgR2VudXM6JyAsICdcXG4nLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Enties by Genus:&#39; , &#39;\n&#39;, &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50aWVzIGJ5IEdlbnVzOiBcbiBcbiJ9 -->
+<pre><code>Number of Journal Enties by Genus: 
+ </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFjYWNpYTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkFjYWNpYVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Acacia: &#39; , count(class.clean[,2] == &quot;Acacia&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBY2FjaWE6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Acacia:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFjZXI6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gXCJBY2VyXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Acer: &#39; , count(class.clean[,2] == &quot;Acer&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBY2VyOiAgMSBcbiJ9 -->
+<pre><code>Number of Journal Entries in Acer:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFuZHJvcG9nb246ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gXCJBbmRyb3BvZ29uXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Andropogon: &#39; , count(class.clean[,2] == &quot;Andropogon&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbmRyb3BvZ29uOiAgMiBcbiJ9 -->
+<pre><code>Number of Journal Entries in Andropogon:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFudGhvY2hhcmlzOiAnICwgY291bnQoY2xhc3MuY2xlYW5bLDJdID09IFwiQW50aG9jaGFyaXNcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Anthocharis: &#39; , count(class.clean[,2] == &quot;Anthocharis&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbnRob2NoYXJpczogIDEgXG4ifQ== -->
+<pre><code>Number of Journal Entries in Anthocharis:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFwbGV4YTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXT09IFwiQXBsZXhhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Aplexa: &#39; , count(class.clean[,2]== &quot;Aplexa&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBcGxleGE6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Aplexa:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFydGVtaXNpYTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkFydGVtaXNpYVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Artemisia: &#39; , count(class.clean[,2] == &quot;Artemisia&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBcnRlbWlzaWE6ICAyIFxuIn0= -->
+<pre><code>Number of Journal Entries in Artemisia:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEF6dGVjYTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkF6dGVjYVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Azteca: &#39; , count(class.clean[,2] == &quot;Azteca&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBenRlY2E6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Azteca:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEJvbWJ1czogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkJvbWJ1c1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Bombus: &#39; , count(class.clean[,2] == &quot;Bombus&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCb21idXM6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Bombus:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEJvdXRlbG91YTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXT09IFwiQm91dGVsb3VhXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Bouteloua: &#39; , count(class.clean[,2]== &quot;Bouteloua&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCb3V0ZWxvdWE6ICAyIFxuIn0= -->
+<pre><code>Number of Journal Entries in Bouteloua:  2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEJyYXNzaWNhOiAnICwgY291bnQoY2xhc3MuY2xlYW5bLDJdID09IFwiQnJhc3NpY2FcIiksICdcXG4nKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Brassica: &#39; , count(class.clean[,2] == &quot;Brassica&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCcmFzc2ljYTogIDEgXG4ifQ== -->
+<pre><code>Number of Journal Entries in Brassica:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEJyb211czogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkJyb211c1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Bromus: &#39; , count(class.clean[,2] == &quot;Bromus&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCcm9tdXM6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Bromus:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENhcHJlb2x1czogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkNhcHJlb2x1c1wiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Capreolus: &#39; , count(class.clean[,2] == &quot;Capreolus&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDYXByZW9sdXM6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Capreolus:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENsYWRpdW06ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gXCJDbGFkaXVtXCIpLCAnXFxuJylcbmBgYCJ9 -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Cladium: &#39; , count(class.clean[,2] == &quot;Cladium&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDbGFkaXVtOiAgMSBcbiJ9 -->
+<pre><code>Number of Journal Entries in Cladium:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvZW5vYml0YTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSBcIkNvZW5vYml0YVwiKSwgJ1xcbicpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&#39;Number of Journal Entries in Coenobita: &#39; , count(class.clean[,2] == &quot;Coenobita&quot;), &#39;\n&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDb2Vub2JpdGE6ICAxIFxuIn0= -->
+<pre><code>Number of Journal Entries in Coenobita:  1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This list continues I dont think this is a good way to do this.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3Blcm1hdG9waHl0YS5HPC0gdmVjdG9yKClcblNwZXJtYXRvcGh5dGEuUyA8LSB2ZWN0b3IoKVxuZm9yKGkgaW4gMTo1OSl7XG4gaWYoY2xhc3MuY2xlYW5baSwxXT09IFwiU3Blcm1hdG9waHl0YVwiKXtcbiAgIFNwZXJtYXRvcGh5dGEuR1tpXSA8LSBjbGFzcy5jbGVhbltpLDJdXG4gICBTcGVybWF0b3BoeXRhLlNbaV0gPC0gY2xhc3MuY2xlYW5baSwzXVxuIH19XG5TcGVybWF0b3BoeXRhLkcuMiA8LSBTcGVybWF0b3BoeXRhLkdbLXdoaWNoKHNhcHBseShTcGVybWF0b3BoeXRhLkcsIGlzLm51bGwpKV1cblNwZXJtYXRvcGh5dGEuRy4yXG5cblNwZXJtYXRvcGh5dGEuUy4yIDwtIFNwZXJtYXRvcGh5dGEuU1std2hpY2goc2FwcGx5KFNwZXJtYXRvcGh5dGEuUywgaXMubnVsbCkpXVxuU3Blcm1hdG9waHl0YS5TLjJcblxuYGBgIn0= -->
+<pre class="r"><code>Spermatophyta.G&lt;- vector()
 Spermatophyta.S &lt;- vector()
 for(i in 1:59){
  if(class.clean[i,1]== &quot;Spermatophyta&quot;){
@@ -2229,116 +2320,18 @@ for(i in 1:59){
    Spermatophyta.S[i] &lt;- class.clean[i,3]
  }}
 Spermatophyta.G.2 &lt;- Spermatophyta.G[-which(sapply(Spermatophyta.G, is.null))]
-Spermatophyta.G.2</code></pre>
+Spermatophyta.G.2
+
+Spermatophyta.S.2 &lt;- Spermatophyta.S[-which(sapply(Spermatophyta.S, is.null))]
+Spermatophyta.S.2
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcIlBpY2VhXCJcblxuW1syXV1cblsxXSBcIkFydGVtaXNpYVwiXG5cbltbM11dXG5bMV0gXCJBcnRlbWlzaWFcIlxuXG5bWzRdXVxuWzFdIFwiQnJhc3NpY2FcIlxuXG5bWzVdXVxuWzFdIFwiQWNlclwiXG5cbltbNl1dXG5bMV0gXCJBbmRyb3BvZ29uXCJcblxuW1s3XV1cblsxXSBcIkxlcGlkaXVtXCJcblxuW1s4XV1cblsxXSBcIkJyb211c1wiXG5cbltbOV1dXG5bMV0gXCJEaXB0ZXJ5eFwiXG5cbltbMTBdXVxuWzFdIFwiVHJhZ2FudW1cIlxuXG5bWzExXV1cblsxXSBcIkFuZHJvcG9nb25cIlxuXG5bWzEyXV1cblsxXSBcIlBpbnVzXCJcblxuW1sxM11dXG5bMV0gXCJGaWN1c1wiXG5cbltbMTRdXVxuWzFdIFwiQm91dGVsb3VhXCJcblxuW1sxNV1dXG5bMV0gXCJKdW5pcGVydXNcIlxuXG5bWzE2XV1cblsxXSBcIlNpbGVuZVwiXG4ifQ== -->
-<pre><code>[[1]]
-[1] &quot;Picea&quot;
-
-[[2]]
-[1] &quot;Artemisia&quot;
-
-[[3]]
-[1] &quot;Artemisia&quot;
-
-[[4]]
-[1] &quot;Brassica&quot;
-
-[[5]]
-[1] &quot;Acer&quot;
-
-[[6]]
-[1] &quot;Andropogon&quot;
-
-[[7]]
-[1] &quot;Lepidium&quot;
-
-[[8]]
-[1] &quot;Bromus&quot;
-
-[[9]]
-[1] &quot;Dipteryx&quot;
-
-[[10]]
-[1] &quot;Traganum&quot;
-
-[[11]]
-[1] &quot;Andropogon&quot;
-
-[[12]]
-[1] &quot;Pinus&quot;
-
-[[13]]
-[1] &quot;Ficus&quot;
-
-[[14]]
-[1] &quot;Bouteloua&quot;
-
-[[15]]
-[1] &quot;Juniperus&quot;
-
-[[16]]
-[1] &quot;Silene&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3Blcm1hdG9waHl0YS5TLjIgPC0gU3Blcm1hdG9waHl0YS5TWy13aGljaChzYXBwbHkoU3Blcm1hdG9waHl0YS5TLCBpcy5udWxsKSldXG5TcGVybWF0b3BoeXRhLlMuMlxuYGBgIn0= -->
-<pre class="r"><code>Spermatophyta.S.2 &lt;- Spermatophyta.S[-which(sapply(Spermatophyta.S, is.null))]
-Spermatophyta.S.2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcImdsYXVjYVwiXG5cbltbMl1dXG5bMV0gXCJ0cmlkZW50YXRhXCJcblxuW1szXV1cblsxXSBcInRyaWRlbnRhdGFcIlxuXG5bWzRdXVxuWzFdIFwibmlncmFcIlxuXG5bWzVdXVxuWzFdIFwic2FjY2hhcnVtXCJcblxuW1s2XV1cblsxXSBcImdlcmFyZGlpXCJcblxuW1s3XV1cblsxXSBcIkxhdGlmb2xpdW1cIlxuXG5bWzhdXVxuWzFdIFwiSW5lcm1pc1wiXG5cbltbOV1dXG5bMV0gXCJvbGVpZmVyYVwiXG5cbltbMTBdXVxuWzFdIFwiTW9xdWluaWlcIlxuXG5bWzExXV1cblsxXSBcImdlcmFyZGlpXCJcblxuW1sxMl1dXG5bMV0gXCJDb250b3J0YVwiXG5cbltbMTNdXVxuWzFdIFwiaGlzcGlkYVwiXG5cbltbMTRdXVxuWzFdIFwiZ3JhY2lsaXNcIlxuXG5bWzE1XV1cblsxXSBcInBpbmdpaVwiXG5cbltbMTZdXVxuWzFdIFwiQWNhdWxpc1wiXG4ifQ== -->
-<pre><code>[[1]]
-[1] &quot;glauca&quot;
-
-[[2]]
-[1] &quot;tridentata&quot;
-
-[[3]]
-[1] &quot;tridentata&quot;
-
-[[4]]
-[1] &quot;nigra&quot;
-
-[[5]]
-[1] &quot;saccharum&quot;
-
-[[6]]
-[1] &quot;gerardii&quot;
-
-[[7]]
-[1] &quot;Latifolium&quot;
-
-[[8]]
-[1] &quot;Inermis&quot;
-
-[[9]]
-[1] &quot;oleifera&quot;
-
-[[10]]
-[1] &quot;Moquinii&quot;
-
-[[11]]
-[1] &quot;gerardii&quot;
-
-[[12]]
-[1] &quot;Contorta&quot;
-
-[[13]]
-[1] &quot;hispida&quot;
-
-[[14]]
-[1] &quot;gracilis&quot;
-
-[[15]]
-[1] &quot;pingii&quot;
-
-[[16]]
-[1] &quot;Acaulis&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>These are now the only ones where we have all 3 classes. There are 59 rows so we lost a lot of data.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdC5HPC0gdmVjdG9yKClcbm11bHQuUyA8LSB2ZWN0b3IoKVxuZm9yKGkgaW4gMTo1OSl7XG4gaWYoY2xhc3MuY2xlYW5baSwxXT09IFwiTXVsdGlwbGVcIil7XG4gICBtdWx0LkdbaV0gPC0gY2xhc3MuY2xlYW5baSwyXVxuICAgbXVsdC5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM11cbiB9fVxubXVsdC5HLjIgPC0gbXVsdC5HWy13aGljaChzYXBwbHkobXVsdC5HLCBpcy5udWxsKSldXG5tdWx0LkcuMlxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdC5HPC0gdmVjdG9yKClcbm11bHQuUyA8LSB2ZWN0b3IoKVxuZm9yKGkgaW4gMTo1OSl7XG4gaWYoY2xhc3MuY2xlYW5baSwxXT09IFwiTXVsdGlwbGVcIil7XG4gICBtdWx0LkdbaV0gPC0gY2xhc3MuY2xlYW5baSwyXVxuICAgbXVsdC5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM11cbiB9fVxubXVsdC5HLjIgPC0gbXVsdC5HWy13aGljaChzYXBwbHkobXVsdC5HLCBpcy5udWxsKSldXG5tdWx0LkcuMlxuXG5tdWx0LlMuMiA8LSBtdWx0LlNbLXdoaWNoKHNhcHBseShtdWx0LlMsIGlzLm51bGwpKV1cbm11bHQuUy4yXG5cbmBgYCJ9 -->
 <pre class="r"><code>mult.G&lt;- vector()
 mult.S &lt;- vector()
 for(i in 1:59){
@@ -2347,31 +2340,17 @@ for(i in 1:59){
    mult.S[i] &lt;- class.clean[i,3]
  }}
 mult.G.2 &lt;- mult.G[-which(sapply(mult.G, is.null))]
-mult.G.2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcIk1hbmR1Y2FcIlxuXG5bWzJdXVxuWzFdIFwiTm9kdWxhcmlhXCJcbiJ9 -->
-<pre><code>[[1]]
-[1] &quot;Manduca&quot;
+mult.G.2
 
-[[2]]
-[1] &quot;Nodularia&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdC5TLjIgPC0gbXVsdC5TWy13aGljaChzYXBwbHkobXVsdC5TLCBpcy5udWxsKSldXG5tdWx0LlMuMlxuYGBgIn0= -->
-<pre class="r"><code>mult.S.2 &lt;- mult.S[-which(sapply(mult.S, is.null))]
-mult.S.2</code></pre>
+mult.S.2 &lt;- mult.S[-which(sapply(mult.S, is.null))]
+mult.S.2
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcInNleHRhXCJcblxuW1syXV1cblsxXSBcInNwdW1pZ2VuYVwiXG4ifQ== -->
-<pre><code>[[1]]
-[1] &quot;sexta&quot;
-
-[[2]]
-[1] &quot;spumigena&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5DaG9yZGF0YS5HPC0gdmVjdG9yKClcbkNob3JkYXRhLlMgPC0gdmVjdG9yKClcbmZvcihpIGluIDE6NTkpe1xuIGlmKGNsYXNzLmNsZWFuW2ksMV09PSBcIkNob3JkYXRhXCIpe1xuICAgQ2hvcmRhdGEuR1tpXSA8LSBjbGFzcy5jbGVhbltpLDJdXG4gICBDaG9yZGF0YS5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM11cbiB9fVxuQ2hvcmRhdGEuRy4yIDwtIENob3JkYXRhLkdbLXdoaWNoKHNhcHBseShDaG9yZGF0YS5HLCBpcy5udWxsKSldXG5DaG9yZGF0YS5HLjJcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5DaG9yZGF0YS5HPC0gdmVjdG9yKClcbkNob3JkYXRhLlMgPC0gdmVjdG9yKClcbmZvcihpIGluIDE6NTkpe1xuIGlmKGNsYXNzLmNsZWFuW2ksMV09PSBcIkNob3JkYXRhXCIpe1xuICAgQ2hvcmRhdGEuR1tpXSA8LSBjbGFzcy5jbGVhbltpLDJdXG4gICBDaG9yZGF0YS5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM11cbiB9fVxuQ2hvcmRhdGEuRy4yIDwtIENob3JkYXRhLkdbLXdoaWNoKHNhcHBseShDaG9yZGF0YS5HLCBpcy5udWxsKSldXG5DaG9yZGF0YS5HLjJcblxuQ2hvcmRhdGEuUy4yIDwtIENob3JkYXRhLlNbLXdoaWNoKHNhcHBseShDaG9yZGF0YS5TLCBpcy5udWxsKSldXG5DaG9yZGF0YS5TLjJcblxuYGBgIn0= -->
 <pre class="r"><code>
 Chordata.G&lt;- vector()
 Chordata.S &lt;- vector()
@@ -2381,104 +2360,18 @@ for(i in 1:59){
    Chordata.S[i] &lt;- class.clean[i,3]
  }}
 Chordata.G.2 &lt;- Chordata.G[-which(sapply(Chordata.G, is.null))]
-Chordata.G.2</code></pre>
+Chordata.G.2
+
+Chordata.S.2 &lt;- Chordata.S[-which(sapply(Chordata.S, is.null))]
+Chordata.S.2
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcIlJhbmdpZmVyXCJcblxuW1syXV1cblsxXSBcIlBzZXVkYWNyaXNcIlxuXG5bWzNdXVxuWzFdIFwiSHlsYVwiXG5cbltbNF1dXG5bMV0gXCJNdXN0ZWxhXCJcblxuW1s1XV1cblsxXSBcIkhvbW9cIlxuXG5bWzZdXVxuWzFdIFwiR29yaWxsYVwiXG5cbltbN11dXG5bMV0gXCJHeXJpbm9waGlsdXNcIlxuXG5bWzhdXVxuWzFdIFwiT2Nob3RvbmFcIlxuXG5bWzldXVxuWzFdIFwiUGFudGhlcmFcIlxuXG5bWzEwXV1cblsxXSBcIlBoYWxhZW5vcHRpbHVzXCJcblxuW1sxMV1dXG5bMV0gXCJDYXByZW9sdXNcIlxuXG5bWzEyXV1cblsxXSBcInNjZWxvcG9ydXNcIlxuXG5bWzEzXV1cblsxXSBcImZvcnN0ZXJ5Z2lvblwiXG5cbltbMTRdXVxuWzFdIFwiU2FsdmVsaW51c1wiXG4ifQ== -->
-<pre><code>[[1]]
-[1] &quot;Rangifer&quot;
-
-[[2]]
-[1] &quot;Pseudacris&quot;
-
-[[3]]
-[1] &quot;Hyla&quot;
-
-[[4]]
-[1] &quot;Mustela&quot;
-
-[[5]]
-[1] &quot;Homo&quot;
-
-[[6]]
-[1] &quot;Gorilla&quot;
-
-[[7]]
-[1] &quot;Gyrinophilus&quot;
-
-[[8]]
-[1] &quot;Ochotona&quot;
-
-[[9]]
-[1] &quot;Panthera&quot;
-
-[[10]]
-[1] &quot;Phalaenoptilus&quot;
-
-[[11]]
-[1] &quot;Capreolus&quot;
-
-[[12]]
-[1] &quot;sceloporus&quot;
-
-[[13]]
-[1] &quot;forsterygion&quot;
-
-[[14]]
-[1] &quot;Salvelinus&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ2hvcmRhdGEuUy4yIDwtIENob3JkYXRhLlNbLXdoaWNoKHNhcHBseShDaG9yZGF0YS5TLCBpcy5udWxsKSldXG5DaG9yZGF0YS5TLjJcbmBgYCJ9 -->
-<pre class="r"><code>Chordata.S.2 &lt;- Chordata.S[-which(sapply(Chordata.S, is.null))]
-Chordata.S.2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcInRhcmFuZHVzXCJcblxuW1syXV1cblsxXSBcInJlZ2lsbGFcIlxuXG5bWzNdXVxuWzFdIFwidmVyc2ljb2xvclwiXG5cbltbNF1dXG5bMV0gXCJuaXZhbGlzXCJcblxuW1s1XV1cblsxXSBcInNhcGllbnNcIlxuXG5bWzZdXVxuWzFdIFwiZ29yaWxsYVwiXG5cbltbN11dXG5bMV0gXCJQb3JwaHlyaXRpY3VzXCJcblxuW1s4XV1cblsxXSBcInByaW5jZXBzXCJcblxuW1s5XV1cblsxXSBcImxlb1wiXG5cbltbMTBdXVxuWzFdIFwibnV0dGFsbGlpXCJcblxuW1sxMV1dXG5bMV0gXCJjYXByZW9sdXNcIlxuXG5bWzEyXV1cblsxXSBcIndvb2RpXCJcblxuW1sxM11dXG5bMV0gXCJMYXBpbGx1bVwiXG5cbltbMTRdXVxuWzFdIFwiRm9udGluYWxpc1wiXG4ifQ== -->
-<pre><code>[[1]]
-[1] &quot;tarandus&quot;
-
-[[2]]
-[1] &quot;regilla&quot;
-
-[[3]]
-[1] &quot;versicolor&quot;
-
-[[4]]
-[1] &quot;nivalis&quot;
-
-[[5]]
-[1] &quot;sapiens&quot;
-
-[[6]]
-[1] &quot;gorilla&quot;
-
-[[7]]
-[1] &quot;Porphyriticus&quot;
-
-[[8]]
-[1] &quot;princeps&quot;
-
-[[9]]
-[1] &quot;leo&quot;
-
-[[10]]
-[1] &quot;nuttallii&quot;
-
-[[11]]
-[1] &quot;capreolus&quot;
-
-[[12]]
-[1] &quot;woodi&quot;
-
-[[13]]
-[1] &quot;Lapillum&quot;
-
-[[14]]
-[1] &quot;Fontinalis&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNjcmF0Y2ggd29yayBFY29sb2d5IFB1YmxpY2F0b24iDQphdXRob3I6IE9kYWx5cyBCYXJyaWVudG9zDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIExvY2F0aW9uIG9mIGZpbGUNCmBgYHtyfQ0KZ2V0d2QoKQ0KbGlicmFyeShtb3NhaWMpDQpgYGANCiMgTmV3IE1hcml4IG9mIGRhdGEgDQpvdXIgZGF0YSBpcyBvbmx5IDE3NSBsaW5lcyBsb25nIA0KYGBge3J9DQpFY29sb2d5QmlhcyA8LSBFY29sb2d5Qmlhc19EYW5lc2hnYXJfUG9wb18yX1sxOjE3NSwgXQ0KRWNvbG9neUJpYXMNCmBgYA0KIyBDb3VudCBvZiBFY29zeXN0ZW1zIChwb3BvIGRlZikNCmBgYHtyfQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1hcmluZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBNYXJpbmUsIFRlcnJlc3RyaWFsLCBGcmVzaHdhdGVyLCBNaXhlZGAgPT0gIk1hcmluZSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFRlcnJlc3RyaWFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiVGVycmVzdHJpYWwiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBGcmVzaHdhdGVyOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiRnJlc2h3YXRlciIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1peGVkOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiTWl4ZWQiKSwgJ1xuJykNCmBgYA0KIyBjb3VudCBvZiBSZWdpb25zIG9mIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lDQpgYGB7cn0NCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50aWVzIGJ5IFJlZ2lvbjonICwgJ1xuJywgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJFYXN0LU5vcnRoIENlbnRyYWwiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNaWQtQXRsYW50aWM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJNaWQtQXRsYW50aWMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNaWQtU291dGg6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJNaWRTb3V0aCIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1vdW50YWluOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTW91bnRhaW4iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBOZXcgRW5nbGFuZDogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk5ldyBFbmdsYW5kIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTm9ydGggV2VzdDogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk5XIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gUGFjaWZpYzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIlBhY2lmaWMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTb3V0aCBBdGxhbnRpYzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIlNvdXRoIEF0bGFudGljIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gV2VzdCBOb3J0aCBDZW50cmFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiV2VzdCBOb3J0aCBDZW50cmFsIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gV2VzdCBTb3V0aCBDZW50cmFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiV2VzdCBTb3V0aCBDZW50cmFsIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTUVUQSBBTkFMWVNJUzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk1FVEEgQU5BTFlTSVMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk11bHRpcGxlIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTXVsdGlwbGUgUmFuZ2VzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTXVsdGlwbGUgUmFuZ2VzIiksICdcbicpDQpgYGANCiMgY291bnQgb2YgZWNvc3lzdGVtcyBiYXNlZCBvZmYgcGVkIGRlZg0KYGBge3J9DQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudGllcyBieSBFY29zeXN0ZW06JyAsICdcbicsICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29hc3RhbCBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29hc3RhbCBFY29zeXN0ZW1zIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBGb3Jlc3RzczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNvbmlmZXJvdXMgRm9yZXN0cyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIERlY2lkdW91cyBhbmQgRXZlcmdyZWVuczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkRlY2lkdW91cyBhbmQgRXZlcmdyZWVuIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNvc3lzdGVtcyBvZiB0aGUgRGVlcCBPY2VhbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVjb3N5c3RlbXMgb2YgdGhlIERlZXAgT2NlYW4iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBJbmxhbmQgQXF1YXRpYyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiSW5sYW5kIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENMYWtlcyBhbmQgUmVzZXJ2b2lycyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiTGFrZXMgYW5kIFJlc2Vydm9pcnMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFBvbGFyICYgQWxwaW5lIFR1bmRyYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlBvbGFyICYgQWxwaW5lIFR1bmRyYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFNocnVibGFuZHM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJTaHJ1YmxhbmRzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJvcGljYWwgRm9yZXN0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRyb3BpY2FsIEZvcmVzdHMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDV2V0bGFuZCBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiV2V0bGFuZCBGb3Jlc3RzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBhbmQgSGFyZHdvb2Q6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJDb25pZmVyb3VzIGFuZCBIYXJkd29vZCIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvcmFsIFJlZWZzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29yYWwgUmVlZnMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY29zeXN0ZW1zIG9mIHRoZSBDb250aW5lbnRhbCBTaGVsdmVzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiRWNvc3lzdGVtcyBvZiB0aGUgQ29udGluZW50YWwgU2hlbHZlcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEludGVydGlkYWwgYW5kIExpdHRvcmFsIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJJbnRlcnRpZGFsIGFuZCBMaXR0b3JhbCBFY29zeXN0ZW1zIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFuYWdlZCBBcXVhdGljIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNYW5hZ2VkIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE5hdHVyYWwgR3Jhc3NsYW5kczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk5hdHVyYWwgR3Jhc3NsYW5kcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFJpdmVyIGFuZCBTdHJlYW0gRWNvc3lzdGVtOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiUml2ZXIgYW5kIFN0cmVhbSBFY29zeXN0ZW0iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgQnJvYWQgTGVhdmVkIEV2ZXJncmVlbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBCcm9hZCBMZWF2ZWQgRXZlcmdyZWVuIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlc2VydHMgYW5kIFNlbWkgRGVzZXJ0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBEZXNlcnRzIGFuZCBTZW1pIERlc2VydHMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcm9waWNhbCBTYXZhbm5hczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNUcm9waWNhbCBTYXZhbm5hcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE11bHRpcGxlIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNdWx0aXBsZSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1FVEEtQU5BTFlTSVM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNRVRBLUFOQUxZU0lTIiksICdcbicpDQpgYGANCiMgY291bnQgb2YgcGh5bHVtDQpgYGB7cn0NCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50aWVzIGJ5IFBoeWx1bTonICwgJ1xuJywgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbm5lbGlkYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiQW5uZWxpZGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbnRob3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJBbnRob3BoeXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQXJ0aHJvcG9kYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiQXJ0aHJvcG9kYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENob3JkYXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJDaG9yZGF0YSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENuaWRhcmlhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJDbmlkYXJpYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvbmlmZXJvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkNvbmlmZXJvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY2hpbm9kZXJtYXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJFY2hpbm9kZXJtYXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFnbm9saW9waHl0YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiTWFnbm9saW9waHl0YSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1vbGx1c2NhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJNb2xsdXNjYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE9jaHJvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIk9jaHJvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBPb215Y290YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiT29teWNvdGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTcGVybWF0b3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJTcGVybWF0b3BoeXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJhY2hlb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJUcmFjaGVvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiTXVsdGlwbGUiKSwgJ1xuJykNCmBgYA0KIyBtYXRyaXggb2YgcGh5bHVtIEdlbnVzIGFuZCBzcGVjaWVzDQpgYGB7cn0NCmNsYXNzZXMgPC0gRWNvbG9neUJpYXNbLDE4OjIwXQ0KY2xhc3Nlcw0KYGBgDQojIFRha2luZyBhd2F5IE5BIG9mIENsYXNzZXMNCmBgYHtyfQ0KY2xhc3MuY2xlYW4gPC0gbmEub21pdChjbGFzc2VzKQ0KDQpTcGVybWF0b3BoeXRhLkc8LSB2ZWN0b3IoKQ0KU3Blcm1hdG9waHl0YS5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIlNwZXJtYXRvcGh5dGEiKXsNCiAgIFNwZXJtYXRvcGh5dGEuR1tpXSA8LSBjbGFzcy5jbGVhbltpLDJdDQogICBTcGVybWF0b3BoeXRhLlNbaV0gPC0gY2xhc3MuY2xlYW5baSwzXQ0KIH19DQpTcGVybWF0b3BoeXRhLkcuMiA8LSBTcGVybWF0b3BoeXRhLkdbLXdoaWNoKHNhcHBseShTcGVybWF0b3BoeXRhLkcsIGlzLm51bGwpKV0NClNwZXJtYXRvcGh5dGEuRy4yDQoNClNwZXJtYXRvcGh5dGEuUy4yIDwtIFNwZXJtYXRvcGh5dGEuU1std2hpY2goc2FwcGx5KFNwZXJtYXRvcGh5dGEuUywgaXMubnVsbCkpXQ0KU3Blcm1hdG9waHl0YS5TLjINCg0KYGBgDQpUaGVzZSBhcmUgbm93IHRoZSBvbmx5IG9uZXMgd2hlcmUgd2UgaGF2ZSBhbGwgMyBjbGFzc2VzLiBUaGVyZSBhcmUgNTkgcm93cyBzbyB3ZSBsb3N0IGEgbG90IG9mIGRhdGEuIA0KYGBge3J9DQptdWx0Lkc8LSB2ZWN0b3IoKQ0KbXVsdC5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIk11bHRpcGxlIil7DQogICBtdWx0LkdbaV0gPC0gY2xhc3MuY2xlYW5baSwyXQ0KICAgbXVsdC5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM10NCiB9fQ0KbXVsdC5HLjIgPC0gbXVsdC5HWy13aGljaChzYXBwbHkobXVsdC5HLCBpcy5udWxsKSldDQptdWx0LkcuMg0KDQptdWx0LlMuMiA8LSBtdWx0LlNbLXdoaWNoKHNhcHBseShtdWx0LlMsIGlzLm51bGwpKV0NCm11bHQuUy4yDQoNCmBgYA0KDQpgYGB7cn0NCg0KQ2hvcmRhdGEuRzwtIHZlY3RvcigpDQpDaG9yZGF0YS5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIkNob3JkYXRhIil7DQogICBDaG9yZGF0YS5HW2ldIDwtIGNsYXNzLmNsZWFuW2ksMl0NCiAgIENob3JkYXRhLlNbaV0gPC0gY2xhc3MuY2xlYW5baSwzXQ0KIH19DQpDaG9yZGF0YS5HLjIgPC0gQ2hvcmRhdGEuR1std2hpY2goc2FwcGx5KENob3JkYXRhLkcsIGlzLm51bGwpKV0NCkNob3JkYXRhLkcuMg0KDQpDaG9yZGF0YS5TLjIgPC0gQ2hvcmRhdGEuU1std2hpY2goc2FwcGx5KENob3JkYXRhLlMsIGlzLm51bGwpKV0NCkNob3JkYXRhLlMuMg0KDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNjcmF0Y2ggd29yayBFY29sb2d5IFB1YmxpY2F0b24iDQphdXRob3I6IE9kYWx5cyBCYXJyaWVudG9zDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIExvY2F0aW9uIG9mIGZpbGUNCmBgYHtyfQ0KZ2V0d2QoKQ0KbGlicmFyeShtb3NhaWMpDQpgYGANCiMgTmV3IE1hcml4IG9mIGRhdGEgDQpvdXIgZGF0YSBpcyBvbmx5IDE3NSBsaW5lcyBsb25nIA0KYGBge3J9DQpFY29sb2d5QmlhcyA8LSBFY29sb2d5Qmlhc19EYW5lc2hnYXJfUG9wb18yX1sxOjE3NSwgXQ0KRWNvbG9neUJpYXMNCmBgYA0KIyBDb3VudCBvZiBFY29zeXN0ZW1zIChwb3BvIGRlZikNCmBgYHtyfQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1hcmluZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBNYXJpbmUsIFRlcnJlc3RyaWFsLCBGcmVzaHdhdGVyLCBNaXhlZGAgPT0gIk1hcmluZSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFRlcnJlc3RyaWFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiVGVycmVzdHJpYWwiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBGcmVzaHdhdGVyOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiRnJlc2h3YXRlciIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1peGVkOiAnICwgY291bnQoRWNvbG9neUJpYXMkYE1hcmluZSwgVGVycmVzdHJpYWwsIEZyZXNod2F0ZXIsIE1peGVkYCA9PSAiTWl4ZWQiKSwgJ1xuJykNCmBgYA0KIyBjb3VudCBvZiBSZWdpb25zIG9mIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lDQpgYGB7cn0NCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50aWVzIGJ5IFJlZ2lvbjonICwgJ1xuJywgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFYXN0LU5vcnRoIENlbnRyYWw6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJFYXN0LU5vcnRoIENlbnRyYWwiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNaWQtQXRsYW50aWM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJNaWQtQXRsYW50aWMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNaWQtU291dGg6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgUmVnaW9ucyB3aGVyZSB0aGUgd29yayB3YXMgZG9uZSAgKFBvcG8gZGVmaW5lcylgID09ICJNaWRTb3V0aCIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1vdW50YWluOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTW91bnRhaW4iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBOZXcgRW5nbGFuZDogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk5ldyBFbmdsYW5kIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTm9ydGggV2VzdDogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk5XIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gUGFjaWZpYzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIlBhY2lmaWMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTb3V0aCBBdGxhbnRpYzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIlNvdXRoIEF0bGFudGljIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gV2VzdCBOb3J0aCBDZW50cmFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiV2VzdCBOb3J0aCBDZW50cmFsIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gV2VzdCBTb3V0aCBDZW50cmFsOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiV2VzdCBTb3V0aCBDZW50cmFsIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTUVUQSBBTkFMWVNJUzogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk1FVEEgQU5BTFlTSVMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBSZWdpb25zIHdoZXJlIHRoZSB3b3JrIHdhcyBkb25lICAoUG9wbyBkZWZpbmVzKWAgPT0gIk11bHRpcGxlIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTXVsdGlwbGUgUmFuZ2VzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYFJlZ2lvbnMgd2hlcmUgdGhlIHdvcmsgd2FzIGRvbmUgIChQb3BvIGRlZmluZXMpYCA9PSAiTXVsdGlwbGUgUmFuZ2VzIiksICdcbicpDQpgYGANCiMgY291bnQgb2YgZWNvc3lzdGVtcyBiYXNlZCBvZmYgcGVkIGRlZg0KYGBge3J9DQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudGllcyBieSBFY29zeXN0ZW06JyAsICdcbicsICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29hc3RhbCBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29hc3RhbCBFY29zeXN0ZW1zIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBGb3Jlc3RzczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNvbmlmZXJvdXMgRm9yZXN0cyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIERlY2lkdW91cyBhbmQgRXZlcmdyZWVuczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkRlY2lkdW91cyBhbmQgRXZlcmdyZWVuIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gRWNvc3lzdGVtcyBvZiB0aGUgRGVlcCBPY2VhbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVjb3N5c3RlbXMgb2YgdGhlIERlZXAgT2NlYW4iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBJbmxhbmQgQXF1YXRpYyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiSW5sYW5kIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENMYWtlcyBhbmQgUmVzZXJ2b2lycyBFY29zeXN0ZW1zOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiTGFrZXMgYW5kIFJlc2Vydm9pcnMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk1hbmFnZWQgVGVycmVzdHJpYWwgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFBvbGFyICYgQWxwaW5lIFR1bmRyYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlBvbGFyICYgQWxwaW5lIFR1bmRyYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFNocnVibGFuZHM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJTaHJ1YmxhbmRzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiVGVtcGVyYXRlIERlY2lkdW91cyBGb3Jlc3RzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJvcGljYWwgRm9yZXN0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRyb3BpY2FsIEZvcmVzdHMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBDV2V0bGFuZCBGb3Jlc3RzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiV2V0bGFuZCBGb3Jlc3RzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ29uaWZlcm91cyBhbmQgSGFyZHdvb2Q6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJDb25pZmVyb3VzIGFuZCBIYXJkd29vZCIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvcmFsIFJlZWZzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiQ29yYWwgUmVlZnMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY29zeXN0ZW1zIG9mIHRoZSBDb250aW5lbnRhbCBTaGVsdmVzOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiRWNvc3lzdGVtcyBvZiB0aGUgQ29udGluZW50YWwgU2hlbHZlcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkVzdHVhcmllcyBhbmQgRW5jbG9zZWQgU2VhcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEludGVydGlkYWwgYW5kIExpdHRvcmFsIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJJbnRlcnRpZGFsIGFuZCBMaXR0b3JhbCBFY29zeXN0ZW1zIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFuYWdlZCBBcXVhdGljIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNYW5hZ2VkIEFxdWF0aWMgRWNvc3lzdGVtcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE5hdHVyYWwgR3Jhc3NsYW5kczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIk5hdHVyYWwgR3Jhc3NsYW5kcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIFJpdmVyIGFuZCBTdHJlYW0gRWNvc3lzdGVtOiAnICwgY291bnQoRWNvbG9neUJpYXMkYEVjb3N5c3RlbSAoUGVkIGRlZmluZXMpYCA9PSAiUml2ZXIgYW5kIFN0cmVhbSBFY29zeXN0ZW0iKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUZW1wZXJhdGUgQnJvYWQgTGVhdmVkIEV2ZXJncmVlbjogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBCcm9hZCBMZWF2ZWQgRXZlcmdyZWVuIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVGVtcGVyYXRlIERlc2VydHMgYW5kIFNlbWkgRGVzZXJ0czogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIlRlbXBlcmF0ZSBEZXNlcnRzIGFuZCBTZW1pIERlc2VydHMiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBUcm9waWNhbCBTYXZhbm5hczogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJGBFY29zeXN0ZW0gKFBlZCBkZWZpbmVzKWAgPT0gIkNUcm9waWNhbCBTYXZhbm5hcyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE11bHRpcGxlIEVjb3N5c3RlbXM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNdWx0aXBsZSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1FVEEtQU5BTFlTSVM6ICcgLCBjb3VudChFY29sb2d5QmlhcyRgRWNvc3lzdGVtIChQZWQgZGVmaW5lcylgID09ICJNRVRBLUFOQUxZU0lTIiksICdcbicpDQpgYGANCiMgY291bnQgb2YgcGh5bHVtDQpgYGB7cn0NCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50aWVzIGJ5IFBoeWx1bTonICwgJ1xuJywgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbm5lbGlkYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiQW5uZWxpZGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbnRob3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJBbnRob3BoeXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQXJ0aHJvcG9kYTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiQXJ0aHJvcG9kYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENob3JkYXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJDaG9yZGF0YSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENuaWRhcmlhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJDbmlkYXJpYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvbmlmZXJvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIkNvbmlmZXJvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBFY2hpbm9kZXJtYXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJFY2hpbm9kZXJtYXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gTWFnbm9saW9waHl0YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiTWFnbm9saW9waHl0YSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE1vbGx1c2NhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJNb2xsdXNjYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIE9jaHJvcGh5dGE6ICcgLCBjb3VudChFY29sb2d5QmlhcyRQaHlsdW0gPT0gIk9jaHJvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBPb215Y290YTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiT29teWNvdGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBTcGVybWF0b3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJTcGVybWF0b3BoeXRhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gVHJhY2hlb3BoeXRhOiAnICwgY291bnQoRWNvbG9neUJpYXMkUGh5bHVtID09ICJUcmFjaGVvcGh5dGEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBNdWx0aXBsZTogJyAsIGNvdW50KEVjb2xvZ3lCaWFzJFBoeWx1bSA9PSAiTXVsdGlwbGUiKSwgJ1xuJykNCmBgYA0KIyBtYXRyaXggb2YgcGh5bHVtIEdlbnVzIGFuZCBzcGVjaWVzDQpgYGB7cn0NCmNsYXNzZXMgPC0gRWNvbG9neUJpYXNbLDE4OjIwXQ0KY2xhc3Nlcw0KDQojIFRha2luZyBhd2F5IE5BIG9mIENsYXNzZXMNCg0KY2xhc3MuY2xlYW4gPC0gbmEub21pdChjbGFzc2VzKQ0KYGBgDQojIGNvdW50cyBieSBnZW51cw0KYGBge3J9DQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudGllcyBieSBHZW51czonICwgJ1xuJywgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBY2FjaWE6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gIkFjYWNpYSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFjZXI6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gIkFjZXIiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBBbmRyb3BvZ29uOiAnICwgY291bnQoY2xhc3MuY2xlYW5bLDJdID09ICJBbmRyb3BvZ29uIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQW50aG9jaGFyaXM6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gIkFudGhvY2hhcmlzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQXBsZXhhOiAnICwgY291bnQoY2xhc3MuY2xlYW5bLDJdPT0gIkFwbGV4YSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEFydGVtaXNpYTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSAiQXJ0ZW1pc2lhIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQXp0ZWNhOiAnICwgY291bnQoY2xhc3MuY2xlYW5bLDJdID09ICJBenRlY2EiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCb21idXM6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gIkJvbWJ1cyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIEJvdXRlbG91YTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXT09ICJCb3V0ZWxvdWEiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCcmFzc2ljYTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSAiQnJhc3NpY2EiKSwgJ1xuJykNCmNhdCgnTnVtYmVyIG9mIEpvdXJuYWwgRW50cmllcyBpbiBCcm9tdXM6ICcgLCBjb3VudChjbGFzcy5jbGVhblssMl0gPT0gIkJyb211cyIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENhcHJlb2x1czogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSAiQ2FwcmVvbHVzIiksICdcbicpDQpjYXQoJ051bWJlciBvZiBKb3VybmFsIEVudHJpZXMgaW4gQ2xhZGl1bTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSAiQ2xhZGl1bSIpLCAnXG4nKQ0KY2F0KCdOdW1iZXIgb2YgSm91cm5hbCBFbnRyaWVzIGluIENvZW5vYml0YTogJyAsIGNvdW50KGNsYXNzLmNsZWFuWywyXSA9PSAiQ29lbm9iaXRhIiksICdcbicpDQpgYGANClRoaXMgbGlzdCBjb250aW51ZXMgSSBkb250IHRoaW5rIHRoaXMgaXMgYSBnb29kIHdheSB0byBkbyB0aGlzLiANCg0KYGBge3J9DQpTcGVybWF0b3BoeXRhLkc8LSB2ZWN0b3IoKQ0KU3Blcm1hdG9waHl0YS5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIlNwZXJtYXRvcGh5dGEiKXsNCiAgIFNwZXJtYXRvcGh5dGEuR1tpXSA8LSBjbGFzcy5jbGVhbltpLDJdDQogICBTcGVybWF0b3BoeXRhLlNbaV0gPC0gY2xhc3MuY2xlYW5baSwzXQ0KIH19DQpTcGVybWF0b3BoeXRhLkcuMiA8LSBTcGVybWF0b3BoeXRhLkdbLXdoaWNoKHNhcHBseShTcGVybWF0b3BoeXRhLkcsIGlzLm51bGwpKV0NClNwZXJtYXRvcGh5dGEuRy4yDQoNClNwZXJtYXRvcGh5dGEuUy4yIDwtIFNwZXJtYXRvcGh5dGEuU1std2hpY2goc2FwcGx5KFNwZXJtYXRvcGh5dGEuUywgaXMubnVsbCkpXQ0KU3Blcm1hdG9waHl0YS5TLjINCg0KYGBgDQpUaGVzZSBhcmUgbm93IHRoZSBvbmx5IG9uZXMgd2hlcmUgd2UgaGF2ZSBhbGwgMyBjbGFzc2VzLiBUaGVyZSBhcmUgNTkgcm93cyBzbyB3ZSBsb3N0IGEgbG90IG9mIGRhdGEuIA0KYGBge3J9DQptdWx0Lkc8LSB2ZWN0b3IoKQ0KbXVsdC5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIk11bHRpcGxlIil7DQogICBtdWx0LkdbaV0gPC0gY2xhc3MuY2xlYW5baSwyXQ0KICAgbXVsdC5TW2ldIDwtIGNsYXNzLmNsZWFuW2ksM10NCiB9fQ0KbXVsdC5HLjIgPC0gbXVsdC5HWy13aGljaChzYXBwbHkobXVsdC5HLCBpcy5udWxsKSldDQptdWx0LkcuMg0KDQptdWx0LlMuMiA8LSBtdWx0LlNbLXdoaWNoKHNhcHBseShtdWx0LlMsIGlzLm51bGwpKV0NCm11bHQuUy4yDQoNCmBgYA0KDQpgYGB7cn0NCg0KQ2hvcmRhdGEuRzwtIHZlY3RvcigpDQpDaG9yZGF0YS5TIDwtIHZlY3RvcigpDQpmb3IoaSBpbiAxOjU5KXsNCiBpZihjbGFzcy5jbGVhbltpLDFdPT0gIkNob3JkYXRhIil7DQogICBDaG9yZGF0YS5HW2ldIDwtIGNsYXNzLmNsZWFuW2ksMl0NCiAgIENob3JkYXRhLlNbaV0gPC0gY2xhc3MuY2xlYW5baSwzXQ0KIH19DQpDaG9yZGF0YS5HLjIgPC0gQ2hvcmRhdGEuR1std2hpY2goc2FwcGx5KENob3JkYXRhLkcsIGlzLm51bGwpKV0NCkNob3JkYXRhLkcuMg0KDQpDaG9yZGF0YS5TLjIgPC0gQ2hvcmRhdGEuU1std2hpY2goc2FwcGx5KENob3JkYXRhLlMsIGlzLm51bGwpKV0NCkNob3JkYXRhLlMuMg0KDQpgYGANCg0K</div>
 
 
 

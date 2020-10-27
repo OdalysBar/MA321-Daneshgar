@@ -90,11 +90,32 @@ cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Mul
 ```{r}
 classes <- EcologyBias[,18:20]
 classes
-```
-# Taking away NA of Classes
-```{r}
-class.clean <- na.omit(classes)
 
+# Taking away NA of Classes
+
+class.clean <- na.omit(classes)
+```
+# counts by genus
+```{r}
+cat('Number of Journal Enties by Genus:' , '\n', '\n')
+cat('Number of Journal Entries in Acacia: ' , count(class.clean[,2] == "Acacia"), '\n')
+cat('Number of Journal Entries in Acer: ' , count(class.clean[,2] == "Acer"), '\n')
+cat('Number of Journal Entries in Andropogon: ' , count(class.clean[,2] == "Andropogon"), '\n')
+cat('Number of Journal Entries in Anthocharis: ' , count(class.clean[,2] == "Anthocharis"), '\n')
+cat('Number of Journal Entries in Aplexa: ' , count(class.clean[,2]== "Aplexa"), '\n')
+cat('Number of Journal Entries in Artemisia: ' , count(class.clean[,2] == "Artemisia"), '\n')
+cat('Number of Journal Entries in Azteca: ' , count(class.clean[,2] == "Azteca"), '\n')
+cat('Number of Journal Entries in Bombus: ' , count(class.clean[,2] == "Bombus"), '\n')
+cat('Number of Journal Entries in Bouteloua: ' , count(class.clean[,2]== "Bouteloua"), '\n')
+cat('Number of Journal Entries in Brassica: ' , count(class.clean[,2] == "Brassica"), '\n')
+cat('Number of Journal Entries in Bromus: ' , count(class.clean[,2] == "Bromus"), '\n')
+cat('Number of Journal Entries in Capreolus: ' , count(class.clean[,2] == "Capreolus"), '\n')
+cat('Number of Journal Entries in Cladium: ' , count(class.clean[,2] == "Cladium"), '\n')
+cat('Number of Journal Entries in Coenobita: ' , count(class.clean[,2] == "Coenobita"), '\n')
+```
+This list continues I dont think this is a good way to do this. 
+
+```{r}
 Spermatophyta.G<- vector()
 Spermatophyta.S <- vector()
 for(i in 1:59){
