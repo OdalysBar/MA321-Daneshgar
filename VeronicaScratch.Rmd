@@ -117,3 +117,47 @@ cat('# of Journal Entries in Tracheophyta: ' , count(EcologyBias$Phylum == "Trac
 cat('# of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Multiple"), '\n')
 ```
 
+```{r}
+tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+```
+
+
+```{r}
+tally(EcologyBias$`Location of first author (region)`)
+```
+
+```{r}
+tally(EcologyBias$`Regions where the work was done  (Popo defines)`)
+```
+
+```{r}
+tally(EcologyBias$`Phylum`)
+```
+
+```{r}
+chisq.test(tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`))
+
+```
+```{r}
+chisq.test(tally(EcologyBias$`Regions where the work was done  (Popo defines)`))
+```
+
+
+```{r}
+chisq.test(tally(EcologyBias$`Location of first author (region)`))
+```
+
+```{r}
+chisq.test(tally(EcologyBias$`Phylum`))
+```
+
+```{r}
+library(gplots)
+# 1. convert the data as a table
+dt <- as.table(as.matrix(tally(EcologyBias$`Regions where the work was done  (Popo defines)`)))
+# 2. Graph
+balloonplot(t(dt), main ="Based on Region where the work was done", xlab ="", ylab="",
+            label = FALSE, show.margins = FALSE)
+```
+
+
