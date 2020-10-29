@@ -6,6 +6,8 @@ output: html_notebook
 
 ```{r}
 EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+library(dplyr)
+library(mosaic)
 ```
 
 ```{r}
@@ -89,7 +91,34 @@ with(EcologyBias$`Genus (only if single species)`, ftable(EcologyBias$Phylum =="
 
 cat('Number of Journal Enties by Phylum & Genus:' , '\n', '\n')
 ```
+```{r}
+tally(EcologyBias$`Regions where the work was done  (Popo defines)`)
+```
 
+```{r}
+tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+```
+
+```{r}
+tally(EcologyBias$`Ecosystem (Ped defines)`)
+```
+```{r}
+tally(EcologyBias$Phylum)
+```
+
+```{r}
+tally(EcologyBias$`Genus (only if single species)`)
+```
+
+
+```{r}
+EcologyBias %>%
+  rename(Genus = "Genus (only if single species)")
+```
+
+```{r}
+tally(~ EcologyBias$Genus|EcologyBias$Phylum, format = count)
+```
 
 
 

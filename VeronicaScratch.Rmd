@@ -160,4 +160,14 @@ balloonplot(t(dt), main ="Based on Region where the work was done", xlab ="", yl
             label = FALSE, show.margins = FALSE)
 ```
 
+```{r}
+favstats(~(tally(EcologyBias$`Regions where the work was done  (Popo defines)`)), data = EcologyBias)
+```
+```{r}
+favstats(~(tally(EcologyBias$`Phylum`)), data = EcologyBias)
+```
+
+```{r}
+favstats(~(tally(EcologyBias$`Location of first author (region)`)), data = EcologyBias)
+```
 
