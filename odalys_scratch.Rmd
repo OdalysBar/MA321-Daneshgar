@@ -94,6 +94,7 @@ classes
 # Taking away NA of Classes
 
 class.clean <- na.omit(classes)
+class.clean
 ```
 # counts by genus
 ```{r}
@@ -161,6 +162,29 @@ Chordata.G.2
 
 Chordata.S.2 <- Chordata.S[-which(sapply(Chordata.S, is.null))]
 Chordata.S.2
+
+```
+
+```{r}
+
+tally(EcologyBias$`Country where the work is done`) # needs to be fixed
+tally(EcologyBias$`Regions where the work was done  (Popo defines)`) # needs to be fixed
+tally(EcologyBias$`State or Municipality where the work was done`) # needs to be fixed
+tally(EcologyBias$`Continent where work done`) # needs to be fixed
+
+```
+
+```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+continent.work %in% remove
+continent.work <- continent.work [! continent.work %in% remove]
+continent.work[43] <- "Oceania"
+continent.work[61] <- "Oceania"
+continent.work <- c(continent.work[1:97], continent.work[99:168])
+continent.work
+tally(continent.work)
+chisq.test(tally(continent.work))
 
 ```
 
