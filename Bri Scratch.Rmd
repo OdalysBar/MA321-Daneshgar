@@ -116,19 +116,63 @@ EcologyBias %>%
   rename(Genus = "Genus (only if single species)")
 ```
 
+
+
+
 ```{r}
-tally(~ EcologyBias$Genus|EcologyBias$Phylum, format = count)
+
+tally(EcologyBias$`Country where the work is done`) # needs to be fixed
+tally(EcologyBias$`Regions where the work was done  (Popo defines)`) # needs to be fixed
+tally(EcologyBias$`State or Municipality where the work was done`) # needs to be fixed
+tally(EcologyBias$`Continent where work done`) # needs to be fixed
+
 ```
 
 
+```{r}
+country.work <- as.vector(EcologyBias$`Country where the work is done`)
+country.work
+remove <- c ("US and Mexico","Multiple???", "META ANALYSIS")
+country.work %in% remove
+country.work <- country.work [! country.work %in% remove]
+country.work
+country.work[1:5] <- "USA"
+country.work[8:11] <- "USA"
+country.work
+country.work <- country.work[!is.na(country.work)]
+country.work
+tally(continent.work)
+chisq.test(tally(continent.work))
 
+```
 
+```{r}
+region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+region.work
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+region.work %in% remove
+region.work <- region.work [! region.work %in% remove]
+region.work
+region.work <- region.work[!is.na(region.work)]
+region.work
+tally(region.work)
+chisq.test(tally(region.work))
 
+```
 
+```{r}
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+state.work
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+state.work %in% remove
+state.work <- state.work [! state.work %in% remove]
+state.work
+state.work <- state.work[!is.na(state.work)]
+state.work
+tally(state.work)
+chisq.test(tally(state.work))
 
-
-
-
+```
 
 
 
