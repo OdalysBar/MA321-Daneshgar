@@ -86,85 +86,7 @@ cat('Number of Journal Entries in Spermatophyta: ' , count(EcologyBias$Phylum ==
 cat('Number of Journal Entries in Tracheophyta: ' , count(EcologyBias$Phylum == "Tracheophyta"), '\n')
 cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Multiple"), '\n')
 ```
-# matrix of phylum Genus and species
-```{r}
-classes <- EcologyBias[,18:20]
-classes
-
-# Taking away NA of Classes
-
-class.clean <- na.omit(classes)
-class.clean
-```
-# counts by genus
-```{r}
-cat('Number of Journal Enties by Genus:' , '\n', '\n')
-cat('Number of Journal Entries in Acacia: ' , count(class.clean[,2] == "Acacia"), '\n')
-cat('Number of Journal Entries in Acer: ' , count(class.clean[,2] == "Acer"), '\n')
-cat('Number of Journal Entries in Andropogon: ' , count(class.clean[,2] == "Andropogon"), '\n')
-cat('Number of Journal Entries in Anthocharis: ' , count(class.clean[,2] == "Anthocharis"), '\n')
-cat('Number of Journal Entries in Aplexa: ' , count(class.clean[,2]== "Aplexa"), '\n')
-cat('Number of Journal Entries in Artemisia: ' , count(class.clean[,2] == "Artemisia"), '\n')
-cat('Number of Journal Entries in Azteca: ' , count(class.clean[,2] == "Azteca"), '\n')
-cat('Number of Journal Entries in Bombus: ' , count(class.clean[,2] == "Bombus"), '\n')
-cat('Number of Journal Entries in Bouteloua: ' , count(class.clean[,2]== "Bouteloua"), '\n')
-cat('Number of Journal Entries in Brassica: ' , count(class.clean[,2] == "Brassica"), '\n')
-cat('Number of Journal Entries in Bromus: ' , count(class.clean[,2] == "Bromus"), '\n')
-cat('Number of Journal Entries in Capreolus: ' , count(class.clean[,2] == "Capreolus"), '\n')
-cat('Number of Journal Entries in Cladium: ' , count(class.clean[,2] == "Cladium"), '\n')
-cat('Number of Journal Entries in Coenobita: ' , count(class.clean[,2] == "Coenobita"), '\n')
-```
-This list continues I dont think this is a good way to do this. 
-
-```{r}
-Spermatophyta.G<- vector()
-Spermatophyta.S <- vector()
-for(i in 1:59){
- if(class.clean[i,1]== "Spermatophyta"){
-   Spermatophyta.G[i] <- class.clean[i,2]
-   Spermatophyta.S[i] <- class.clean[i,3]
- }}
-Spermatophyta.G.2 <- Spermatophyta.G[-which(sapply(Spermatophyta.G, is.null))]
-Spermatophyta.G.2
-
-Spermatophyta.S.2 <- Spermatophyta.S[-which(sapply(Spermatophyta.S, is.null))]
-Spermatophyta.S.2
-
-```
-These are now the only ones where we have all 3 classes. There are 59 rows so we lost a lot of data. 
-```{r}
-mult.G<- vector()
-mult.S <- vector()
-for(i in 1:59){
- if(class.clean[i,1]== "Multiple"){
-   mult.G[i] <- class.clean[i,2]
-   mult.S[i] <- class.clean[i,3]
- }}
-mult.G.2 <- mult.G[-which(sapply(mult.G, is.null))]
-mult.G.2
-
-mult.S.2 <- mult.S[-which(sapply(mult.S, is.null))]
-mult.S.2
-
-```
-
-```{r}
-
-Chordata.G<- vector()
-Chordata.S <- vector()
-for(i in 1:59){
- if(class.clean[i,1]== "Chordata"){
-   Chordata.G[i] <- class.clean[i,2]
-   Chordata.S[i] <- class.clean[i,3]
- }}
-Chordata.G.2 <- Chordata.G[-which(sapply(Chordata.G, is.null))]
-Chordata.G.2
-
-Chordata.S.2 <- Chordata.S[-which(sapply(Chordata.S, is.null))]
-Chordata.S.2
-
-```
-
+# contingency tables of ORIGINAL country, region, state, and continent
 ```{r}
 
 tally(EcologyBias$`Country where the work is done`) # needs to be fixed
@@ -173,7 +95,7 @@ tally(EcologyBias$`State or Municipality where the work was done`) # needs to be
 tally(EcologyBias$`Continent where work done`) # needs to be fixed
 
 ```
-
+# Continent
 ```{r}
 continent.work <- as.vector(EcologyBias$`Continent where work done`)
 remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
@@ -186,5 +108,74 @@ continent.work
 tally(continent.work)
 chisq.test(tally(continent.work))
 
+```
+# Chisq test country
+```{r}
+country.work <- as.vector(EcologyBias$`Country where the work is done`)
+remove <- c ("Brazil/Costa Rica/Puerto Rico", "Germany & New Zealand","Lesser Antilles/Guadelupe", "META ANALYSIS", "Multiple???", "US and Mexico", "Trinidad and Tobago")
+country.work %in% remove
+country.work <- country.work [! country.work %in% remove]
+country.work[1:5] <- "USA"
+country.work[8:11] <- "USA"
+country.work <- c(country.work[1:25], country.work[27:34], country.work[36:77], country.work[79:95], country.work[97:121], country.work[123:144], country.work[146:168])
+country.work
+tally(country.work)
+chisq.test(tally(country.work))
+
+```
+# Chisq test region
+```{r}
+region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+region.work
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+region.work %in% remove
+region.work <- region.work [! region.work %in% remove]
+region.work
+region.work <- region.work[!is.na(region.work)]
+region.work
+tally(region.work)
+chisq.test(tally(region.work))
+
+```
+# Chisq test state
+```{r}
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+state.work
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+state.work %in% remove
+state.work <- state.work [! state.work %in% remove]
+state.work
+state.work <- state.work[!is.na(state.work)]
+state.work
+tally(state.work)
+chisq.test(tally(state.work))
+
+```
+
+# Chisq test ecosystems popo def
+```{r}
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po
+remove <- c ("Mixed")
+eco.po %in% remove
+eco.po <- eco.po [! eco.po %in% remove]
+eco.po
+
+tally(eco.po)
+chisq.test(tally(eco.po))
+```
+
+# Chisq ecosystem ped def
+```{r}
+eco.ped <- as.vector(EcologyBias$`Ecosystem (Ped defines)`)
+
+remove <- c ("Multiple", "META-ANALYSIS")
+eco.ped %in% remove
+eco.ped <- eco.ped [! eco.ped %in% remove]
+
+eco.ped <- c(eco.ped[1:50], eco.ped[52:169])
+eco.ped
+tally(eco.ped)
+chisq.test(tally(eco.ped))
 ```
 
