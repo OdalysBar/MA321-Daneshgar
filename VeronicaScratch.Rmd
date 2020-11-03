@@ -171,3 +171,15 @@ favstats(~(tally(EcologyBias$`Phylum`)), data = EcologyBias)
 favstats(~(tally(EcologyBias$`Location of first author (region)`)), data = EcologyBias)
 ```
 
+```{r}
+Ecosystem <- EcologyBias[,16]
+Ecosystem
+
+class.clean <- na.omit(Ecosystem)
+class.clean
+```
+
+```{r}
+prop.test()
+```
+
