@@ -179,7 +179,119 @@ class.clean <- na.omit(Ecosystem)
 class.clean
 ```
 
+
+
 ```{r}
-prop.test()
+continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+continent.work %in% remove
+continent.work <- continent.work [! continent.work %in% remove]
+continent.work[43] <- "Oceania"
+continent.work[61] <- "Oceania"
+continent.work <- c(continent.work[1:97], continent.work[99:168])
+continent.work
+tally(continent.work)
+chisq.test(tally(continent.work))
+
+```
+##State where work was done
+```{r}
+State.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+remove <- c ("Multiple", "META ANALYSIS","Multiple States")
+State.work %in% remove
+State.work <- State.work [! State.work %in% remove]
+
+State.work <- State.work[!is.na(State.work)]
+State.work
+tally(State.work)
+chisq.test(tally(State.work))
+```
+Our pvalue is still coming back the same 
+
+##State where work was done, DELETED THE MULTIPLE STATE ONES WITHN GIVEN STATES
+```{r}
+State.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+remove <- c ("Multiple", "META ANALYSIS","Multiple States", "GA/FL", "OR/CA", "NY, MA, CT")
+State.work %in% remove
+State.work <- State.work [! State.work %in% remove]
+
+State.work <- State.work[!is.na(State.work)]
+State.work
+tally(State.work)
+chisq.test(tally(State.work))
+```
+our pvalue is still coming back the same 
+
+```{r}
+SquMil <- Square_Mileage[1:50, ]
+SquMil
+```
+Fav stats for total Sq.Mil given all 50 states
+```{r}
+favstats(~(SquMil$'Total Sq. mi (mi^2)'), data = SquMil)
+```
+
+```{r}
+
+```
+
+fav stats for total Sq.Mil given Continent
+```{r}
+favstats(~(SquMil$'Sq. mi (million mi^2)'), data = SquMil)
+```
+
+```{r}
+chisq.test(SquMil$`Total Sq. mi (mi^2)`)
+```
+
+# Chisq test ecosystems popo def
+```{r}
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po
+remove <- c ("Mixed")
+eco.po %in% remove
+eco.po <- eco.po [! eco.po %in% remove]
+eco.po
+
+tally(eco.po)
+chisq.test(tally(eco.po))
+```
+
+# Chisq ecosystem ped def
+```{r}
+eco.ped <- as.vector(EcologyBias$`Ecosystem (Ped defines)`)
+
+remove <- c ("Multiple", "META-ANALYSIS")
+eco.ped %in% remove
+eco.ped <- eco.ped [! eco.ped %in% remove]
+
+eco.ped <- c(eco.ped[1:50], eco.ped[52:169])
+eco.ped
+tally(eco.ped)
+chisq.test(tally(eco.ped))
+```
+Continent where work was done cleaned 
+```{r}
+Continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+Continent.work %in% remove
+Continent.work <- Continent.work [! Continent.work %in% remove]
+Continent.work[43] <- "Oceania"
+Continent.work[61] <- "Oceania"
+Continent.work <- c(Continent.work[1:97], Continent.work[99:168])
+Continent.work
+tally(Continent.work)
+chisq.test(tally(Continent.work))
+```
+
+
+```{r}
+xchisq.test(tally(Continent.work))
+
+```
+
+
+```{r}
+xchisq.test(tally(eco.po))
 ```
 
