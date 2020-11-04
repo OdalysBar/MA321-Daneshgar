@@ -295,3 +295,25 @@ xchisq.test(tally(Continent.work))
 xchisq.test(tally(eco.po))
 ```
 
+
+```{r}
+slices <- c(20,127,12,16)
+lbls <- c("Marine", "Terrestrial", "Freshwater", "Mixed")
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem")
+```
+
+
+
+```{r}
+slices <- c(5,14,2,34,94,5,13)
+lbls <- c("Africa", "Asia", "Australia", "Europe", " North America", "Oceania", "South America")
+pie(slices, labels = lbls, main="Pie Chart of Continents where work was done")
+```
+
+
+```{r}
+slices <- c(11.73,17.21,2.97,3.931,9.54,3.292,6.888)
+lbls <- c("Africa", "Asia", "Australia", "Europe", " North America", "Oceania", "South America")
+pie(slices, labels = lbls, main="Pie Chart of Sq. Mileage based on Continent")
+```
+
