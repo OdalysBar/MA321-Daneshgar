@@ -95,7 +95,7 @@ tally(EcologyBias$`State or Municipality where the work was done`) # needs to be
 tally(EcologyBias$`Continent where work done`) # needs to be fixed
 
 ```
-# Continent
+# Chisq test Continent
 ```{r}
 continent.work <- as.vector(EcologyBias$`Continent where work done`)
 remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
@@ -109,6 +109,20 @@ tally(continent.work)
 chisq.test(tally(continent.work))
 
 ```
+# Continent with Sqr mileage
+```{r}
+sm.earth <- 197 # sqr miles of earths surface
+
+sm.continent <- c(SqrMileage$`Sq. mi (million mi^2)`)
+
+sm.continent <- as.numeric(sm.continent[2:8])
+
+prop.cont <- sm.continent/sum(sm.continent)
+prop.cont
+chisq.test(tally(continent.work),p=prop.cont )
+
+```
+
 # Chisq test country
 ```{r}
 country.work <- as.vector(EcologyBias$`Country where the work is done`)
@@ -151,6 +165,17 @@ tally(state.work)
 chisq.test(tally(state.work))
 
 ```
+# state with sqr mileage
+```{r}
+sm.state <- c(SqrMileage$`Total Sq. mi (mi^2)`)
+sm.state
+
+prop.state <- sm.state/sum(sm.state)
+prop.state
+chisq.test(tally(state.work),p=prop.state )
+
+```
+
 
 # Chisq test ecosystems popo def
 ```{r}
