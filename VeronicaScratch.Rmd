@@ -284,21 +284,30 @@ tally(Continent.work)
 chisq.test(tally(Continent.work))
 ```
 
-
+# continent.work
 ```{r}
 xchisq.test(tally(Continent.work))
 
 ```
 
-
+# eco.po
 ```{r}
-xchisq.test(tally(eco.po))
+x <- tally(eco.po)
+x <- as.matrix(x)
+x
+xchisq.test(x)
+
+```
+This data shows us the expected number each ecosystem is suppose to have given that all ecosystems had a fair chance of being "picked". This information explains why a pvalue soooooo small happened because comparing to the expected number and the actual number there is no close similarities. Which leads our findings to having bias in ecosystems.
+# eco.ped
+```{r}
+xchisq.test(tally(eco.ped))
 ```
 
 
 ```{r}
-slices <- c(20,127,12,16)
-lbls <- c("Marine", "Terrestrial", "Freshwater", "Mixed")
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
 pie(slices, labels = lbls, main="Pie Chart of Ecosystem")
 ```
 
@@ -315,5 +324,142 @@ pie(slices, labels = lbls, main="Pie Chart of Continents where work was done")
 slices <- c(11.73,17.21,2.97,3.931,9.54,3.292,6.888)
 lbls <- c("Africa", "Asia", "Australia", "Europe", " North America", "Oceania", "South America")
 pie(slices, labels = lbls, main="Pie Chart of Sq. Mileage based on Continent")
+```
+
+# Chisq test Continent
+```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+continent.work %in% remove
+continent.work <- continent.work [! continent.work %in% remove]
+continent.work[43] <- "Oceania"
+continent.work[61] <- "Oceania"
+continent.work <- c(continent.work[1:97], continent.work[99:168])
+continent.work
+tally(continent.work)
+chisq.test(tally(continent.work))
+
+```
+# Continent with Sqr mileage
+```{r}
+sm.earth <- 197 # sqr miles of earths surface
+
+sm.continent <- c(SqrMileage$`Sq. mi (million mi^2)`)
+
+sm.continent <- as.numeric(sm.continent[2:8])
+
+prop.cont <- sm.continent/sum(sm.continent)
+prop.cont
+chisq.test(tally(continent.work), p=prop.cont)
+xchisq.test(tally(continent.work),p=prop.cont )
+
+```
+
+# Chart for Continent with Sqr Mileage
+
+```{r}
+library(nhstplot)
+plotchisqtest(254.462, 6)
+```
+# Chart using the Expected values 
+```{r}
+E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
+CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Country based on the Sq. Mileage", border = "black")
+```
+
+
+# Chart using the Observed values
+```{r}
+O <- c(5,14,2,34,94,5,13)
+C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Country", border = "black")
+```
+
+# Combing both charts
+```{r}
+
+```
+
+
+# Chisq test country
+```{r}
+country.work <- as.vector(EcologyBias$`Country where the work is done`)
+remove <- c ("Brazil/Costa Rica/Puerto Rico", "Germany & New Zealand","Lesser Antilles/Guadelupe", "META ANALYSIS", "Multiple???", "US and Mexico", "Trinidad and Tobago")
+country.work %in% remove
+country.work <- country.work [! country.work %in% remove]
+country.work[1:5] <- "USA"
+country.work[8:11] <- "USA"
+country.work <- c(country.work[1:25], country.work[27:34], country.work[36:77], country.work[79:95], country.work[97:121], country.work[123:144], country.work[146:168])
+country.work
+tally(country.work)
+chisq.test(tally(country.work))
+
+```
+# Chisq test region
+```{r}
+region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+region.work
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+region.work %in% remove
+region.work <- region.work [! region.work %in% remove]
+region.work
+region.work <- region.work[!is.na(region.work)]
+region.work
+tally(region.work)
+chisq.test(tally(region.work))
+
+```
+# Chisq test state
+```{r}
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+state.work
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+state.work %in% remove
+state.work <- state.work [! state.work %in% remove]
+state.work
+state.work <- state.work[!is.na(state.work)]
+state.work
+tally(state.work)
+chisq.test(tally(state.work))
+
+```
+# state with sqr mileage
+```{r}
+sm.state <- c(SqrMileage$`Total Sq. mi (mi^2)`)
+sm.state
+
+prop.state <- sm.state/sum(sm.state)
+prop.state
+chisq.test(tally(state.work),p=prop.state )
+
+```
+
+
+# Chisq test ecosystems popo def
+```{r}
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po
+remove <- c ("Mixed")
+eco.po %in% remove
+eco.po <- eco.po [! eco.po %in% remove]
+eco.po
+
+tally(eco.po)
+chisq.test(tally(eco.po))
+```
+
+# Chisq ecosystem ped def
+```{r}
+eco.ped <- as.vector(EcologyBias$`Ecosystem (Ped defines)`)
+
+remove <- c ("Multiple", "META-ANALYSIS")
+eco.ped %in% remove
+eco.ped <- eco.ped [! eco.ped %in% remove]
+
+eco.ped <- c(eco.ped[1:50], eco.ped[52:169])
+eco.ped
+tally(eco.ped)
+chisq.test(tally(eco.ped))
 ```
 
