@@ -410,6 +410,17 @@ tally(region.work)
 chisq.test(tally(region.work))
 
 ```
+# Region with sqr mileage
+```{r}
+sm.region <- c(SqrMileage$`Sq. mi (mi^2)`)
+sm.region[1:13]
+sm.region <- as.numeric(sm.region[1:13])
+prop.region <- sm.region/sum(sm.region)
+prop.region
+xchisq.test(tally(region.work),p=prop.region )
+```
+
+
 # Chisq test state
 ```{r}
 state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
@@ -420,18 +431,19 @@ state.work <- state.work [! state.work %in% remove]
 state.work
 state.work <- state.work[!is.na(state.work)]
 state.work
+
 tally(state.work)
-chisq.test(tally(state.work))
+xchisq.test(tally(state.work))
 
 ```
 # state with sqr mileage
 ```{r}
-sm.state <- c(SqrMileage$`Total Sq. mi (mi^2)`)
-sm.state
-
+sm.state <- c(SqrMileage$`totalSQM`)
+sm.state[1:27]
+sm.state <- as.numeric(sm.state[1:27])
 prop.state <- sm.state/sum(sm.state)
 prop.state
-chisq.test(tally(state.work),p=prop.state )
+xchisq.test(tally(state.work),p=prop.state )
 
 ```
 
@@ -446,8 +458,37 @@ eco.po <- eco.po [! eco.po %in% remove]
 eco.po
 
 tally(eco.po)
-chisq.test(tally(eco.po))
+
 ```
+
+# Chisq Test ecosystem popo def
+```{r}
+xchisq.test(tally(eco.po))
+```
+
+# Chart with Observed Values 
+```{r}
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Observed # of Journals in each Ecosystem", border = "black")
+```
+
+
+#Chart with Expected Value 
+*given all ecosystems have a fair chance of being selected
+*not based on sqr mileage just based on the "n"
+```{r}
+Exp <- c(53,53,53)
+Eco <- c("Freshwater", "Marine", "Terrestrial")
+barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
+```
+
+
+# Combining both graphs
+```{r}
+
+```
+
 
 # Chisq ecosystem ped def
 ```{r}
