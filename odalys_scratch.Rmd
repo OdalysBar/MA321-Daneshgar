@@ -105,10 +105,20 @@ continent.work[43] <- "Oceania"
 continent.work[61] <- "Oceania"
 continent.work <- c(continent.work[1:97], continent.work[99:168])
 continent.work
-tally(continent.work)
-chisq.test(tally(continent.work))
+continent <- as.matrix(table(continent.work))
+xchisq.test(tally(continent.work))
 
 ```
+```{r}
+install.packages("gplots")
+library(gplots)
+# 1. convert the data as a table
+dt <- as.table(continent)
+# 2. Graph
+balloonplot(t(dt), main ="Based on Region where the work was done", xlab ="", ylab="",
+            label = FALSE, show.margins = FALSE)
+```
+
 # Continent with Sqr mileage
 ```{r}
 sm.earth <- 197 # sqr miles of earths surface
@@ -118,8 +128,8 @@ sm.continent <- c(SqrMileage$`Sq. mi (million mi^2)`)
 sm.continent <- as.numeric(sm.continent[2:8])
 
 prop.cont <- sm.continent/sum(sm.continent)
-prop.cont
-chisq.test(tally(continent.work),p=prop.cont )
+#prop.cont
+xchisq.test(tally(continent.work),p=prop.cont )
 
 ```
 
@@ -137,6 +147,11 @@ tally(country.work)
 chisq.test(tally(country.work))
 
 ```
+# country observed vs expected
+```{r}
+tally(country.work)
+xchisq.test(tally(country.work))
+```
 # Chisq test region
 ```{r}
 region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
@@ -150,6 +165,11 @@ region.work
 tally(region.work)
 chisq.test(tally(region.work))
 
+```
+# region observed vs expected
+```{r}
+tally(region.work)
+xchisq.test(tally(region.work))
 ```
 # Chisq test state
 ```{r}
@@ -165,13 +185,18 @@ tally(state.work)
 chisq.test(tally(state.work))
 
 ```
+# state observed vs expected
+```{r}
+tally(state.work)
+xchisq.test(tally(state.work))
+```
 # state with sqr mileage
 ```{r}
-sm.state <- c(SqrMileage$`Total Sq. mi (mi^2)`)
-sm.state
-
+sm.state <- c(SqrMileage$'totalSQM')
+sm.state <- c(sm.state[1:27])
+#sm.state
 prop.state <- sm.state/sum(sm.state)
-prop.state
+#prop.state
 chisq.test(tally(state.work),p=prop.state )
 
 ```
@@ -189,6 +214,12 @@ eco.po
 tally(eco.po)
 chisq.test(tally(eco.po))
 ```
+# eco po observed vs expected
+```{r}
+tally(eco.po)
+xchisq.test(tally(eco.po))
+```
+
 
 # Chisq ecosystem ped def
 ```{r}
@@ -203,4 +234,14 @@ eco.ped
 tally(eco.ped)
 chisq.test(tally(eco.ped))
 ```
+# eco ped observed vs expected
+```{r}
+tally(eco.ped)
+xchisq.test(tally(eco.ped))
+```
+```{r}
+?xchisq.test
+```
+
+
 
