@@ -304,11 +304,18 @@ This data shows us the expected number each ecosystem is suppose to have given t
 xchisq.test(tally(eco.ped))
 ```
 
-
+# Pie Chart of Ecosystem of Observed 
 ```{r}
 slices <- c(20,127,12)
 lbls <- c("Marine", "Terrestrial", "Freshwater")
-pie(slices, labels = lbls, main="Pie Chart of Ecosystem")
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)")
+```
+
+# Pie Chart of Ecosystem of Expected
+```{r}
+slicesExp <- c(53,53,53)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main = "Pie Chart of Ecosystem (Expected)" )
 ```
 
 
@@ -373,7 +380,7 @@ barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue
 ```{r}
 O <- c(5,14,2,34,94,5,13)
 C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Country", border = "black")
+barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Country based on Sqr. Mileage", border = "black")
 ```
 
 # Combing both charts
@@ -400,7 +407,7 @@ chisq.test(tally(country.work))
 ```{r}
 region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
 region.work
-remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges", "MidSouth")
 region.work %in% remove
 region.work <- region.work [! region.work %in% remove]
 region.work
@@ -410,14 +417,51 @@ tally(region.work)
 chisq.test(tally(region.work))
 
 ```
+# xChisq test Region
+```{r}
+tally(region.work)
+xchisq.test(tally(region.work))
+```
+
+# Pie Chart of Region (Expected)
+```{r}
+Region.Obs <- c(6.70,6.70,6.70,6.70,6.70,6.70,6.70, 6.70, 6.70, 6.70)
+R.names <- c("East.NC", "Mid-A", "Mid-S", "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+pie(Region.Obs, labels = R.names, main="Pie Chart of Region (Expected)")
+```
+
+# Pie Chart of Region (Observed)
+```{r}
+Region.Obs <- c(7,3,1,12,3,1,24, 10, 3, 3)
+R.names <- c("East.NC", "Mid-A", "Mid-S", "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+pie(Region.Obs, labels = R.names, main="Pie Chart of Region (Observed)")
+```
+
+
 # Region with sqr mileage
 ```{r}
-sm.region <- c(SqrMileage$`Sq. mi (mi^2)`)
-sm.region[1:13]
-sm.region <- as.numeric(sm.region[1:13])
+tally(region.work)
+sm.region <- c(SqrMileage$`Sq. mi2 (mi^2)`)
+sm.region[1:9]
+
+sm.region <- as.numeric(sm.region[1:9])
 prop.region <- sm.region/sum(sm.region)
 prop.region
 xchisq.test(tally(region.work),p=prop.region )
+```
+# Chart of Region based on Sqr Mileage Expected *Note no Mid-South
+```{r}
+RegionSM.Exp <- c(5.54,3.54,15.85,1.33,0.10,16.58,5.42, 9.41, 8.23)
+Region <- c("East.NC", "Mid-A",  "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+barPlot1 <- barplot(RegionSM.Exp, names.arg = Region, xlab ="Region", ylab = " # of Journals", col = "dark green", main = "Expected # of Journals in each Region based on Sqr. Mileage", border = "black")
+```
+
+
+# Chart of Region based on Sqr Mileage Observed *Note no Mid-South
+```{r}
+RegionSM.Obs <- c(7,1,12,3,1,24, 10, 3, 3)
+Region <- c("East.NC", "Mid-A",  "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+barPlot1 <- barplot(RegionSM.Obs, names.arg = Region, xlab ="Region", ylab = " # of Journals", col = "dark green", main = "Observed # of Journals in each Region based on Sqr. Mileage", border = "black")
 ```
 
 
@@ -436,15 +480,45 @@ tally(state.work)
 xchisq.test(tally(state.work))
 
 ```
+# Chart of State (Expected)
+```{r}
+state.EXP <- c(2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.EXP, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Expected # of Journals in each State", border = "black")
+```
+
+# Chart of State (Observed)
+```{r}
+state.obs <- c(2,2,3,13,2,4,1,1,2,1,1,4,1,1,1,1,2,1,1,1,4,2,3,1,3,1,2)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.obs, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Observed # of Journals in each State ", border = "black")
+```
+
+
+
+
+
 # state with sqr mileage
 ```{r}
 sm.state <- c(SqrMileage$`totalSQM`)
-sm.state[1:27]
-sm.state <- as.numeric(sm.state[1:27])
+sm.state <- c(sm.state[1:27])
+#sm.state
 prop.state <- sm.state/sum(sm.state)
-prop.state
-xchisq.test(tally(state.work),p=prop.state )
-
+#prop.state
+xchisq.test(tally(state.work),p=prop.state  )
+tally(state.work)
+```
+# Chart of State with Sqr Mileage (Observed)
+```{r}
+state.obs <- c(2,2,3,13,2,4,1,1,2,1,1,4,1,1,1,1,2,1,1,1,4,2,3,1,3,1,2)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.obs, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Observed # of Journals in each State based on Sqr. Mileage", border = "black")
+```
+# Chart of State with Sqr. Mileage (Expected)
+```{r}
+state.exp <- c(15.290,1.221,2.656, 3.813, 2.425, 1.397, 0.150, 0.848, 1.917, 0.824, 0289, 2.255, 1.624, 3.425, 1.227, 0.218, 0.203, 2.832, 1.269, 1.044, 2.292, 0.082, 6.256, 1.978, 1.661, 1.526, 2.278)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.exp, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Expected # of Journals in each State based on Sqr. Mileage", border = "black")
 ```
 
 
@@ -470,7 +544,7 @@ xchisq.test(tally(eco.po))
 ```{r}
 Obs <- c(12, 20, 127)
 EcoObs <- c("Freshwater", "Marine", "Terrestrial")
-barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Observed # of Journals in each Ecosystem", border = "black")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Observed # of Journals in each Ecosystem", border = "black")
 ```
 
 
@@ -480,14 +554,72 @@ barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col
 ```{r}
 Exp <- c(53,53,53)
 Eco <- c("Freshwater", "Marine", "Terrestrial")
-barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
+barPlot1 <- barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
+```
+
+```{r}
+EcoExpected = matrix(c(53,53,53))
+EcoExpected
+EcoObserved = matrix(c(12,20,127))
+EcoObserved
 ```
 
 
 # Combining both graphs
 ```{r}
+##counts <- table(EcosystemExp_Obs$EcoExpected, EcosystemExp_Obs$EcoObserved)
+##barplot(counts, main = "Ecosystem", xlab = "# of Journals", col = c("purple", "Green"), legend = rownames(counts), beside = ##TRUE)
+#require(gridExtra)
+#grid.arrange(barPlot1, barPlot2 ,ncol = 2 )
 
 ```
+
+
+
+# xChisq ecosystem po def with Sqr. Mileage
+```{r}
+sm.ecosystem <- c(Eco_Sqr_Mileage$`Sqr Mil (mil mi^2)`)
+
+sm.ecosystem <- as.numeric(sm.ecosystem[1:3])
+
+prop.cont <- sm.ecosystem/sum(sm.ecosystem)
+prop.cont
+chisq.test(tally(eco.po), p=prop.cont)
+xchisq.test(tally(eco.po), p = prop.cont)
+xchisq.test(tally(eco.po),p=prop.cont, simulate.p.value = TRUE )
+```
+
+# Pie Chart of Ecosystem with Sqr. Mileage Expected
+```{r}
+slicesExp <- c(110.74,44.92,3.34)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main="Pie Chart of Ecosystem (Expected)")
+```
+# Chart of Ecosystem with Sqr. Mileage Expected
+```{r}
+Exp <- c(3.34, 110.74, 44.92)
+Exp
+EcoExp <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Exp, names.arg = EcoExp, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Expected # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+```
+
+
+
+
+# Pie Chart of Ecosytem with Sqr. Mileage Observed
+```{r}
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)")
+```
+# Chart of Ecosystem with Sqr Mileage Observed
+```{r}
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Observed # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+```
+
+
 
 
 # Chisq ecosystem ped def
@@ -503,4 +635,16 @@ eco.ped
 tally(eco.ped)
 chisq.test(tally(eco.ped))
 ```
+
+# Chisq Country where work was done
+```{r}
+tally(country.work)
+chisq.test(tally(country.work))
+```
+
+# XChisq Country where work was done
+```{r}
+xchisq.test(tally(country.work))
+```
+
 
