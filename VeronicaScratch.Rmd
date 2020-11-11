@@ -647,4 +647,16 @@ chisq.test(tally(country.work))
 xchisq.test(tally(country.work))
 ```
 
+# XChisq Country where work was done based on square mileage
+```{r}
+sm.country <- c(CountrySqrMileage$`Sqr.Mil (mi^2)`)
+
+sm.country <- as.numeric(sm.country[1:37])
+
+prop.cont <- sm.country/sum(sm.country)
+prop.cont
+chisq.test(tally(country.work), p=prop.cont)
+xchisq.test(tally(country.work), p = prop.cont)
+xchisq.test(tally(country.work),p=prop.cont, simulate.p.value = TRUE )
+```
 
