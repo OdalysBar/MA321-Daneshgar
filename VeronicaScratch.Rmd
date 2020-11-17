@@ -372,7 +372,7 @@ plotchisqtest(254.462, 6)
 ```{r}
 E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
 CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Country based on the Sq. Mileage", border = "black")
+barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
 ```
 
 
@@ -598,7 +598,6 @@ pie(slicesExp, labels = lbls, main="Pie Chart of Ecosystem (Expected)")
 # Chart of Ecosystem with Sqr. Mileage Expected
 ```{r}
 Exp <- c(3.34, 110.74, 44.92)
-Exp
 EcoExp <- c("Freshwater", "Marine", "Terrestrial")
 barPlot2 <- barplot(Exp, names.arg = EcoExp, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Expected # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
 ```

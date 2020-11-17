@@ -53,7 +53,7 @@ tally function is going into the data file finding the column named "Marine, Ter
 
 
 
-Chi-Squared Test of Ecosystem (Po defines)
+Chi-Squared Test of Ecosystem (Po defines) *Case 1*
 *Note: that here we removed mixed because of our null and alt hypothesis are based on giving each type of ecosystem has a fair chance, so mixed wouldn't help us prove their is a difference between them.*
 What is Chi-Sq?
 Chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table
@@ -74,3 +74,264 @@ chisq.test(tally(eco.po))
 # xchisq.tes() will display the p-value and display our expected values if it was fair throughout
 xchisq.test(tally(eco.po))
 ```
+After running the 2 chisq test notice the p-value, it resulted that the p-value was less than .05 which resulted in the us rejecting the null that the probability of each Ecosystem being represented in a journal entry is the same. Which also can be seen from our observed and expected values, terrestrial has almost 3x more journal entries than the other ones.  From the Pearson Residuals the Terrestrial ecosystem has the most positive residual thus the observed frequency exceeded the expected frequency. The Freshwater ecosystem has the most negative residual thus the observed frequency did not meet the expected frequency. Which here it makes sense since Marine studies are more expensive to do than that of terrestrial studies.
+
+Creating Charts to visually show our findings
+
+2 Types of Chart with Expected Values
+*given all ecosystems have a fair chance of being selected
+*not based on sqr mileage just based on the "n"
+```{r}
+# Bar Plot
+Exp <- c(53,53,53)
+Eco <- c("Freshwater", "Marine", "Terrestrial")
+barPlot1 <- barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
+
+#Pie Chart
+slicesExp <- c(53,53,53)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main = "Pie Chart of Ecosystem (Expected)" )
+
+```
+
+
+
+2 Types of Chart with Observed Values
+```{r}
+#Bar Plot
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Observed # of Journals in each Ecosystem", border = "black")
+
+#Pie Chart
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)")
+```
+
+Chi-Squared Test of Ecosystem (Po defines) *Case 2* (With Square Mileage)
+```{r}
+sm.ecosystem <- c(Eco_Sqr_Mileage$`Sqr Mil (mil mi^2)`)
+
+sm.ecosystem <- as.numeric(sm.ecosystem[1:3])
+
+prop.cont <- sm.ecosystem/sum(sm.ecosystem)
+prop.cont
+chisq.test(tally(eco.po), p=prop.cont)
+xchisq.test(tally(eco.po), p = prop.cont)
+xchisq.test(tally(eco.po),p=prop.cont, simulate.p.value = TRUE )
+```
+
+
+2 Types of Charts of Expected Value based on the Square Mileage
+```{r}
+#Bar Plot
+Exp <- c(3.34, 110.74, 44.92)
+EcoExp <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Exp, names.arg = EcoExp, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Expected # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+
+#Pie Chart
+slicesExp <- c(110.74,44.92,3.34)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main="Expected # of Jounrals in each Ecosystem based on Sqr. Mileage")
+```
+
+
+2 Types of Charts of Observed Values based on the Square Mileage
+```{r}
+#Bar Plot
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Observed # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+
+#Pie Chart
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices, labels = lbls, main="Observed # of Jounrals in each Ecosystem based on Sqr. Mileage)")
+```
+
+
+
+# Continent
+*CASE 1 * (no Square mileage)
+HO: The probability of each Continent being represented in a journal entry is the same
+HA: The probability of each Continent being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each Continent being represented in a journal entry is the same as square mileage
+HA: The probability of each Continent being represented in a journal entry is not the same as square mileage 
+
+
+Cleaning our data and using tally() function to view our numbers
+```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+continent.work %in% remove
+continent.work <- continent.work [! continent.work %in% remove]
+continent.work[43] <- "Oceania"
+continent.work[61] <- "Oceania"
+continent.work <- c(continent.work[1:97], continent.work[99:168])
+continent.work
+tally(continent.work)
+```
+
+
+Chi-Squared Tests for *CASE 1*
+```{r}
+chisq.test(tally(continent.work))
+xchisq.test(tally(continent.work))
+```
+
+2 Types of Charts of Expected Values
+```{r}
+#Bar Plot
+E <- c(23.86,23.86,23.86,23.86,23.86,23.86,23.86)
+CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "light green", main = "Expected # of Journals in each Countinent ", border = "black")
+
+#Pie Chart
+slices <- c(23.86,23.86,23.86,23.86,23.86,23.86,23.86)
+lbls <- c("Africa", "Asia", "Australia", "Europe", " North America", "Oceania", "South America")
+pie(slices, labels = lbls, main="Expected # of Jounrals in each Continent")
+```
+
+
+2 Types of Chart of Observed Values
+```{r}
+#Bar Plot
+continent.Observed <- c(5,14,2,34,94,5,13)
+Obs <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(continent.Observed, names.arg = Obs, xlab ="Country", ylab = " # of Journals", col = "light green", main = "Observed # of Journals in each Countinent ", border = "black")
+
+#Pie Chart
+slices <- c(5,14,2,34,94,5,13)
+lbls <- c("Africa", "Asia", "Australia", "Europe", " North America", "Oceania", "South America")
+pie(slices, labels = lbls, main="Observed # of Jounrals in each Continent")
+```
+
+
+Chi-Squared Tests for *CASE 2* (Square Mileage)
+
+```{r}
+
+sm.earth <- 197 # sqr miles of earths surface
+
+sm.continent <- c(SqrMileage$`Sq. mi (million mi^2)`)
+
+sm.continent <- as.numeric(sm.continent[2:8])
+
+prop.cont <- sm.continent/sum(sm.continent)
+prop.cont
+
+#Chi-Squares
+chisq.test(tally(continent.work), p=prop.cont)
+xchisq.test(tally(continent.work),p=prop.cont )
+
+```
+
+Chart of Expected Values based on Square Mileage
+```{r}
+#Bar Plot
+E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
+CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
+
+```
+
+
+Chart of Obseved Values based on Square Mileage
+```{r}
+#Bar Plot
+O <- c(5,14,2,34,94,5,13)
+C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Continent based on Sqr. Mileage", border = "black")
+```
+
+# Country
+*CASE 1 * (no Square mileage)
+HO: The probability of each Country being represented in a journal entry is the same
+HA: The probability of each Country being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each Country being represented in a journal entry is the same as square mileage
+HA: The probability of each Country being represented in a journal entry is not the same as square mileage
+
+
+# State
+*CASE 1 * (no Square mileage)
+HO: The probability of each State being represented in a journal entry is the same
+HA: The probability of each State being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each State being represented in a journal entry is the same as square mileage
+HA: The probability of each State being represented in a journal entry is not the same as square mileage 
+
+
+Cleaning our data and using tally() function to view our numbers
+```{r}
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+state.work
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+state.work %in% remove
+state.work <- state.work [! state.work %in% remove]
+state.work
+state.work <- state.work[!is.na(state.work)]
+state.work
+
+```
+
+
+
+Chi Square Test *Case 1*
+```{r}
+tally(state.work)
+xchisq.test(tally(state.work))
+```
+
+Chart of State (Expected) 
+```{r}
+state.EXP <- c(2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26,2.26)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.EXP, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Expected # of Journals in each State", border = "black")
+```
+
+Chart of State (Observed)
+```{r}
+state.obs <- c(2,2,3,13,2,4,1,1,2,1,1,4,1,1,1,1,2,1,1,1,4,2,3,1,3,1,2)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.obs, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Observed # of Journals in each State ", border = "black")
+```
+
+State with sqr mileage *Case 2*
+```{r}
+sm.state <- c(SqrMileage$`totalSQM`)
+sm.state <- c(sm.state[1:27])
+#sm.state
+prop.state <- sm.state/sum(sm.state)
+#prop.state
+#Chi Square
+xchisq.test(tally(state.work),p=prop.state  )
+
+```
+
+
+Chart of State based on Square Mileage (Expected)
+```{r}
+state.exp <- c(15.290,1.221,2.656, 3.813, 2.425, 1.397, 0.150, 0.848, 1.917, 0.824, 0289, 2.255, 1.624, 3.425, 1.227, 0.218, 0.203, 2.832, 1.269, 1.044, 2.292, 0.082, 6.256, 1.978, 1.661, 1.526, 2.278)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.exp, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Expected # of Journals in each State based on Sqr. Mileage", border = "black")
+```
+
+Chart of State based on Square Mileage (Observed)
+```{r}
+state.obs <- c(2,2,3,13,2,4,1,1,2,1,1,4,1,1,1,1,2,1,1,1,4,2,3,1,3,1,2)
+state <- c("AK", "AL", "AZ", "CA", "CO", "FL", "HI", "IN", "KS", "MA", "MD", "MI", "MO", "MT", "NC", "NH", "NJ", "NM", "NY", "OH", "OR", "PR", "TX", "UT", "WA", "WI", "WY")
+barPlot1 <- barplot(state.obs, names.arg = state, xlab ="State", ylab = " # of Journals", col = "light green", main = "Observed # of Journals in each State based on Sqr. Mileage", border = "black")
+```
+
+
+# Region
+*CASE 1 * (no Square mileage)
+HO: The probability of each Region being represented in a journal entry is the same
+HA: The probability of each Region being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each Region being represented in a journal entry is the same as square mileage
+HA: The probability of each Region being represented in a journal entry is not the same as square mileage
+

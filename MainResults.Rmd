@@ -1,8 +1,0 @@
----
-title: "Main Work and Analysis"
-author: Brianna Cirillo, Odalys Barrientos, Veronica Marquez
-output: html_notebook
----
-
-
-
