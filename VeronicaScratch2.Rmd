@@ -1,0 +1,76 @@
+---
+title: "Veronica Scratch2"
+author: Veronica Marquez
+output: html_notebook
+---
+
+Check Location of the file
+```{r}
+getwd()
+```
+
+run the libraries
+```{r}
+library(mosaic)
+library(readxl)
+library(gplots)
+library(nhstplot)
+```
+
+Read in the Data from the excel file provided
+```{r}
+EcologyBias_Daneshgar_Popo_2_ <- read_excel("/Users/veronicamarquez/Desktop/Dr.D Ecology Bias SC/MA321-Daneshgar/EcologyBias.Daneshgar.Popo.xlsx")
+View(EcologyBias_Daneshgar_Popo_2_)
+# here we are renaming the file
+EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+```
+
+# Ecosystem
+*CASE 1 * (no Square mileage)
+HO: The probability of each Ecosystem being represented in a journal entry is the same
+HA: The probability of each Ecosystem being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each Ecosystem being represented in a journal entry is the same as square mileage
+HA: The probability of each Ecosystem being represented in a journal entry is not the same as square mileage 
+
+
+Going through the data to see how many of each ecosystem type are found
+```{r}
+#what this code is doing is basically counting each time a data entry matches the "word" we are looking for
+cat("# of Journals in Marine: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Marine"), "\n")
+cat("# of Journals in Terrestrial: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Terrestrial"), "\n")
+cat("# of Journals in Frshwater: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Freshwater"), "\n")
+cat("# of Journals in Mixed: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Mixed"), "\n")
+```
+Notice here that there is a noticeable difference in the amount of articles that contain each ecosystem. If we take the sum of the data entries and divide it by the number of ecosystems we see that on average if they were given a "fair" chance of being chosen we would get an average number of 43 per ecosystem. But based on the results of the observed data we could conclude that there is some distinct difference between all th data. Could this allow me to conclude right of the bat that there is some noticeable bias involved? That could mean that we are basing all this on "self-opinion" and "assumption"
+
+
+using tally() function
+```{r}
+tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+```
+tally function is going into the data file finding the column named "Marine, Terrestrial, Freshwater, Mixed" and tallying each type of ecosystem. This is another good way to check that the count matches and we haven't overlooked any other type of ecosystem in that column
+
+
+
+Chi-Squared Test of Ecosystem (Po defines)
+*Note: that here we removed mixed because of our null and alt hypothesis are based on giving each type of ecosystem has a fair chance, so mixed wouldn't help us prove their is a difference between them.*
+What is Chi-Sq?
+Chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table
+```{r}
+# Creating a vector
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po
+# removing each time "Mixed" is mentioned
+remove <- c ("Mixed")
+
+eco.po %in% remove
+eco.po <- eco.po [! eco.po %in% remove]
+eco.po
+
+tally(eco.po)
+# chisq.test() will display the p-vlaue
+chisq.test(tally(eco.po))
+# xchisq.tes() will display the p-value and display our expected values if it was fair throughout
+xchisq.test(tally(eco.po))
+```
