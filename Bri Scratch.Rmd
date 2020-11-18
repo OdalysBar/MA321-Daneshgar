@@ -8,9 +8,14 @@ output: html_notebook
 EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
 library(dplyr)
 library(mosaic)
+library(mosaicCore)
 ```
 
 ```{r}
+# This is just a nice way to print results
+# cat('What you want the print out to say' , code you want to run, '\n')
+
+#This is doing counts for Marine, Terrestrial, Freshwater, Mixed
 cat('Number of Journal Entries in Marine: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Marine"), '\n')
 cat('Number of Journal Entries in Terrestrial: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Terrestrial"), '\n')
 cat('Number of Journal Entries in Freshwater: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Freshwater"), '\n')
@@ -18,6 +23,8 @@ cat('Number of Journal Entries in Mixed: ' , count(EcologyBias$`Marine, Terrestr
 ```
 
 ```{r}
+#This is doing counts for Region
+
 cat('Number of Journal Enties by Region:' , '\n', '\n')
 cat('Number of Journal Entries in East-North Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "East-North Central"), '\n')
 cat('Number of Journal Entries in Mid-Atlantic: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Mid-Atlantic"), '\n')
@@ -36,6 +43,8 @@ cat('Number of Journal Entries in Multiple Ranges: ' , count(EcologyBias$`Region
 
 
 ```{r}
+#This is doing counts for Ecosystem
+
 cat('Number of Journal Enties by Ecosystem:' , '\n', '\n')
 cat('Number of Journal Entries in Coastal Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coastal Ecosystems"), '\n')
 cat('Number of Journal Entries in Coniferous Forestss: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coniferous Forests"), '\n')
@@ -65,6 +74,8 @@ cat('Number of Journal Entries in META-ANALYSIS: ' , count(EcologyBias$`Ecosyste
 ```
 
 ```{r}
+#This is doing counts for Phylum
+
 cat('Number of Journal Enties by Phylum:' , '\n', '\n')
 cat('Number of Journal Entries in Annelida: ' , count(EcologyBias$Phylum == "Annelida"), '\n')
 cat('Number of Journal Entries in Anthophyta: ' , count(EcologyBias$Phylum == "Anthophyta"), '\n')
@@ -83,33 +94,48 @@ cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Mul
 ```
 
 ```{r}
-if (EcologyBias$Phylum == "Spermatophyta"){
-  count(EcologyBias$`Genus (only if single species)`)
-}
+#if (EcologyBias$Phylum == "Spermatophyta"){
+  #count(EcologyBias$`Genus (only if single species)`)
+#}
 
-with(EcologyBias$`Genus (only if single species)`, ftable(EcologyBias$Phylum =="Spermatophyta"))
+#with(EcologyBias$`Genus (only if single species)`, ftable(EcologyBias$Phylum =="Spermatophyta"))
 
-cat('Number of Journal Enties by Phylum & Genus:' , '\n', '\n')
+#cat('Number of Journal Enties by Phylum & Genus:' , '\n', '\n')
 ```
+
+
 ```{r}
+# Making a contingency table using the tally function 
+# Region
 tally(EcologyBias$`Regions where the work was done  (Popo defines)`)
 ```
 
 ```{r}
+# Making a contingency table using the tally function 
+# Marine, terrestrial, freshwater, mixed
 tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
 ```
 
 ```{r}
+# Making a contingency table using the tally function 
+# Ecosystem
 tally(EcologyBias$`Ecosystem (Ped defines)`)
 ```
+
+
 ```{r}
+# Making a contingency table using the tally function 
+# Phylum
 tally(EcologyBias$Phylum)
 ```
 
 ```{r}
+# Making a contingency table using the tally function 
+# Genus
 tally(EcologyBias$`Genus (only if single species)`)
 ```
 
+# Attempting to rename columns, didn't work
 
 ```{r}
 EcologyBias %>%
@@ -120,6 +146,7 @@ EcologyBias %>%
 # Removing Mult data for more Accurate Chi-Square
 
 ```{r}
+# Looking at the contingency tables to see which have multiples so we can remove them
 
 tally(EcologyBias$`Country where the work is done`) # needs to be fixed
 tally(EcologyBias$`Regions where the work was done  (Popo defines)`) # needs to be fixed
@@ -131,36 +158,71 @@ tally(EcologyBias$`Continent where work done`) # needs to be fixed
 ## Country
 
 ```{r}
+# Running Chi-Sq After removing Multiples
+
+# Making the column for country into a vector
 country.work <- as.vector(EcologyBias$`Country where the work is done`)
+
+# Printing the vector to look for the multiples we need to remove
 country.work
+
+# Creating a vector of the data names of what we need to remove
 remove <- c ("US and Mexico","Multiple???", "META ANALYSIS")
+
+# %in% returns a boolean TRUE if it is in remove, false if not
 country.work %in% remove
+
+# Removing everything in the remove vector from country.work
 country.work <- country.work [! country.work %in% remove]
+
+#Printing the vector to make sure we didn't miss anything
 country.work
+
+# This is changing 1-5 and 8-11 from US to USA so everything matches
 country.work[1:5] <- "USA"
 country.work[8:11] <- "USA"
+
+# Printing the vector to make sure it worked properly
 country.work
+
+# Removing any NA
 country.work <- country.work[!is.na(country.work)]
+
+# Printing the vector to make sure it worked properly
 country.work
-tally(continent.work)
-chisq.test(tally(continent.work))
+
+# Rerunning the contingency table to to look at the new counts
+tally(country.work)
+
+# Running the chi-squared on the new data
+chisq.test(tally(country.work))
 
 ```
 
 ## Region
 
 ```{r}
-region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
-region.work
-remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
-region.work %in% remove
-region.work <- region.work [! region.work %in% remove]
-region.work
-region.work <- region.work[!is.na(region.work)]
-region.work
-tally(region.work)
-chisq.test(tally(region.work))
+# The code is doing the exact same thing as in the chunk above
 
+region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+
+region.work
+
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+
+region.work %in% remove
+
+region.work <- region.work [! region.work %in% remove]
+
+region.work
+
+region.work <- region.work[!is.na(region.work)]
+
+region.work
+
+tally(region.work)
+
+chisq.test(tally(region.work))
 ```
 
 
@@ -168,17 +230,27 @@ chisq.test(tally(region.work))
 ## State
 
 ```{r}
-state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
-state.work
-remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
-state.work %in% remove
-state.work <- state.work [! state.work %in% remove]
-state.work
-state.work <- state.work[!is.na(state.work)]
-state.work
-tally(state.work)
-chisq.test(tally(state.work))
+# The code is doing the exact same thing as in the chunk above
 
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+
+state.work
+
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+
+state.work %in% remove
+
+state.work <- state.work [! state.work %in% remove]
+
+state.work
+
+state.work <- state.work[!is.na(state.work)]
+
+state.work
+
+tally(state.work)
+
+chisq.test(tally(state.work))
 ```
 
 
