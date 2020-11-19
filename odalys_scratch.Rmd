@@ -4,117 +4,55 @@ author: Odalys Barrientos
 output: html_notebook
 ---
 
-# Location of file
+## Installing packages used
 ```{r}
-getwd()
+#install.packages("vctrs")
+#install.packages("ggplot2",repos = c("http://rstudio.org/_packages","http://cran.rstudio.com"))
+library(ggplot2)
+#install.packages("gplots")
+library(gplots)
+#install.packages("mosaic")
 library(mosaic)
+
+
 ```
 # New Marix of data 
-our data is only 175 lines long 
 ```{r}
+#our data is only 175 lines long 
 EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
-EcologyBias
+EcologyBias # the name of our new matrix with all the data
 ```
-# Count of Ecosystems (popo def)
+# Contingency tables
+# Contingency table: Contient where the work was done
 ```{r}
-cat('Number of Journal Entries in Marine: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Marine"), '\n')
-cat('Number of Journal Entries in Terrestrial: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Terrestrial"), '\n')
-cat('Number of Journal Entries in Freshwater: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Freshwater"), '\n')
-cat('Number of Journal Entries in Mixed: ' , count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Mixed"), '\n')
-```
-# count of Regions of where the work was done
-```{r}
-cat('Number of Journal Enties by Region:' , '\n', '\n')
-cat('Number of Journal Entries in East-North Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "East-North Central"), '\n')
-cat('Number of Journal Entries in Mid-Atlantic: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Mid-Atlantic"), '\n')
-cat('Number of Journal Entries in Mid-South: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "MidSouth"), '\n')
-cat('Number of Journal Entries in Mountain: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Mountain"), '\n')
-cat('Number of Journal Entries in New England: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "New England"), '\n')
-cat('Number of Journal Entries in North West: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "NW"), '\n')
-cat('Number of Journal Entries in Pacific: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Pacific"), '\n')
-cat('Number of Journal Entries in South Atlantic: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "South Atlantic"), '\n')
-cat('Number of Journal Entries in West North Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "West North Central"), '\n')
-cat('Number of Journal Entries in West South Central: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "West South Central"), '\n')
-cat('Number of Journal Entries in META ANALYSIS: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "META ANALYSIS"), '\n')
-cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Multiple"), '\n')
-cat('Number of Journal Entries in Multiple Ranges: ' , count(EcologyBias$`Regions where the work was done  (Popo defines)` == "Multiple Ranges"), '\n')
-```
-# count of ecosystems based off ped def
-```{r}
-cat('Number of Journal Enties by Ecosystem:' , '\n', '\n')
-cat('Number of Journal Entries in Coastal Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coastal Ecosystems"), '\n')
-cat('Number of Journal Entries in Coniferous Forestss: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coniferous Forests"), '\n')
-cat('Number of Journal Entries in Deciduous and Evergreens: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Deciduous and Evergreen"), '\n')
-cat('Number of Journal Entries in Ecosystems of the Deep Ocean: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Ecosystems of the Deep Ocean"), '\n')
-cat('Number of Journal Entries in Inland Aquatic Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Inland Aquatic Ecosystems"), '\n')
-cat('Number of Journal Entries in CLakes and Reservoirs Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Lakes and Reservoirs Ecosystems"), '\n')
-cat('Number of Journal Entries in Managed Terrestrial Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Managed Terrestrial Ecosystems"), '\n')
-cat('Number of Journal Entries in Polar & Alpine Tundra: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Polar & Alpine Tundra"), '\n')
-cat('Number of Journal Entries in Shrublands: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Shrublands"), '\n')
-cat('Number of Journal Entries in Temperate Deciduous Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Deciduous Forests"), '\n')
-cat('Number of Journal Entries in Tropical Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Tropical Forests"), '\n')
-cat('Number of Journal Entries in CWetland Forests: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Wetland Forests"), '\n')
-cat('Number of Journal Entries in Coniferous and Hardwood: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coniferous and Hardwood"), '\n')
-cat('Number of Journal Entries in Coral Reefs: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Coral Reefs"), '\n')
-cat('Number of Journal Entries in Ecosystems of the Continental Shelves: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Ecosystems of the Continental Shelves"), '\n')
-cat('Number of Journal Entries in Estuaries and Enclosed Seas: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Estuaries and Enclosed Seas"), '\n')
-cat('Number of Journal Entries in Intertidal and Littoral Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Intertidal and Littoral Ecosystems"), '\n')
-cat('Number of Journal Entries in Managed Aquatic Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Managed Aquatic Ecosystems"), '\n')
-cat('Number of Journal Entries in Natural Grasslands: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Natural Grasslands"), '\n')
-cat('Number of Journal Entries in River and Stream Ecosystem: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "River and Stream Ecosystem"), '\n')
-cat('Number of Journal Entries in Temperate Broad Leaved Evergreen: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Broad Leaved Evergreen"), '\n')
-cat('Number of Journal Entries in Temperate Deserts and Semi Deserts: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Temperate Deserts and Semi Deserts"), '\n')
-cat('Number of Journal Entries in Tropical Savannas: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "CTropical Savannas"), '\n')
-cat('Number of Journal Entries in Multiple Ecosystems: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "Multiple"), '\n')
-cat('Number of Journal Entries in META-ANALYSIS: ' , count(EcologyBias$`Ecosystem (Ped defines)` == "META-ANALYSIS"), '\n')
-```
-# count of phylum
-```{r}
-cat('Number of Journal Enties by Phylum:' , '\n', '\n')
-cat('Number of Journal Entries in Annelida: ' , count(EcologyBias$Phylum == "Annelida"), '\n')
-cat('Number of Journal Entries in Anthophyta: ' , count(EcologyBias$Phylum == "Anthophyta"), '\n')
-cat('Number of Journal Entries in Arthropoda: ' , count(EcologyBias$Phylum == "Arthropoda"), '\n')
-cat('Number of Journal Entries in Chordata: ' , count(EcologyBias$Phylum == "Chordata"), '\n')
-cat('Number of Journal Entries in Cnidaria: ' , count(EcologyBias$Phylum == "Cnidaria"), '\n')
-cat('Number of Journal Entries in Coniferophyta: ' , count(EcologyBias$Phylum == "Coniferophyta"), '\n')
-cat('Number of Journal Entries in Echinodermata: ' , count(EcologyBias$Phylum == "Echinodermata"), '\n')
-cat('Number of Journal Entries in Magnoliophyta: ' , count(EcologyBias$Phylum == "Magnoliophyta"), '\n')
-cat('Number of Journal Entries in Mollusca: ' , count(EcologyBias$Phylum == "Mollusca"), '\n')
-cat('Number of Journal Entries in Ochrophyta: ' , count(EcologyBias$Phylum == "Ochrophyta"), '\n')
-cat('Number of Journal Entries in Oomycota: ' , count(EcologyBias$Phylum == "Oomycota"), '\n')
-cat('Number of Journal Entries in Spermatophyta: ' , count(EcologyBias$Phylum == "Spermatophyta"), '\n')
-cat('Number of Journal Entries in Tracheophyta: ' , count(EcologyBias$Phylum == "Tracheophyta"), '\n')
-cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Multiple"), '\n')
-```
-# contingency tables of ORIGINAL country, region, state, and continent
-```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`) # removing the column of all the continents where the work was done and making it into a vector
 
-tally(EcologyBias$`Country where the work is done`) # needs to be fixed
-tally(EcologyBias$`Regions where the work was done  (Popo defines)`) # needs to be fixed
-tally(EcologyBias$`State or Municipality where the work was done`) # needs to be fixed
-tally(EcologyBias$`Continent where work done`) # needs to be fixed
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!") # removing these variables because it goes against the assumptions of a chisq test (mutually exclusive & independent)
 
-```
-# Chisq test Continent
-```{r}
-continent.work <- as.vector(EcologyBias$`Continent where work done`)
-remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
-continent.work %in% remove
-continent.work <- continent.work [! continent.work %in% remove]
-continent.work[43] <- "Oceania"
-continent.work[61] <- "Oceania"
-continent.work <- c(continent.work[1:97], continent.work[99:168])
-continent.work
+# (continent.work %in% remove) ---> creates a vector of TRUE and FALSE to remove the elements we do not want 
+continent.work <- continent.work [! continent.work %in% remove] # continent.work now has mutually exclusive and independent elements but contains NAs
+
+continent.work[43] <- "Oceania" # fixing a miss spelling error
+continent.work[61] <- "Oceania" # fixing a miss spelling error
+
+continent.work <- c(continent.work[1:97], continent.work[99:168]) # removing NAs
+# continent.work is not clean 
+# I made a vector with all the continents and excluded the NAs
+
 continent <- as.matrix(table(continent.work))
+continent
+```
+# Case 1
+# Chi-squared test: Continent where the work was done
+```{r}
 xchisq.test(tally(continent.work))
-
+# we cannot use the pvalue because the test assumes randomness (our data is not random)
+# we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not equally represented
 ```
 ```{r}
-install.packages("gplots")
-library(gplots)
-# 1. convert the data as a table
+# convert the data as a table
 dt <- as.table(continent)
-# 2. Graph
+# Graph
 balloonplot(t(dt), main ="Based on Region where the work was done", xlab ="", ylab="",
             label = FALSE, show.margins = FALSE)
 ```

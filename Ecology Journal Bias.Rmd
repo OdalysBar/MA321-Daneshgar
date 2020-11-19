@@ -4,4 +4,65 @@ authors: Odalys Barrientos, Brianna Cirillo, Veronica Marquez
 output: html_notebook
 ---
 
- 
+ ## Installing packages used
+```{r}
+#install.packages("vctrs")
+#install.packages("ggplot2",repos = c("http://rstudio.org/_packages","http://cran.rstudio.com"))
+library(ggplot2)
+#install.packages("gplots")
+library(gplots)
+#install.packages("mosaic")
+library(mosaic)
+
+
+```
+# New Marix of data 
+```{r}
+#our data is only 175 lines long 
+EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
+EcologyBias # the name of our new matrix with all the data
+```
+
+# Contingency tables
+# Contingency table: Contient where the work was done
+```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`) # removing the column of all the continents where the work was done and making it into a vector
+
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!") # removing these variables because it goes against the assumptions of a chisq test (mutually exclusive & independent)
+
+# (continent.work %in% remove) ---> creates a vector of TRUE and FALSE to remove the elements we do not want 
+continent.work <- continent.work [! continent.work %in% remove] # continent.work now has mutually exclusive and independent elements but contains NAs
+
+continent.work[43] <- "Oceania" # fixing a miss spelling error
+continent.work[61] <- "Oceania" # fixing a miss spelling error
+
+continent.work <- c(continent.work[1:97], continent.work[99:168]) # removing NAs
+# continent.work is not clean 
+# I made a vector with all the continents and excluded the NAs
+
+continent <- as.matrix(table(continent.work))
+continent
+```
+# Case 1
+# Chi-squared test: Continent where the work was done
+```{r}
+xchisq.test(tally(continent.work))
+# we cannot use the pvalue because the test assumes randomness (our data is not random)
+# we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not equally represented
+```
+
+```{r}
+par(mfrow=c(1,2))
+
+mypalette<-brewer.pal(7,"BuGn") # this uses a package to change the color pallet
+
+# what we expect the pie chart to look like based off of our expected values in chisq test
+slicesExp <- rep(23.86, length.out = 7)
+lbls <- c("Africa ", "Asia","Australia ", "Europe ","North America ","Oceania","South America"  )
+pie(slicesExp, labels = lbls, main = "Pie Chart of Continent EXPECTED", col = mypalette )
+
+# what we the pie chart actually looks like based off of our observed values in chisq test
+slicesExp <- c(tally(continent.work))
+lbls <- c("Africa ", "Asia","Australia ", "Europe ","North America ","Oceania","South America"  )
+pie(slicesExp, labels = lbls, main = "Pie Chart of Continent OBSERVED" , col = mypalette)
+```
