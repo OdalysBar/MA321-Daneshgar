@@ -13,6 +13,8 @@ library(ggplot2)
 library(gplots)
 #install.packages("mosaic")
 library(mosaic)
+#install.packages("usmap")
+library(usmap)
 #install.packages("RColorBrewer")
 library(RColorBrewer)
 
@@ -181,46 +183,116 @@ xchisq.test(total.state.counts,p=prop.state, simulate.p.value = TRUE )
 ```
 
 ```{r}
+data.states <- as.data.frame(matrix(data=c(SquareMileage$state.In.Order[1:50], SquareMileage$SM.IN.ORDER[1:50]), nrow=50, ncol=2)) # this package takes a data frame the first column are the states and the second column is the square mileage for that state (in the excel sheet it is in order from greatest to least)
 
+colnames(data.states)[1] <- "state" # naming the first column state
+colnames(data.states)[2] <- "level" # naming the second column level
+
+# this package cannot take large numbers and put them in order so I assigned 9 levels
+# level 1 means the lowest sqr mileage 
+# level 9 means the highest sqr mileage 
+data.states[1:6,2] <- 9 
+data.states[7:12,2] <- 8
+data.states[13:18,2] <- 7
+data.states[19:24,2] <- 6
+data.states[25:30,2] <- 5
+data.states[31:36,2] <- 4
+data.states[37:42,2] <- 3
+data.states[43:48,2] <- 2
+data.states[49:50,2] <- 1
+
+data.counts <- as.data.frame(matrix(data=c(SquareMileage$`U.S. States`[1:26], SquareMileage$Counts[1:26]), nrow=26, ncol=2)) # this package takes a data frame the first column are the states in the same order as the contintengency table and the second column is the counts (the number of times a state appeard)
+# only 26 rows because we only had counts for 26 states 
+colnames(data.counts)[1] <- "state" # naming the first colum state
+colnames(data.counts)[2] <- "counts" # naming the second column count
+
+par(mfrow=c(1,2))
+# map of what we expect the frequency to look like based off of sqr mileage
+plot_usmap(data = data.states, values="level", color="black")+theme(legend.position = "right")
+# map of the observed frequency
+plot_usmap(data = data.counts, values="counts", color="black")+theme(legend.position = "right")
 ```
 
-# Chisq test ecosystems popo def
+## Contingency table: Ecosystems (Marine, Terrestrial, Freshwater)
 ```{r}
-eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)# removing the column of ecosystem based on (marine, terrestrial, freshwater) and making it into a vector
+
+remove <- c ("Mixed") # removing the mixed option because it goes against the assumptions of a chisq test (mutually exclusive & independent)
+
+# (eco.po %in% remove) ---> creates a vector of TRUE and FALSE to remove the elements we do not want
+eco.po <- eco.po [! eco.po %in% remove] # eco.po now has mutually exclusive and independent elements 
+
+eco.po <- as.matrix(table(eco.po))
+
 eco.po
-remove <- c ("Mixed")
-eco.po %in% remove
-eco.po <- eco.po [! eco.po %in% remove]
-eco.po
-
-tally(eco.po)
-chisq.test(tally(eco.po))
 ```
-# eco po observed vs expected
+# Case 1
+## Chi-squared test: Ecosystems
 ```{r}
-tally(eco.po)
-xchisq.test(tally(eco.po))
+xchisq.test(eco.po)
+# we cannot use the pvalue because the test assumes randomness (our data is not random)
+# we can use the observed frequency, expected frequency, and the pearson residual to show that all the ecosystems are not equally represented 
+
 ```
-
-
-# Chisq ecosystem ped def
 ```{r}
-eco.ped <- as.vector(EcologyBias$`Ecosystem (Ped defines)`)
+par(mfrow=c(1,2))
+eco.col<-brewer.pal(7,"YlGn") # this uses a package to change the color pallet
 
-remove <- c ("Multiple", "META-ANALYSIS")
-eco.ped %in% remove
-eco.ped <- eco.ped [! eco.ped %in% remove]
+slices.exp <- c(53,53,53)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices.exp, labels = lbls, main="Pie Chart of Ecosystem (Expected)", col=eco.col)
 
-eco.ped <- c(eco.ped[1:50], eco.ped[52:169])
-eco.ped
-tally(eco.ped)
-chisq.test(tally(eco.ped))
+slices <- c(20,127,12)
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = eco.col)
 ```
-# eco ped observed vs expected
+
+# Case 2
+## Chi-squared test: Ecosystems
 ```{r}
-tally(eco.ped)
-xchisq.test(tally(eco.ped))
+prop.ecosystem <- c(EcoSqrMileage$`Percent Coverage`)
+
+
+xchisq.test(eco.po,p=prop.ecosystem, simulate.p.value = TRUE )
 ```
+```{r}
+par(mfrow=c(1,2))
+e.col<-brewer.pal(7,"Blues") # this uses a package to change the color pallet
+
+slicesExp <- c(111.30,44.36,3.34)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main="Pie Chart of Ecosystem (Expected)",col=e.col)
+
+slices <- c(20,127,12)
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = e.col)
+
+```
+
+# Case 1
+## Chi-squared test: Ecosystem-Terrestrial
+```{r}
+ecosystems <- matrix(c(EcologyBias_Daneshgar_Popo_2_$`Marine, Terrestrial, Freshwater, Mixed2`, EcologyBias_Daneshgar_Popo_2_$eco.ped2), ncol=2)
+#ecosystems
+eco.t <- vector()
+eco.m <- vector()
+eco.f <- vector()
+
+for(i in 1:155){
+if(ecosystems[i,1]=="Terrestrial"){
+  eco.t[i] <- ecosystems[i,2]
+}
+if(ecosystems[i,1]=="Marine"){
+  eco.m[i] <- ecosystems[i,2]
+}else{
+  eco.f[i] <- ecosystems[i,2]
+}}
+
+tally(eco.t)
+tally(eco.m)
+tally(eco.f)
+```
+
+
+
 
 
 

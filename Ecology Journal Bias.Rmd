@@ -80,6 +80,18 @@ xchisq.test(tally(continent.work),p=prop.cont )
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not represented basded off of their sqr mileage
 ```
 
+```{r}
+par(mfrow=c(2,1))
+E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
+CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
+
+O <- c(5,14,2,34,94,5,13)
+C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
+barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Country based on Sqr. Mileage", border = "black")
+```
+
+
 ## Contingency table: Country where the work was done
 ```{r}
 country.work <- as.vector(EcologyBias$`Country where the work is done`) # removing the column of country where the work was done and making it into a vector
@@ -124,7 +136,8 @@ region <- as.matrix(table(region.work))
 region
 ```
 
-# Chi-squared test: Region where the work was done
+# Case 1
+## Chi-squared test: Region where the work was done
 ```{r}
 xchisq.test(tally(region.work))
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
@@ -138,15 +151,43 @@ region.col<-brewer.pal(7,"PuBuGn") # this uses a package to change the color pal
 
 # what we expect the pie chart to look like based off of our expected values in chisq test
 Region.Obs <- c(6.70,6.70,6.70,6.70,6.70,6.70,6.70, 6.70, 6.70, 6.70)
-R.names <- c("East.NC", "Mid-A", "Mid-S", "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+R.names <- c("E.NC", "Mid-A", "Mid-S", "Mt", "NE", " NW", "PT", "S.Atl", "W.NC", "W.SC")
 pie(Region.Obs, labels = R.names, main="Pie Chart of Region (Expected)", col = region.col)
 
 # what we the pie chart actually looks like based off of our observed values in chisq test
 Region.Obs <- c(7,3,1,12,3,1,24, 10, 3, 3)
-R.names <- c("East.NC", "Mid-A", "Mid-S", "Mount", "New Eng", " NW", "Pacific", "S.Atl", "W.NC", "W.SC")
+R.names <- c("E.NC", "Mid-A", "Mid-S", "Mt", "NE", " NW", "PT", "S.Atl", "W.NC", "W.SC")
 pie(Region.Obs, labels = R.names, main="Pie Chart of Region (Observed)", col=region.col)
     
 ```
+
+# Case 2
+## Chi-squared test: Region where the work was done
+```{r}
+sm.region <- c(SqrMileage$`Sq. mi2 (mi^2)`)# data of the sqr mileage for each region in a vector
+
+sm.region <- as.numeric(sm.region[1:9])# we were only able to find the sqr mileage for 9 regions so we took out the 10th region
+
+prop.region <- sm.region/sum(sm.region)# the proportion we expect each region to follow based off of its sqr mileage
+# we set p = prop.regiont since we are now assuming the observed frequency should match the proportion of its sqr mileage 
+
+xchisq.test(tally(region.work)[1:9],p=prop.region, simulate.p.value = TRUE)
+```
+
+```{r}
+par(mfrow=c(2,1))
+
+# what we expect the bar graph to look like based expected values in chisqr test
+RegionSM.Exp <- c(5.54,3.54,15.85,1.33,0.10,16.58,5.42, 9.41, 8.23)
+Region <- c("E.NC", "MA",  "Mt", "NE", " NW", "PT", "S.Atl", "W.NC", "W.SC")
+barPlot1 <- barplot(RegionSM.Exp, names.arg = Region, xlab ="Region", ylab = " # of Journals", col = "dark green", main = "Expected # of Journals in each Region based on Sqr. Mileage", border = "black")
+
+# what the pie chart looks like based off our observed value in chisqr test
+RegionSM.Obs <- c(7,1,12,3,1,24, 10, 3, 3)
+Region <- c("E.NC", "MA",  "Mt", "NE", " NW", "PT", "S.Atl", "W.NC", "W.SC")
+barPlot1 <- barplot(RegionSM.Obs, names.arg = Region, xlab ="Region", ylab = " # of Journals", col = "dark green", main = "Observed # of Journals in each Region based on Sqr. Mileage", border = "black")
+```
+
 
 ## Contingency table: State where the work was done
 ```{r}
@@ -182,3 +223,69 @@ xchisq.test(total.state.counts,p=prop.state, simulate.p.value = TRUE )
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the states are not represented based off of their sqr mileage
 
 ```
+
+```{r}
+data.states <- as.data.frame(matrix(data=c(SquareMileage$state.In.Order[1:50], SquareMileage$SM.IN.ORDER[1:50]), nrow=50, ncol=2)) # this package takes a data frame the first column are the states and the second column is the square mileage for that state (in the excel sheet it is in order from greatest to least)
+
+colnames(data.states)[1] <- "state" # naming the first column state
+colnames(data.states)[2] <- "level" # naming the second column level
+
+# this package cannot take large numbers and put them in order so I assigned 9 levels
+# level 1 means the lowest sqr mileage 
+# level 9 means the highest sqr mileage 
+data.states[1:6,2] <- 9 
+data.states[7:12,2] <- 8
+data.states[13:18,2] <- 7
+data.states[19:24,2] <- 6
+data.states[25:30,2] <- 5
+data.states[31:36,2] <- 4
+data.states[37:42,2] <- 3
+data.states[43:48,2] <- 2
+data.states[49:50,2] <- 1
+
+data.counts <- as.data.frame(matrix(data=c(SquareMileage$`U.S. States`[1:26], SquareMileage$Counts[1:26]), nrow=26, ncol=2)) # this package takes a data frame the first column are the states in the same order as the contintengency table and the second column is the counts (the number of times a state appeard)
+# only 26 rows because we only had counts for 26 states 
+colnames(data.counts)[1] <- "state" # naming the first colum state
+colnames(data.counts)[2] <- "counts" # naming the second column count
+
+par(mfrow=c(1,2))
+# map of what we expect the frequency to look like based off of sqr mileage
+plot_usmap(data = data.states, values="level", color="black")+theme(legend.position = "right")
+# map of the observed frequency
+plot_usmap(data = data.counts, values="counts", color="black")+theme(legend.position = "right")
+```
+
+## Contingency table: Ecosystems (Marine, Terrestrial, Freshwater)
+```{r}
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)# removing the column of ecosystem based on (marine, terrestrial, freshwater) and making it into a vector
+
+remove <- c ("Mixed") # removing the mixed option because it goes against the assumptions of a chisq test (mutually exclusive & independent)
+
+# (eco.po %in% remove) ---> creates a vector of TRUE and FALSE to remove the elements we do not want
+eco.po <- eco.po [! eco.po %in% remove] # eco.po now has mutually exclusive and independent elements 
+
+eco.po <- as.matrix(table(eco.po))
+
+eco.po
+```
+# Case 1
+## Chi-squared test: Ecosystems
+```{r}
+xchisq.test(eco.po)
+# we cannot use the pvalue because the test assumes randomness (our data is not random)
+# we can use the observed frequency, expected frequency, and the pearson residual to show that all the ecosystems are not equally represented 
+
+```
+
+```{r}
+par(mfrow=c(1,2))
+eco.col<-brewer.pal(7,"YlGn") # this uses a package to change the color pallet
+
+slices.exp <- c(53,53,53)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices.exp, labels = lbls, main="Pie Chart of Ecosystem (Expected)", col=eco.col)
+
+slices <- c(20,127,12)
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = eco.col)
+```
+
