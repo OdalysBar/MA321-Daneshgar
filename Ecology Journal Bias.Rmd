@@ -4,7 +4,8 @@ authors: Odalys Barrientos, Brianna Cirillo, Veronica Marquez
 output: html_notebook
 ---
 
- ## Installing packages used
+## Installing packages used
+
 ```{r}
 #install.packages("vctrs")
 #install.packages("ggplot2",repos = c("http://rstudio.org/_packages","http://cran.rstudio.com"))
@@ -17,8 +18,16 @@ library(mosaic)
 library(usmap)
 #install.packages("RColorBrewer")
 library(RColorBrewer)
+#install.packages("dplyr")
+library(dplyr)
+#install.packages("mosaic")
+library(mosaic)
+#install.packages("mosaicCore")
+library(mosaicCore)
 ```
-# New Marix of data 
+
+# New Matrix of data 
+
 ```{r}
 #our data is only 175 lines long 
 EcologyBias <- EcologyBias_Daneshgar_Popo_2_[1:175, ]
@@ -26,7 +35,9 @@ EcologyBias # the name of our new matrix with all the data
 ```
 
 # Contingency tables
-# Contingency table: Contient where the work was done
+
+## Contingency table: Contient where the work was done
+
 ```{r}
 continent.work <- as.vector(EcologyBias$`Continent where work done`) # removing the column of all the continents where the work was done and making it into a vector
 
@@ -45,8 +56,139 @@ continent.work <- c(continent.work[1:97], continent.work[99:168]) # removing NAs
 continent <- as.matrix(table(continent.work))
 continent
 ```
+
+## Contingency table: Country where the work was done
+
+```{r}
+# Running Chi-Sq After removing Multiples
+
+# Making the column for country into a vector
+country.work <- as.vector(EcologyBias$`Country where the work is done`)
+
+# Printing the vector to look for the multiples we need to remove
+country.work
+
+# Creating a vector of the data names of what we need to remove
+remove <- c ("US and Mexico","Multiple???", "META ANALYSIS")
+
+# %in% returns a boolean TRUE if it is in remove, false if not
+country.work %in% remove
+
+# Removing everything in the remove vector from country.work
+country.work <- country.work [! country.work %in% remove]
+
+#Printing the vector to make sure we didn't miss anything
+country.work
+
+# This is changing 1-5 and 8-11 from US to USA so everything matches
+country.work[1:5] <- "USA"
+country.work[8:11] <- "USA"
+
+# Printing the vector to make sure it worked properly
+country.work
+
+# Removing any NA
+country.work <- country.work[!is.na(country.work)]
+
+# Printing the vector to make sure it worked properly
+country.work
+
+# Rerunning the contingency table to to look at the new counts
+tally(country.work)
+
+# Running the chi-squared on the new data
+chisq.test(tally(country.work))
+
+```
+
+## Contingency table: Region where the work was done
+
+```{r}
+# Making the column for region into a vector
+region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+
+# Printing the vector to look for the multiples we need to remove
+region.work
+
+# Creating a vector of the data names of what we need to remove
+remove <- c ("Multiple", "META ANALYSIS", "Multiple Ranges")
+
+# %in% returns a boolean TRUE if it is in remove, false if not
+region.work %in% remove
+
+# Removing everything in the remove vector from region.work
+region.work <- region.work [! region.work %in% remove]
+
+#Printing the vector to make sure we didn't miss anything
+region.work
+
+# Removing any NA
+region.work <- region.work[!is.na(region.work)]
+
+# Printing the vector to make sure it worked properly
+region.work
+
+# Rerunning the contingency table to to look at the new counts
+tally(region.work)
+
+# Running the chi-squared on the new data
+chisq.test(tally(region.work))
+```
+
+## Contingency table: State where the work was done
+
+```{r}
+# Making the column for state into a vector
+state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
+
+# Creating a vector of the data names of what we need to remove
+remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
+
+# Removing everything in the remove vector from state.work
+state.work %in% remove
+state.work <- state.work [! state.work %in% remove]
+
+# Removing any NA
+state.work <- state.work[!is.na(state.work)]
+
+# Rerunning the contingency table to to look at the new counts
+tally(state.work)
+
+# Running the chi-squared on the new data
+chisq.test(tally(state.work))
+```
+
+## Contingency table: Ecosystem (Marine, Terrestrial, Freshwater, Mixed)
+
+```{r}
+# Making the column for ecosystem into a vector
+ecosystem.MTF <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+
+# Printing the vector to look for data names we need to remove
+ecosystem.MTF
+
+# Creating a vector of the data names of what we need to remove
+remove <- c ("Mixed")
+
+# Removing everything in the remove vector from ecosystem.MTF
+ecosystem.MTF %in% remove
+ecosystem.MTF <- ecosystem.MTF [! ecosystem.MTF %in% remove]
+
+# Removing any NA
+ecosystem.MTF <- ecosystem.MTF [!is.na(ecosystem.MTF)]
+
+# Rerunning the contingency table to to look at the new counts
+tally(ecosystem.MTF)
+
+# Running the chi-squared on the new data
+chisq.test(tally(ecosystem.MTF))
+```
+
+
 # Case 1
+
 # Chi-squared test: Continent where the work was done
+
 ```{r}
 xchisq.test(tally(continent.work))
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
@@ -82,6 +224,8 @@ xchisq.test(tally(continent.work),p=prop.cont )
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not represented basded off of their sqr mileage
 ```
 
+
+
 ```{r}
 par(mfrow=c(2,1))
 E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
@@ -95,6 +239,7 @@ barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue"
 
 
 ## Contingency table: Country where the work was done
+
 ```{r}
 country.work <- as.vector(EcologyBias$`Country where the work is done`) # removing the column of country where the work was done and making it into a vector
 
@@ -114,8 +259,11 @@ country <- as.matrix(table(country.work))
 country
 ```
 
+
 # Case 1
+
 ## Chi-squared test: Country where the work was done
+
 ```{r}
 xchisq.test(tally(country.work), simulate.p.value=TRUE)
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
@@ -123,7 +271,10 @@ xchisq.test(tally(country.work), simulate.p.value=TRUE)
 # we are setting simulate.p.value = TRUE because we have MANY categories 
 ```
 
+
+
 ## Contingency table: Region where the work was done
+
 ```{r}
 region.work <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)# removing the column of region where the work was done and making it into a vector
 
@@ -138,13 +289,17 @@ region <- as.matrix(table(region.work))
 region
 ```
 
-# Case 1
+# Case 1: Without Square Mileage
+
 ## Chi-squared test: Region where the work was done
+
 ```{r}
 xchisq.test(tally(region.work))
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the regions are not equally represented
 ```
+
+
 
 ```{r}
 par(mfrow=c(1,2))
@@ -163,8 +318,11 @@ pie(Region.Obs, labels = R.names, main="Pie Chart of Region (Observed)", col=reg
     
 ```
 
-# Case 2
+
+# Case 2: With Square Mileage
+
 ## Chi-squared test: Region where the work was done
+
 ```{r}
 sm.region <- c(SqrMileage$`Sq. mi2 (mi^2)`)# data of the sqr mileage for each region in a vector
 
@@ -175,6 +333,8 @@ prop.region <- sm.region/sum(sm.region)# the proportion we expect each region to
 
 xchisq.test(tally(region.work)[1:9],p=prop.region, simulate.p.value = TRUE)
 ```
+
+
 
 ```{r}
 par(mfrow=c(2,1))
@@ -192,6 +352,7 @@ barPlot1 <- barplot(RegionSM.Obs, names.arg = Region, xlab ="Region", ylab = " #
 
 
 ## Contingency table: State where the work was done
+
 ```{r}
 state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)# removing the column of state where the work was done and making it into a vector
 
@@ -212,8 +373,12 @@ state
 
 ```
 
+
+
 # Case 2
+
 ## Chi-squared test: State where the work was done
+
 ```{r}
 sm.state <- c(SquareMileage$stateSQM[1:50]) # data of the sqr mileage for all 50 states in a vector
 
@@ -225,6 +390,8 @@ xchisq.test(total.state.counts,p=prop.state, simulate.p.value = TRUE )
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the states are not represented based off of their sqr mileage
 
 ```
+
+
 
 ```{r}
 data.states <- as.data.frame(matrix(data=c(SquareMileage$state.In.Order[1:50], SquareMileage$SM.IN.ORDER[1:50]), nrow=50, ncol=2)) # this package takes a data frame the first column are the states and the second column is the square mileage for that state (in the excel sheet it is in order from greatest to least)
@@ -257,7 +424,10 @@ plot_usmap(data = data.states, values="level", color="black")+theme(legend.posit
 plot_usmap(data = data.counts, values="counts", color="black")+theme(legend.position = "right")
 ```
 
+
+
 ## Contingency table: Ecosystems (Marine, Terrestrial, Freshwater)
+
 ```{r}
 eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)# removing the column of ecosystem based on (marine, terrestrial, freshwater) and making it into a vector
 
@@ -270,14 +440,20 @@ eco.po <- as.matrix(table(eco.po))
 
 eco.po
 ```
+
+
 # Case 1
+
 ## Chi-squared test: Ecosystems
+
 ```{r}
 xchisq.test(eco.po)
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the ecosystems are not equally represented 
 
 ```
+
+
 
 ```{r}
 par(mfrow=c(1,2))
@@ -291,14 +467,19 @@ slices <- c(20,127,12)
 pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = eco.col)
 ```
 
+
 # Case 2
+
 ## Chi-squared test: Ecosystems
+
 ```{r}
 prop.ecosystem <- c(EcoSqrMileage$`Percent Coverage`)
 
 
 xchisq.test(eco.po,p=prop.ecosystem, simulate.p.value = TRUE )
 ```
+
+
 
 ```{r}
 par(mfrow=c(1,2))
