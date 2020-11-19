@@ -289,3 +289,25 @@ slices <- c(20,127,12)
 pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = eco.col)
 ```
 
+# Case 2
+## Chi-squared test: Ecosystems
+```{r}
+prop.ecosystem <- c(EcoSqrMileage$`Percent Coverage`)
+
+
+xchisq.test(eco.po,p=prop.ecosystem, simulate.p.value = TRUE )
+```
+
+```{r}
+par(mfrow=c(1,2))
+e.col<-brewer.pal(7,"Blues") # this uses a package to change the color pallet
+
+slicesExp <- c(111.30,44.36,3.34)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main="Pie Chart of Ecosystem (Expected)",col=e.col)
+
+slices <- c(20,127,12)
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = e.col)
+
+```
+
