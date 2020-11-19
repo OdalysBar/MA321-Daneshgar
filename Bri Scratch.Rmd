@@ -155,6 +155,23 @@ tally(EcologyBias$`Continent where work done`) # needs to be fixed
 
 ```
 
+## Continent
+
+```{r}
+continent.work <- as.vector(EcologyBias$`Continent where work done`)
+remove <- c ("Europe & Oceania", "META ANALYSIS","META ANALYSIS!")
+continent.work %in% remove
+continent.work <- continent.work [! continent.work %in% remove]
+continent.work[43] <- "Oceania"
+continent.work[61] <- "Oceania"
+continent.work <- c(continent.work[1:97], continent.work[99:168])
+continent.work
+continent <- as.matrix(table(continent.work))
+xchisq.test(tally(continent.work))
+
+```
+
+
 ## Country
 
 ```{r}
@@ -234,7 +251,6 @@ chisq.test(tally(region.work))
 
 state.work <- as.vector(EcologyBias$`State or Municipality where the work was done`)
 
-state.work
 
 remove <- c ("Multiple States", "Multiple", "META ANALYSIS", "OR/CA", "GA/FL", "NY, MA, CT")
 
@@ -242,15 +258,66 @@ state.work %in% remove
 
 state.work <- state.work [! state.work %in% remove]
 
-state.work
-
 state.work <- state.work[!is.na(state.work)]
-
-state.work
 
 tally(state.work)
 
 chisq.test(tally(state.work))
+```
+
+## MTF
+
+```{r}
+# Making the column for ecosystem into a vector
+ecosystem.MTF <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+
+# Printing the vector to look for data names we need to remove
+ecosystem.MTF
+
+# Creating a vector of the data names of what we need to remove
+remove <- c ("Mixed")
+
+# Removing everything in the remove vector from ecosystem.MTF
+ecosystem.MTF %in% remove
+ecosystem.MTF <- ecosystem.MTF [! ecosystem.MTF %in% remove]
+
+# Removing any NA
+ecosystem.MTF <- ecosystem.MTF [!is.na(ecosystem.MTF)]
+
+# Rerunning the contingency table to to look at the new counts
+tally(ecosystem.MTF)
+
+# Running the chi-squared on the new data
+chisq.test(tally(ecosystem.MTF))
+```
+
+```{r}
+EcologyBias2 <- EcologyBias_Daneshgar_Popo_2_2
+
+ecosystems <- matrix(c(EcologyBias2$`Marine, Terrestrial, Freshwater, Mixed`, EcologyBias2$`Ecosystem (Ped defines)`), ncol=2)
+
+ecosystems <- ecosystems [!is.na(ecosystems)]
+
+ecosystems
+
+#ecosystems
+eco.t <- vector()
+eco.m <- vector()
+eco.f <- vector()
+
+for(i in 1:317){
+if(ecosystems[i,1]=="Terrestrial"){
+  eco.t[i] <- ecosystems[i,2]
+}
+if(ecosystems[i,1]=="Marine"){
+  eco.m[i] <- ecosystems[i,2]
+}else{
+  eco.f[i] <- ecosystems[i,2]
+}}
+
+tally(eco.t)
+tally(eco.m)
+tally(eco.f)
 ```
 
 
