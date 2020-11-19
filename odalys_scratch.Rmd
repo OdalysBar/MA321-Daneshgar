@@ -267,8 +267,7 @@ pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = e.col
 
 ```
 
-# Case 1
-## Chi-squared test: Ecosystem-Terrestrial
+## Contingency table: Ecosystem-Terrestrial
 ```{r}
 ecosystems <- matrix(c(EcologyBias_Daneshgar_Popo_2_$`Marine, Terrestrial, Freshwater, Mixed2`, EcologyBias_Daneshgar_Popo_2_$eco.ped2), ncol=2)
 #ecosystems
@@ -279,19 +278,31 @@ eco.f <- vector()
 for(i in 1:155){
 if(ecosystems[i,1]=="Terrestrial"){
   eco.t[i] <- ecosystems[i,2]
-}
-if(ecosystems[i,1]=="Marine"){
+}else{
+  if(ecosystems[i,1]=="Marine"){
   eco.m[i] <- ecosystems[i,2]
 }else{
   eco.f[i] <- ecosystems[i,2]
-}}
+}}}
+```
 
-tally(eco.t)
-tally(eco.m)
-tally(eco.f)
+```{r}
+eco.terrestrial <- as.matrix(table(eco.t))
+eco.terrestrial
+```
+
+## Contingency table: Ecosystem-Marine
+```{r}
+eco.marine <- as.matrix(table(eco.m))
+eco.marine
 ```
 
 
+## Contingency table: Ecosystem-Freshwater
+```{r}
+eco.freshwater <- as.matrix(table(eco.f))
+eco.freshwater
+```
 
 
 
