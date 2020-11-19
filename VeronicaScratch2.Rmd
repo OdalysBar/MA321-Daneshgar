@@ -254,6 +254,44 @@ HA: The probability of each Country being represented in a journal entry is not 
 HO: The probability of each Country being represented in a journal entry is the same as square mileage
 HA: The probability of each Country being represented in a journal entry is not the same as square mileage
 
+Cleaning and Taking a look at the Country where work was done
+```{r}
+country.work <- as.vector(EcologyBias$`Country where the work is done`)
+remove <- c ("Brazil/Costa Rica/Puerto Rico", "Germany & New Zealand","Lesser Antilles/Guadelupe", "META ANALYSIS", "Multiple???", "US and Mexico", "Trinidad and Tobago")
+country.work %in% remove
+country.work <- country.work [! country.work %in% remove]
+country.work[1:5] <- "USA"
+country.work[8:11] <- "USA"
+country.work <- c(country.work[1:25], country.work[27:34], country.work[36:77], country.work[79:95], country.work[97:121], country.work[123:144], country.work[146:168])
+country.work
+tally(country.work)
+```
+
+
+Chi-Square Test *Case 1*
+```{r}
+chisq.test(tally(country.work))
+xchisq.test(tally(country.work))
+```
+
+
+
+Chi-Square Test *Case 2*
+```{r}
+sm.country <- c(CountrySqrMileage$`Sqr.Mil (mi^2)`)
+
+sm.country <- as.numeric(sm.country[1:37])
+
+prop.cont <- sm.country/sum(sm.country)
+#prop.cont
+
+chisq.test(tally(country.work), p=prop.cont)
+xchisq.test(tally(country.work), p = prop.cont)
+xchisq.test(tally(country.work),p=prop.cont, simulate.p.value = TRUE )
+```
+
+
+
 
 # State
 *CASE 1 * (no Square mileage)

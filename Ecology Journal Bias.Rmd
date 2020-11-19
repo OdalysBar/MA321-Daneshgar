@@ -66,3 +66,148 @@ slicesExp <- c(tally(continent.work))
 lbls <- c("Africa ", "Asia","Australia ", "Europe ","North America ","Oceania","South America"  )
 pie(slicesExp, labels = lbls, main = "Pie Chart of Continent OBSERVED" , col = mypalette)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Ecosystem
+*CASE 1 * (no Square mileage)
+HO: The probability of each Ecosystem being represented in a journal entry is the same
+HA: The probability of each Ecosystem being represented in a journal entry is not the same
+*Case 2 * (with Square Mileage)
+HO: The probability of each Ecosystem being represented in a journal entry is the same as square mileage
+HA: The probability of each Ecosystem being represented in a journal entry is not the same as square mileage 
+
+
+Going through the data to see how many of each ecosystem type are found
+```{r}
+#what this code is doing is basically counting each time a data entry matches the "word" we are looking for
+cat("# of Journals in Marine: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Marine"), "\n")
+cat("# of Journals in Terrestrial: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Terrestrial"), "\n")
+cat("# of Journals in Frshwater: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Freshwater"), "\n")
+cat("# of Journals in Mixed: ", count(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed` == "Mixed"), "\n")
+```
+Notice here that there is a noticeable difference in the amount of articles that contain each ecosystem. If we take the sum of the data entries and divide it by the number of ecosystems we see that on average if they were given a "fair" chance of being chosen we would get an average number of 43 per ecosystem. But based on the results of the observed data we could conclude that there is some distinct difference between all th data. Could this allow me to conclude right of the bat that there is some noticeable bias involved? That could mean that we are basing all this on "self-opinion" and "assumption"
+
+
+using tally() function
+```{r}
+tally(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+```
+tally function is going into the data file finding the column named "Marine, Terrestrial, Freshwater, Mixed" and tallying each type of ecosystem. This is another good way to check that the count matches and we haven't overlooked any other type of ecosystem in that column
+
+
+
+Chi-Squared Test of Ecosystem (Po defines) *Case 1*
+*Note: that here we removed mixed because of our null and alt hypothesis are based on giving each type of ecosystem has a fair chance, so mixed wouldn't help us prove their is a difference between them.*
+What is Chi-Sq?
+Chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table
+```{r}
+# Creating a vector
+eco.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.po
+# removing each time "Mixed" is mentioned
+remove <- c ("Mixed")
+
+eco.po %in% remove
+eco.po <- eco.po [! eco.po %in% remove]
+eco.po
+
+tally(eco.po)
+# chisq.test() will display the p-vlaue
+chisq.test(tally(eco.po))
+# xchisq.tes() will display the p-value and display our expected values if it was fair throughout
+xchisq.test(tally(eco.po))
+```
+After running the 2 chisq test notice the p-value, it resulted that the p-value was less than .05 which resulted in the us rejecting the null that the probability of each Ecosystem being represented in a journal entry is the same. Which also can be seen from our observed and expected values, terrestrial has almost 3x more journal entries than the other ones.  From the Pearson Residuals the Terrestrial ecosystem has the most positive residual thus the observed frequency exceeded the expected frequency. The Freshwater ecosystem has the most negative residual thus the observed frequency did not meet the expected frequency. Which here it makes sense since Marine studies are more expensive to do than that of terrestrial studies.
+
+Creating Charts to visually show our findings
+
+2 Types of Chart with Expected Values
+*given all ecosystems have a fair chance of being selected
+*not based on sqr mileage just based on the "n"
+```{r}
+# Bar Plot
+Exp <- c(53,53,53)
+Eco <- c("Freshwater", "Marine", "Terrestrial")
+barPlot1 <- barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
+
+#Pie Chart
+slicesExp <- c(53,53,53)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main = "Pie Chart of Ecosystem (Expected)" )
+
+```
+
+
+
+2 Types of Chart with Observed Values
+```{r}
+#Bar Plot
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Observed # of Journals in each Ecosystem", border = "black")
+
+#Pie Chart
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)")
+```
+
+Chi-Squared Test of Ecosystem (Po defines) *Case 2* (With Square Mileage)
+```{r}
+sm.ecosystem <- c(Eco_Sqr_Mileage$`Sqr Mil (mil mi^2)`)
+
+sm.ecosystem <- as.numeric(sm.ecosystem[1:3])
+
+prop.cont <- sm.ecosystem/sum(sm.ecosystem)
+#prop.cont
+
+chisq.test(tally(eco.po), p=prop.cont)
+
+xchisq.test(tally(eco.po), p = prop.cont)
+
+xchisq.test(tally(eco.po),p=prop.cont, simulate.p.value = TRUE )
+#Stimulated a p.value to be TRUE so it wouldn't keep giving us a approximation error 
+```
+After running the 2 chisq test notice the p-value, it resulted that the p-value was less than .05 which resulted in the us rejecting the null that the probability of each Ecosystem being represented in a journal entry is the same as square mileage. Which also can be seen from our observed and expected values, terrestrial has almost 3x more journal entries than the other ones.  From the Pearson Residuals the Terrestrial ecosystem has the most positive residual thus the observed frequency exceeded the expected frequency. The Marine ecosystem has the most negative residual thus the observed frequency did not meet the expected frequency. Which here it makes sense since Marine studies are more expensive to do than that of terrestrial studies.
+
+2 Types of Charts of Expected Value based on the Square Mileage
+```{r}
+#Bar Plot
+Exp <- c(3.34, 110.74, 44.92)
+EcoExp <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Exp, names.arg = EcoExp, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Expected # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+
+#Pie Chart
+slicesExp <- c(110.74,44.92,3.34)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slicesExp, labels = lbls, main="Expected # of Jounrals in each Ecosystem based on Sqr. Mileage")
+```
+
+
+2 Types of Charts of Observed Values based on the Square Mileage
+```{r}
+#Bar Plot
+Obs <- c(12, 20, 127)
+EcoObs <- c("Freshwater", "Marine", "Terrestrial")
+barPlot2 <- barplot(Obs, names.arg = EcoObs, xlab ="Ecosystem", ylab = " # of Journals", col = "green", main = "Observed # of Journals in each Ecosystem based on Sqr. Mileage", border = "black")
+
+#Pie Chart
+slices <- c(20,127,12)
+lbls <- c("Marine", "Terrestrial", "Freshwater")
+pie(slices, labels = lbls, main="Observed # of Jounrals in each Ecosystem based on Sqr. Mileage)")
+```
