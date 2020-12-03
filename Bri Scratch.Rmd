@@ -107,7 +107,15 @@ cat('Number of Journal Entries in Multiple: ' , count(EcologyBias$Phylum == "Mul
 ```{r}
 # Making a contingency table using the tally function 
 # Region
-tally(EcologyBias$`Regions where the work was done  (Popo defines)`)
+
+# Makes the data into a vector
+region <- as.vector(EcologyBias$`Regions where the work was done  (Popo defines)`)
+
+# Removes the NAs from the vector
+region <- region[!is.na(region)]
+
+# Making the contingency table of the data without NAs
+tally(region)
 ```
 
 ```{r}
@@ -321,5 +329,7 @@ tally(eco.f)
 ```
 
 
+## Possible fixes
 
+Look at multiple journals that are located in different regions around the 
 
