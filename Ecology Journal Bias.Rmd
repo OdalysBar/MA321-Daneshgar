@@ -476,7 +476,9 @@ pie(slices, labels = lbls, main="Pie Chart of Ecosystem (Observed)", col = eco.c
 prop.ecosystem <- c(EcoSqrMileage$`Percent Coverage`)
 
 
-xchisq.test(eco.po,p=prop.ecosystem, simulate.p.value = TRUE )
+xchisq.test(eco.po,p=prop.ecosystem, simulate.p.value = TRUE ) 
+# we cannot use the pvalue because the test assumes randomness (our data is not random)
+# we can use the observed frequency, expected frequency, and the pearson residual to show that all the ecosystems are not equally represented 
 ```
 
 
