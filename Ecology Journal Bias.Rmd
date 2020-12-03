@@ -55,7 +55,11 @@ continent <- as.matrix(table(continent.work))
 continent
 ```
 
-## Contingency table: Country where the work was done
+A contingency table was made to look at the number of journal articles, based off of the continent that the work for the article was done. The highest number of articles were from North America, where there were 95 journal articles. The lowest number of articles were from Australia, which had 2 journal articles.
+
+# Case 1
+
+## Chi-Square: Country where the work was done
 
 ```{r}
 # Running Chi-Sq After removing Multiples
@@ -99,7 +103,9 @@ chisq.test(tally(country.work))
 
 ```
 
-## Contingency table: Region where the work was done
+A contingency table was made to look at the number of journal articles, based off of the country that the work for the article was done. The highest number of articles were from the United States, where there were 68 journal articles. The majority of the other countries only had one or two journal articles from each. From the chi-squared test shows that the probability of each country being represented in a journal entry is not the same $(P<2.2e-16)$.
+
+## Chi-Square: Region where the work was done
 
 ```{r}
 # Making the column for region into a vector
@@ -133,7 +139,10 @@ tally(region.work)
 chisq.test(tally(region.work))
 ```
 
-## Contingency table: State where the work was done
+A contingency table was made to look at the number of journal articles, based off of the region that the work for the article was done. The highest number of articles were from the Pacific, where there were 24 journal articles. The lowest number of journal articles were from the North-West and Mid-South, which had 1 journal article each. The chi-squared test shows that the probability of each country being represented in a journal entry is not the same $(P<3.171e-11)$.
+
+
+## Chi-Square: State where the work was done
 
 ```{r}
 # Making the column for state into a vector
@@ -156,7 +165,10 @@ tally(state.work)
 chisq.test(tally(state.work))
 ```
 
-## Contingency table: Ecosystem (Marine, Terrestrial, Freshwater, Mixed)
+A contingency table was made to look at the number of journal articles, based off of the state in the United States that the work for the article was done. The highest number of articles were from California, where there were 13 journal articles. The majority of the other states only had one or two journal articles from each. From the chi-squared test shows that the probability of each state being represented in a journal entry is not the same $(P<3.284e-05)$.
+
+
+## Chi-Square: Ecosystem (Marine, Terrestrial, Freshwater, Mixed)
 
 ```{r}
 # Making the column for ecosystem into a vector
@@ -182,16 +194,21 @@ tally(ecosystem.MTF)
 chisq.test(tally(ecosystem.MTF))
 ```
 
+A contingency table was made to look at the number of journal articles, based off of whether the research was done in freshwater, marine, or terrestrial. The highest number of articles were from terrestrial, where there were 127 journal articles. The lowest number of journal articles were from freshwater, with 12 journal articles. From the chi-squared test shows that the probability of each ecosystem being represented in a journal entry is not the same $(P<2.2e-16)$.
 
-# Case 1
 
 # Chi-squared test: Continent where the work was done
 
 ```{r}
+tally(continent.work)
+
 xchisq.test(tally(continent.work))
 # we cannot use the pvalue because the test assumes randomness (our data is not random)
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not equally represented
 ```
+
+North America has the most positive residual thus the observed frequency of journal entries exceeded the expected frequency. Australia has the most negative residual thus the observed frequency of journal entries did not meet the expected frequency.
+
 
 ```{r}
 par(mfrow=c(1,2))
@@ -209,6 +226,7 @@ lbls <- c("Africa ", "Asia","Australia ", "Europe ","North America ","Oceania","
 pie(slicesExp, labels = lbls, main = "Pie Chart of Continent OBSERVED" , col = mypalette)
 ```
 
+
 # Case 2
 ## Chi-squared test: Continent where the work was done
 ```{r}
@@ -222,7 +240,7 @@ xchisq.test(tally(continent.work),p=prop.cont )
 # we can use the observed frequency, expected frequency, and the pearson residual to show that all the continents are not represented basded off of their sqr mileage
 ```
 
-
+USA has the most positive residual thus the observed frequency of journal articles exceeded the expected frequency. While, Belgium, Bermuda, Britain, Cambodia, England, French Guiana, Galapagos, Greece, Italy, Papua New Guinea , Portugal, Republic of Congo, Singapore, St. John, Svalbard had the most negative residual thus the observed frequency of journal articles did not meet the expected frequency.
 
 ```{r}
 par(mfrow=c(2,1))
@@ -236,7 +254,7 @@ barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue"
 ```
 
 
-## Contingency table: Country where the work was done
+## Chi-Square: Country where the work was done
 
 ```{r}
 country.work <- as.vector(EcologyBias$`Country where the work is done`) # removing the column of country where the work was done and making it into a vector
@@ -259,6 +277,7 @@ country
 
 
 # Case 1
+
 
 ## Chi-squared test: Country where the work was done
 
@@ -392,6 +411,7 @@ xchisq.test(total.state.counts,p=prop.state, simulate.p.value = TRUE )
 
 
 ```{r}
+library(usmap)
 data.states <- as.data.frame(matrix(data=c(SquareMileage$state.In.Order[1:50], SquareMileage$SM.IN.ORDER[1:50]), nrow=50, ncol=2)) # this package takes a data frame the first column are the states and the second column is the square mileage for that state (in the excel sheet it is in order from greatest to least)
 
 colnames(data.states)[1] <- "state" # naming the first column state
