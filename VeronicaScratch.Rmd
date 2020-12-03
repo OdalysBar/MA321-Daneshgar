@@ -557,6 +557,32 @@ Eco <- c("Freshwater", "Marine", "Terrestrial")
 barPlot1 <- barplot(Exp, names.arg = Eco, xlab ="Ecosystem", ylab = " # of Journals", col = "purple", main = "Expected # of Journals in each Ecosystem", border = "black")
 ```
 
+# Trying to remove the most positive residual in Ecosystem *CASE 1*
+```{r}
+eco.NEW.po <- as.vector(EcologyBias$`Marine, Terrestrial, Freshwater, Mixed`)
+eco.NEW.po
+remove <- c ("Mixed", "Terrestrial")
+eco.NEW.po %in% remove
+eco.NEW.po <- eco.NEW.po [! eco.NEW.po %in% remove]
+eco.NEW.po
+
+```
+
+```{r}
+tally(eco.NEW.po)
+xchisq.test(tally(eco.NEW.po))
+```
+
+```{r}
+slicesExp <- c(12,20)
+lbls <- c("Freshwater", "Marine")
+pie(slicesExp, labels = lbls, main="Pie Chart of Ecosystem (Expected)")
+slicesOBS <- c(16, 16)
+pie(slicesOBS, labels = lbls, main = "Pie Chart of Ecosystem (Observed)")
+```
+
+
+
 ```{r}
 EcoExpected = matrix(c(53,53,53))
 EcoExpected
@@ -658,4 +684,5 @@ chisq.test(tally(country.work), p=prop.cont)
 xchisq.test(tally(country.work), p = prop.cont)
 xchisq.test(tally(country.work),p=prop.cont, simulate.p.value = TRUE )
 ```
+
 
