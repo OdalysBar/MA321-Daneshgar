@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Ecology}
+\author{s1205984 }
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\end{document}
+```{r}
+
+```
+
