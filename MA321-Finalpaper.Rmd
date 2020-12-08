@@ -1,9 +1,17 @@
 ---
 title: "Ecology Counts"
 author: "Odalys Barrientos, Brianna Cirillo, Veronia Marque"
-data: "22 December 2020"
+data: 22 December 2020
 output:
-  pdf_document: default
+  html_document:
+    df_print: paged
   html_notebook: default
+  pdf_document: default
 ---
+
+# Statistical Methodology
+
+We used contingency tables and pie charts to asses how many journal entries came from each of the independent variables used (continent, country, region, state, and ecosystem). Chi square tests were used to determine whether or not the observed amount of journal entries for each of the independent variables were equal. Square mileage of continent, country, region, and state were taken into account, to better estimate the expected number of journal entries in each category. We removed rows that didn't have data in them for chi-squared tests.
+
+
 
