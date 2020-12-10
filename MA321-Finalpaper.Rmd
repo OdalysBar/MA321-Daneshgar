@@ -9,7 +9,6 @@ output:
     df_print: paged
 indent: true
 ---
-
 # Statistical Methodology
 
 In this analysis, contingency tables were used to asses how many journal entries came from each of the independent variables used. A contingency table, which can also be called a cross tabulation, is a table that shows the frequency distribution of each of the variables. Data cleaning was performed, thus removing any data where the independent variable being looked at was not applicable. Therefore, we separated the data by continent, country, region, state, and ecosystem. We looked at each of these tables to determine if the number of journal entries in each category, of these variables, were equal or close in frequency. 
@@ -39,18 +38,25 @@ Being that the data consists of predominantly categorical variables, some additi
 
 ## d. State
 The state category noted if and how many of these published articles completed their study in a particular state. This allowed us to see which states were more or less popular for ecology work. The following contingency table counts the number of times a state was represented in the data set. 
-*insert figure*
-
+\begin{figure}
+  \caption{Contingency Table}
+	\includegraphics[width=13cm]{statetable.pdf}
+\end{figure}
 From the table above, one can tell that most of the journal entries are published when the work was in California. The states that are not included in the table were never represented in the data set. 
 
 If there is an assumption that the probability of each state being represented in a journal entry is the same as each state's square mileage then the larger states would have more published articles than the smaller states. Below, is the Chi-Square test that test if this statement is true. 
 
-*insert figure*
+insert fig
 
 From the Pearson residuals one can note that California has the most positive residual thus, the observed frequency exceeds the expected frequency. For a visual presentation, figure *3* helps explain this idea. The map on the left is what the map is expected to look like based off of how large and small each state is. The map on the right is what the map looks like when using the counts from the data set. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Expected Frequency based on Square Mileage}
+	\includegraphics[width=13cm]{expected_map.pdf}
+\end{figure}
+\begin{figure}
+  \caption{Observed Frequency}
+	\includegraphics[width=13cm]{observed_map.pdf}
+\end{figure}
 California is a large state and the majority of the published articles had work done in California. However, all the other states do not meet the assumption. The gray states represent the sates that were never counted in the data set. From the maps, one can conclude that the probability of each state being represented in a journal entry is not the same as the states square mileage. In other words, just because a state is bigger does not mean there are more published articles from that particular state.
 
 ## e. Ecosystem
