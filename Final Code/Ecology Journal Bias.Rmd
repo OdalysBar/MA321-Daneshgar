@@ -103,7 +103,7 @@ country.work
 tally(country.work)
 
 # Running the chi-squared on the new data
-chisq.test(tally(country.work))
+xchisq.test(tally(country.work))
 
 ```
 
@@ -250,11 +250,11 @@ USA has the most positive residual thus the observed frequency of journal articl
 par(mfrow=c(2,1))
 E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
 CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(E, names.arg = CS, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
+barplot(E, names.arg = CS, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
 
 O <- c(5,14,2,34,94,5,13)
 C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(O, names.arg = C, xlab ="Country", ylab = " # of Journals", col = "blue", main = "Observed # of Journals in each Country based on Sqr. Mileage", border = "black")
+barplot(O, names.arg = C, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Observed # of Journals in each Continent based on Sqr. Mileage", border = "black")
 ```
 
 
@@ -276,6 +276,7 @@ country.work <- c(country.work[1:25], country.work[27:34], country.work[36:77], 
 # I made a vector with all the countries and excluded the NAs
 
 country <- as.matrix(table(country.work))
+tally(country.work)
 country
 ```
 
@@ -292,7 +293,22 @@ xchisq.test(tally(country.work), simulate.p.value=TRUE)
 # we are setting simulate.p.value = TRUE because we have MANY categories 
 ```
 
+```{r}
+par(mfrow=c(1,2))
 
+mypalette<-brewer.pal(37,"PuBu") # this uses a package to change the color pallet
+
+# what we expect the pie chart to look like based off of our expected values in chisq test
+slicesExp <- rep(4.38, length.out = 37)
+lbls <- c("Argentina","Australia","Belgium","Bermuda" ,"Brazil","Britain","Cambodia","Canada","China","Colombia","Costa Rica","England","Finland","France","French Guiana","Galapagos","Germany","Greece","Italy","Kenya","Mexico","New Zealand","Panama","Papua New Guinea","Peru","Portugal","Puerto Rico","Republic of Congo","Singapore","South Africa","Spain","St. John","Svalbard","Sweden","Switzerland","The Netherlands","USA")
+pie(slicesExp,labels = "", main = "Pie Chart of Country EXPECTED", col = mypalette )
+
+# what we the pie chart actually looks like based off of our observed values in chisq test
+slicesExp <- c(tally(country.work))
+lbls <- c("Argentina","Australia","Belgium","Bermuda" ,"Brazil","Britain","Cambodia","Canada","China","Colombia","Costa Rica","England","Finland","France","French Guiana","Galapagos","Germany","Greece","Italy","Kenya","Mexico","New Zealand","Panama","Papua New Guinea","Peru","Portugal","Puerto Rico","Republic of Congo","Singapore","South Africa","Spain","St. John","Svalbard","Sweden","Switzerland","The Netherlands","USA")
+lbls1 <- c("","","","" ,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","USA")
+pie(slicesExp, labels = lbls1, main = "Pie Chart of Country OBSERVED" , col = mypalette)
+```
 
 ## Contingency table: Region where the work was done
 
