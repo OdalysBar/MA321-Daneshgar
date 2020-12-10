@@ -29,6 +29,7 @@ Being that the data consists of predominantly categorical variables, some additi
 
 ## b. Country
 
+A contingency table was made to look at the number of journal articles, based off of the country that the work for the article was done.  The highest number of articles were from the United States, where there were 68 journal articles. The majority of the other countries only had one or two journal articles from each. From the chi-squared test shows that the probability of each country being represented in a journal entry is not the same $(P<2.2e-16)$. 
 
 
 
