@@ -94,17 +94,14 @@ The state category noted if and how many of these published articles completed t
 From the table above, one can tell that most of the journal entries are published when the work was in California. The states that are not included in the table were never represented in the data set. 
 
 If there is an assumption that the probability of each state being represented in a journal entry is the same as each state's square mileage then the larger states would have more published articles than the smaller states. Below, is the Chi-Square test that test if this statement is true. 
-
-insert fig
-
+\begin{figure}
+  \caption{Chi-Square Test: States}
+	\includegraphics[width=13cm]{chi-state.pdf}
+\end{figure}
 From the Pearson residuals one can note that California has the most positive residual thus, the observed frequency exceeds the expected frequency. For a visual presentation, figure *3* helps explain this idea. The map on the left is what the map is expected to look like based off of how large and small each state is. The map on the right is what the map looks like when using the counts from the data set. 
 \begin{figure}
-  \caption{Expected Frequency based on Square Mileage}
-	\includegraphics[width=13cm]{expected_map.pdf}
-\end{figure}
-\begin{figure}
-  \caption{Observed Frequency}
-	\includegraphics[width=13cm]{observed_map.pdf}
+  \caption{Expected Frequency based on Square Mileage vs Observed Frequency}
+	\includegraphics[width=13cm]{maps.pdf}
 \end{figure}
 California is a large state and the majority of the published articles had work done in California. However, all the other states do not meet the assumption. The gray states represent the sates that were never counted in the data set. From the maps, one can conclude that the probability of each state being represented in a journal entry is not the same as the states square mileage. In other words, just because a state is bigger does not mean there are more published articles from that particular state.
 
