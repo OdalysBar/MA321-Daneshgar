@@ -46,48 +46,55 @@ Using a chi squared test, we analyzed whether the probability of each country be
 
 
 ## d. State
-
 The state category noted if and how many of these published articles completed their study in a particular state. This allowed us to see which states were more or less popular for ecology work. The following contingency table counts the number of times a state was represented in the data set. 
-*insert figure*
-
+\begin{figure}
+  \caption{Contingency Table}
+	\includegraphics[width=13cm]{statetable.pdf}
+\end{figure}
 From the table above, one can tell that most of the journal entries are published when the work was in California. The states that are not included in the table were never represented in the data set. 
 
 If there is an assumption that the probability of each state being represented in a journal entry is the same as each state's square mileage then the larger states would have more published articles than the smaller states. Below, is the Chi-Square test that test if this statement is true. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Chi-Square Test: States}
+	\includegraphics[width=13cm]{chi-state.pdf}
+\end{figure}
 From the Pearson residuals one can note that California has the most positive residual thus, the observed frequency exceeds the expected frequency. For a visual presentation, figure *3* helps explain this idea. The map on the left is what the map is expected to look like based off of how large and small each state is. The map on the right is what the map looks like when using the counts from the data set. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Expected Frequency based on Square Mileage vs Observed Frequency}
+	\includegraphics[width=13cm]{maps.pdf}
+\end{figure}
 California is a large state and the majority of the published articles had work done in California. However, all the other states do not meet the assumption. The gray states represent the sates that were never counted in the data set. From the maps, one can conclude that the probability of each state being represented in a journal entry is not the same as the states square mileage. In other words, just because a state is bigger does not mean there are more published articles from that particular state.
 
 ## e. Ecosystem
-
-The ecosystem variable noted how many of the published articles used a particular ecosystem. Ecosystems were broken down into 3 categories, Marine, Terrestrial, and Freshwater. When looking at ecosystems, the idea was to see if one ecosystem was counted more than a different ecosystem. The following contingency table counts the number of times an ecosystem was represented in the data set.
-
-*insert figure*
-
+The ecosystem variable noted how many of the published articles used a particular ecosystem. Ecosystems were broken down into 3 categories, Marine, Terrestrial, and Freshwater. When looking at ecosystems, the idea was to see if one ecosystem was counted more than a different ecosystem. The following contingency table counts the number of times an ecosystem was represented in the data set. 
+\begin{figure}
+  \caption{Contingency Table}
+	\includegraphics[width=13cm]{ct-eco.pdf}
+\end{figure}
 From the table above, one can tell that most of the published articles have a terrestrial ecosystem. 
 
 If there is an assumption that the probability of each ecosystem being represented in a journal entry is the same, then there should be the same number of counts for each ecosystem. Below, is the Chi-Square test that test if this statement is true. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Chi-Square Test: Ecosystem}
+	\includegraphics[width=13cm]{chi-eco-1.pdf}
+\end{figure}
 From the Pearson residuals one can note that terrestrial has the most positive residual thus, the observed frequency exceeds the expected frequency. Additionally,freshwater has the most negative residual thus, the observed frequency does not meet the expected frequency. For a visual presentation, figure *3* helps explain this idea. The pie chart on the left shows what the pie chart should look like if every ecosystem had an equal chance of being represented in a published article. While the pie chart on the right is what the pie chart looks like when using the counts from the data set. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Expected Frequency vs Observed Frequency}
+	\includegraphics[width=13cm]{pie-eco-1.pdf}
+\end{figure}
 If the ecosystems had a equal chance of being represented in these published articles these pie charts would look similar. However this is not the case and it is obvious that terrestrial takes up the majority of the pie chart. 
 
 If there is an assumption that the probability of each ecosystem being represented in a journal entry is the same as each ecosystem's square mileage then the larger ecosystem's would have more published articles than the smaller ecosystems. Below, is the Chi-Square test that test if this statement is true. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Chi-Square Test: Ecosystem}
+	\includegraphics[width=13cm]{chi-eco-2.pdf}
+\end{figure}
 Terrestrial has the most positive residual and marine has the most negative residual. Figure *3* shows what the expected counts should look like and what the observed counts were. 
-
-*insert figure*
-
+\begin{figure}
+  \caption{Expected Frequency based on Square Mileage vs Observed Frequency}
+	\includegraphics[width=13cm]{pie-eco-2.pdf}
+\end{figure}
 These bar charts do not match up thus, we cannot conclude that the probability of each ecosystem being represented in a journal entry is the same as each ecosystem's square mileage.
 
 # Discussion
