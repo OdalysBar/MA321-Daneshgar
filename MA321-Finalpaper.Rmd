@@ -1,17 +1,54 @@
 ---
 title: "Ecology Counts"
-author: "Odalys Barrientos, Brianna Cirillo, Veronia Marque"
+author: "Odalys Barrientos, Brianna Cirillo, Veronia Marquez"
 data: 22 December 2020
 output:
   html_document:
     df_print: paged
   html_notebook: default
   pdf_document: default
+indent: true
 ---
 
 # Statistical Methodology
 
-We used contingency tables and pie charts to asses how many journal entries came from each of the independent variables used (continent, country, region, state, and ecosystem). Chi square tests were used to determine whether or not the observed amount of journal entries for each of the independent variables were equal. Square mileage of continent, country, region, and state were taken into account, to better estimate the expected number of journal entries in each category. We removed rows that didn't have data in them for chi-squared tests.
+In this analysis, contingency tables were used to asses how many journal entries came from each of the independent variables used. A contingency table, which can also be called a cross tabulation, is a table that shows the frequency distribution of each of the variables. Data cleaning was performed, thus removing any data where the independent variable being looked at was not applicable. Therefore, we separated the data by continent, country, region, state, and ecosystem. We looked at each of these tables to determine if the number of journal entries in each category, of these variables, were equal or close in frequency. 
+
+In order to better understand the distribution of the number of journal entries in each category, pie charts and bar graphs were made. This gave a visual representation of the distribution of journal entries in each independent variable. Therefore allowing for a visual analysis based on graphs and tables made.
+
+To further analyze these categories, chi square tests were used to determine whether or not the observed amount of journal entries for each of the independent variables were equal. The Pearson's chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table. An assumption of the test is that observations are mutually exclusive and independent. Therefore, data cleaning was done to ensure this condition was met. But the data was not randomly sampled, which goes against one of the assumptions. Thus, the p-values obtained do not have any relevance or any real meaning in relation to the data.
+
+Being that the data consists of predominantly categorical variables, some additional data was added. Square mileage of continent, region, and state were researched, in order to better estimate the expected number of journal entries in each category.This allowed for chi square tests to be run with expected frequencies, that match the square mileage of each of the independent variables. This allowed for more accurate expected frequencies of journal entries from each independent variable. Data cleaning was done to remove rows that did not contain applicable data for each independent variable. The assumption of random sampling is still violated, therefore the p-values obtained could not be used to draw conclusions.
+
+# Results
+
+## a. Continent
 
 
 
+
+## b. Country
+
+
+
+
+## c. Region
+
+
+
+
+## d. State
+
+
+
+
+## e. Ecosystem
+
+
+
+
+# Discussion
+
+
+   
+ 
