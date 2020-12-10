@@ -24,12 +24,16 @@ Being that the data consists of predominantly categorical variables, some additi
 
 ## a. Continent
 
-
+ 
 
 
 ## b. Country
 
-A contingency table was made to look at the number of journal articles, based off of the country that the work for the article was done.  The highest number of articles were from the United States, where there were 68 journal articles. The majority of the other countries only had one or two journal articles from each. From the chi-squared test shows that the probability of each country being represented in a journal entry is not the same $(P<2.2e-16)$. 
+A contingency table was made to look at the number of journal articles, based off of the country that the work for the article was done in. From the table, the highest number of articles were from the United States, where there were 68 journal articles. The majority of the other countries only had one or two journal articles from each. 
+
+**insert figure**
+
+From the chi-squared test shows that the probability of each country being represented in a journal entry is not the same $(P<2.2e-16)$. 
 
 
 
@@ -49,7 +53,12 @@ A contingency table was made to look at the number of journal articles, based of
 
 
 # Discussion
+ 
+Due to the data not being random and there only being qualitative variables, there was not much statistical analysis to be done. For the next time the study is done, we have come up with two different ways to approach the study. If the research question was: Do publishing companies publish more articles with work done in their region, in comparison to work done outside of their region? The goal of using this question is to eliminate the need for data on journal articles that were not published. The study would focus on articles from different publishing companies, but all from the same year. The regions from which they published the most would be analyzed for any kind of bias. This would be an observational study looking at the counts of journal articles from each region. 
 
+Another approach would be to consider published articles that have significant results. The research question is: Is there a greater percentage of published articles that have a statistically significant p-value (p < 0.05) in comparison to those who do not? The goal of using this question would also be to  eliminate the need for data on journal articles that were not published, due to the population being all published articles on ecology. This would be an observational study, that would be conducted by looking at different publishing companies from the same year and calculating the proportion of published articles that had a p-value less than 0.05. This would be the test statistic used to determine if there is any statistically significant difference in the proportion of published articles with significant p-values. 
+
+Although both of these approaches fix the need for unattainable data, they still do not fix meeting the randomness assumption. In order to fix this, the data collectors can look for articles on a database, with the criteria of the year they are looking for, the subject they want to look into, and any other specifics they would like. After getting the results of the search, they could use a random number generator to select which articles they  will use for their study. This will correct the issue of the data not being randomly selected.
 
    
  
