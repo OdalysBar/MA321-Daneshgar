@@ -35,7 +35,7 @@ The variable country accounted for how many of these published articles complete
 
 From the figure above, an be seen that the country where the study was done, that had the highest frequency of articles was the United States. There were 68 journal articles where the work was in the United States. This is different from the number of articles with work done in other countries, it was more common that each only had one or two journal articles. 
 
-Using a chi squared test, we analyzed whether the probability of each country being represented in a journal entry is the same.
+Using a chi squared test, we analyzed whether the probability of each country being represented in a journal article is the same. Being that the size of each country varies, it would not make sense for each country to have a
 
 
 

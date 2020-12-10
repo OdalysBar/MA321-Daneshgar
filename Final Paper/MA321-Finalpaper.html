@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Odalys Barrientos, Brianna Cirillo, Veronia Marque" />
+<meta name="author" content="Odalys Barrientos, Brianna Cirillo, Veronia Marquez" />
 
 
 <title>Ecology Counts</title>
@@ -1479,6 +1479,54 @@ window.onload = function() {
   PagedTableDoc.initAll();
 };
 </script>
+<style type="text/css">
+a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
+a.anchor-section::before {content: '#';}
+.hasAnchor:hover a.anchor-section {visibility: visible;}
+</style>
+<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
+document.addEventListener('DOMContentLoaded', function() {
+  // Do nothing if AnchorJS is used
+  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
+    return;
+  }
+
+  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  // Do nothing if sections are already anchored
+  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
+    return null;
+  }
+
+  // Use section id when pandoc runs with --section-divs
+  const section_id = function(x) {
+    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
+            ? x.id : '');
+  };
+
+  // Add anchors
+  h.forEach(function(x) {
+    const id = x.id || section_id(x.parentElement);
+    if (id === '') {
+      return null;
+    }
+    let anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.classList = ['anchor-section'];
+    x.classList.add('hasAnchor');
+    x.appendChild(anchor);
+  });
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -1634,14 +1682,65 @@ summary {
 
 
 <h1 class="title toc-ignore">Ecology Counts</h1>
-<h4 class="author">Odalys Barrientos, Brianna Cirillo, Veronia Marque</h4>
+<h4 class="author">Odalys Barrientos, Brianna Cirillo, Veronia Marquez</h4>
 
 </div>
 
 
 <div id="statistical-methodology" class="section level1">
 <h1>Statistical Methodology</h1>
-<p>We used contingency tables and pie charts to asses how many journal entries came from each of the independent variables used (continent, country, region, state, and ecosystem). Chi square tests were used to determine whether or not the observed amount of journal entries for each of the independent variables were equal. Square mileage of continent, country, region, and state were taken into account, to better estimate the expected number of journal entries in each category.</p>
+<p>In this analysis, contingency tables were used to asses how many journal entries came from each of the independent variables used. A contingency table, which can also be called a cross tabulation, is a table that shows the frequency distribution of each of the variables. Data cleaning was performed, thus removing any data where the independent variable being looked at was not applicable. Therefore, we separated the data by continent, country, region, state, and ecosystem. We looked at each of these tables to determine if the number of journal entries in each category, of these variables, were equal or close in frequency.</p>
+<p>In order to better understand the distribution of the number of journal entries in each category, pie charts and bar graphs were made. This gave a visual representation of the distribution of journal entries in each independent variable. Therefore allowing for a visual analysis based on graphs and tables made.</p>
+<p>To further analyze these categories, chi square tests were used to determine whether or not the observed amount of journal entries for each of the independent variables were equal. The Pearson’s chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table. An assumption of the test is that observations are mutually exclusive and independent. Therefore, data cleaning was done to ensure this condition was met. But the data was not randomly sampled, which goes against one of the assumptions. Thus, the p-values obtained do not have any relevance or any real meaning in relation to the data.</p>
+<p>Being that the data consists of predominantly categorical variables, some additional data was added. Square mileage of continent, country, region, and state were researched, in order to better estimate the expected number of journal entries in each category.This allowed for chi square tests to be run with expected frequencies, that match the square mileage of each of the independent variables. This allowed for more accurate expected frequencies of journal entries from each independent variable. Data cleaning was done to remove rows that did not contain applicable data for each independent variable. The assumption of random sampling is still violated, therefore the p-values obtained could not be used to draw conclusions.</p>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div id="a.-continent" class="section level2">
+<h2>a. Continent</h2>
+</div>
+<div id="b.-country" class="section level2">
+<h2>b. Country</h2>
+<p>The variable country accounted for how many of these published articles completed the work done for the study in a particular country. Thus, we can see how many published articles from this collection of data have ecology work done in countries. To better model this, a contingency table was made to depict how frequently work done in a particular country was represented in the data set.</p>
+<p><em>insert figure</em></p>
+<p>From the figure above, an be seen that the country where the study was done, that had the highest frequency of articles was the United States. There were 68 journal articles where the work was in the United States. This is different from the number of articles with work done in other countries, it was more common that each only had one or two journal articles.</p>
+<p>Using a chi squared test, we analyzed whether the probability of each country being represented in a journal entry is the same.</p>
+</div>
+<div id="c.-region" class="section level2">
+<h2>c. Region</h2>
+</div>
+<div id="d.-state" class="section level2">
+<h2>d. State</h2>
+<p>The state category noted if and how many of these published articles completed their study in a particular state. This allowed us to see which states were more or less popular for ecology work. The following contingency table counts the number of times a state was represented in the data set. <em>insert figure</em></p>
+<p>From the table above, one can tell that most of the journal entries are published when the work was in California. The states that are not included in the table were never represented in the data set.</p>
+<p>If there is an assumption that the probability of each state being represented in a journal entry is the same as each state’s square mileage then the larger states would have more published articles than the smaller states. Below, is the Chi-Square test that test if this statement is true.</p>
+<p><em>insert figure</em></p>
+<p>From the Pearson residuals one can note that California has the most positive residual thus, the observed frequency exceeds the expected frequency. For a visual presentation, figure <em>3</em> helps explain this idea. The map on the left is what the map is expected to look like based off of how large and small each state is. The map on the right is what the map looks like when using the counts from the data set.</p>
+<p><em>insert figure</em></p>
+<p>California is a large state and the majority of the published articles had work done in California. However, all the other states do not meet the assumption. The gray states represent the sates that were never counted in the data set. From the maps, one can conclude that the probability of each state being represented in a journal entry is not the same as the states square mileage. In other words, just because a state is bigger does not mean there are more published articles from that particular state.</p>
+</div>
+<div id="e.-ecosystem" class="section level2">
+<h2>e. Ecosystem</h2>
+<p>The ecosystem variable noted how many of the published articles used a particular ecosystem. Ecosystems were broken down into 3 categories, Marine, Terrestrial, and Freshwater. When looking at ecosystems, the idea was to see if one ecosystem was counted more than a different ecosystem. The following contingency table counts the number of times an ecosystem was represented in the data set.</p>
+<p><em>insert figure</em></p>
+<p>From the table above, one can tell that most of the published articles have a terrestrial ecosystem.</p>
+<p>If there is an assumption that the probability of each ecosystem being represented in a journal entry is the same, then there should be the same number of counts for each ecosystem. Below, is the Chi-Square test that test if this statement is true.</p>
+<p><em>insert figure</em></p>
+<p>From the Pearson residuals one can note that terrestrial has the most positive residual thus, the observed frequency exceeds the expected frequency. Additionally,freshwater has the most negative residual thus, the observed frequency does not meet the expected frequency. For a visual presentation, figure <em>3</em> helps explain this idea. The pie chart on the left shows what the pie chart should look like if every ecosystem had an equal chance of being represented in a published article. While the pie chart on the right is what the pie chart looks like when using the counts from the data set.</p>
+<p><em>insert figure</em></p>
+<p>If the ecosystems had a equal chance of being represented in these published articles these pie charts would look similar. However this is not the case and it is obvious that terrestrial takes up the majority of the pie chart.</p>
+<p>If there is an assumption that the probability of each ecosystem being represented in a journal entry is the same as each ecosystem’s square mileage then the larger ecosystem’s would have more published articles than the smaller ecosystems. Below, is the Chi-Square test that test if this statement is true.</p>
+<p><em>insert figure</em></p>
+<p>Terrestrial has the most positive residual and marine has the most negative residual. Figure <em>3</em> shows what the expected counts should look like and what the observed counts were.</p>
+<p><em>insert figure</em></p>
+<p>These bar charts do not match up thus, we cannot conclude that the probability of each ecosystem being represented in a journal entry is the same as each ecosystem’s square mileage.</p>
+</div>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<p>Due to the data not being random and there only being qualitative variables, there was not much statistical analysis to be done. For the next time the study is done, we have come up with two different ways to approach the study. If the research question was: Do publishing companies publish more articles with work done in their region, in comparison to work done outside of their region? The goal of using this question is to eliminate the need for data on journal articles that were not published. The study would focus on articles from different publishing companies, but all from the same year. The regions from which they published the most would be analyzed for any kind of bias. This would be an observational study looking at the counts of journal articles from each region.</p>
+<p>Another approach would be to consider published articles that have significant results. The research question is: Is there a greater percentage of published articles that have a statistically significant p-value (p &lt; 0.05) in comparison to those who do not? The goal of using this question would also be to eliminate the need for data on journal articles that were not published, due to the population being all published articles on ecology. This would be an observational study, that would be conducted by looking at different publishing companies from the same year and calculating the proportion of published articles that had a p-value less than 0.05. This would be the test statistic used to determine if there is any statistically significant difference in the proportion of published articles with significant p-values.</p>
+<p>Although both of these approaches fix the need for unattainable data, they still do not fix meeting the randomness assumption. In order to fix this, the data collectors can look for articles on a database, with the criteria of the year they are looking for, the subject they want to look into, and any other specifics they would like. After getting the results of the search, they could use a random number generator to select which articles they will use for their study. This will correct the issue of the data not being randomly selected.</p>
 </div>
 
 
@@ -1653,7 +1752,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
