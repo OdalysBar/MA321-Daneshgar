@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.10)  10 DEC 2020 19:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.10)  10 DEC 2020 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,11 +370,8 @@ line 40.
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count276
 \l__pdf_internal_box=\box49
-) (./MA321-Finalpaper.aux
-
-LaTeX Warning: Label `fig:CaffRun' multiply defined.
-
 )
+No file MA321-Finalpaper.aux.
 \openout1 = `MA321-Finalpaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -426,7 +423,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 57.
 LaTeX Info: Redefining \pageref on input line 57.
 LaTeX Info: Redefining \nameref on input line 57.
-(./MA321-Finalpaper.out) (./MA321-Finalpaper.out)
 \@outlinefile=\write3
 \openout3 = `MA321-Finalpaper.out'.
 
@@ -500,89 +496,26 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 (/Users/briannacirillo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<country_contingency.pdf, id=36, 614.295pt x 794.97pt>
-File: country_contingency.pdf Graphic file (type pdf)
-<use country_contingency.pdf>
-Package pdftex.def Info: country_contingency.pdf  used on input line 120.
-(pdftex.def)             Requested size: 234.87802pt x 303.9598pt.
-<xchisq_country.pdf, id=37, 614.295pt x 794.97pt>
-File: xchisq_country.pdf Graphic file (type pdf)
-<use xchisq_country.pdf>
-Package pdftex.def Info: xchisq_country.pdf  used on input line 138.
-(pdftex.def)             Requested size: 234.87802pt x 303.9598pt.
-[1
 
-{/Users/briannacirillo/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
-.map}] [2 <./country_contingency.pdf>] [3 <./xchisq_country.pdf>]
-<statetable.pdf, id=99, 794.97pt x 614.295pt>
-File: statetable.pdf Graphic file (type pdf)
-<use statetable.pdf>
-Package pdftex.def Info: statetable.pdf  used on input line 164.
-(pdftex.def)             Requested size: 369.89984pt x 285.83168pt.
-<chi-state.pdf, id=100, 845.1575pt x 597.23125pt>
-File: chi-state.pdf Graphic file (type pdf)
-<use chi-state.pdf>
-Package pdftex.def Info: chi-state.pdf  used on input line 179.
-(pdftex.def)             Requested size: 369.89735pt x 261.38826pt.
-<maps.pdf, id=101, 845.1575pt x 597.23125pt>
-File: maps.pdf Graphic file (type pdf)
-<use maps.pdf>
-Package pdftex.def Info: maps.pdf  used on input line 191.
-(pdftex.def)             Requested size: 369.89735pt x 261.38826pt.
-[4 <./statetable.pdf>] [5 <./chi-state.pdf> <./maps.pdf>]
-<ct-eco.pdf, id=130, 614.295pt x 794.97pt>
-File: ct-eco.pdf Graphic file (type pdf)
-<use ct-eco.pdf>
-Package pdftex.def Info: ct-eco.pdf  used on input line 215.
-(pdftex.def)             Requested size: 369.8921pt x 478.68391pt.
-<chi-eco-1.pdf, id=131, 614.295pt x 794.97pt>
-File: chi-eco-1.pdf Graphic file (type pdf)
-<use chi-eco-1.pdf>
-Package pdftex.def Info: chi-eco-1.pdf  used on input line 227.
-(pdftex.def)             Requested size: 369.8921pt x 478.68391pt.
-[6 <./ct-eco.pdf>] [7 <./chi-eco-1.pdf>]
-<pie-eco-1.pdf, id=153, 614.295pt x 794.97pt>
-File: pie-eco-1.pdf Graphic file (type pdf)
-<use pie-eco-1.pdf>
-Package pdftex.def Info: pie-eco-1.pdf  used on input line 242.
-(pdftex.def)             Requested size: 369.8921pt x 478.68391pt.
-<chi-eco-2.pdf, id=154, 614.295pt x 794.97pt>
-File: chi-eco-2.pdf Graphic file (type pdf)
-<use chi-eco-2.pdf>
-Package pdftex.def Info: chi-eco-2.pdf  used on input line 258.
-(pdftex.def)             Requested size: 369.8921pt x 478.68391pt.
-[8 <./pie-eco-1.pdf>] [9 <./chi-eco-2.pdf>]
-<pie-eco-2.pdf, id=176, 614.295pt x 794.97pt>
-File: pie-eco-2.pdf Graphic file (type pdf)
-<use pie-eco-2.pdf>
-Package pdftex.def Info: pie-eco-2.pdf  used on input line 267.
-(pdftex.def)             Requested size: 369.8921pt x 478.68391pt.
-[10 <./pie-eco-2.pdf>] [11] (./MA321-Finalpaper.aux)
-Package rerunfilecheck Info: File `MA321-Finalpaper.out' has not changed.
-(rerunfilecheck)             Checksum: 973B4E28E9F9D95A61BC5E36E53A370E;875.
+LaTeX Warning: File `ContinentCTable.pdf' not found on input line 119.
 
-LaTeX Warning: There were multiply-defined labels.
 
- ) 
+! Package pdftex.def Error: File `ContinentCTable.pdf' not found: using draft s
+etting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 ...idth=0.50\textwidth]{ContinentCTable.pdf}
+                                                   
 Here is how much of TeX's memory you used:
- 10413 strings out of 481364
- 150293 string characters out of 5917669
- 438336 words of memory out of 5000000
- 27040 multiletter control sequences out of 15000+600000
- 437952 words of font info for 50 fonts, out of 8000000 for 9000
+ 10315 strings out of 481364
+ 148876 string characters out of 5917669
+ 429472 words of memory out of 5000000
+ 26985 multiletter control sequences out of 15000+600000
+ 433689 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 66i,6n,72p,437b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
-c}</Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx1
-2.pfb></Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
-mr10.pfb></Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/type1/public/l
-m/lmr12.pfb></Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/type1/publi
-c/lm/lmr17.pfb></Users/briannacirillo/Library/TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmri10.pfb>
-Output written on MA321-Finalpaper.pdf (11 pages, 1582336 bytes).
-PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66i,6n,72p,250b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

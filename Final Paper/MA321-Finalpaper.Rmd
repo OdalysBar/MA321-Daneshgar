@@ -126,10 +126,8 @@ Using a chi squared test, we analyzed whether the probability of each country be
 From the figure above, the expected number of articles from each country is approximately 4. Yet from the observed frequencies above, we can see that many countries only have 1 or two articles with work done there, but the United States has 68. Therefore, we can say that the probability of each country being represented in a journal article might not be the same.
 
 Being that the size of each country varies, it would not make sense for each country to have the same likelihood of being represented in a journal article. Thus, the square mileage of each country was researched in order to better estimate the probability of each country being represented in a journal article. 
+ 
 
-<<<<<<< Updated upstream
-*insert figure*
-=======
 ## c. Region
 The region category exhibited if any or the amount of published articles completed their study in a particular region. This allowed us to see which region were more or less commonly seen for ecology work. The following contingency table counts the number of times a region was represented in the data set.
 \begin{figure}
