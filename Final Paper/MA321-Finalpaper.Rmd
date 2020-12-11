@@ -54,7 +54,7 @@ If there is an assumption that the probability of each continent being represent
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.50\textwidth]{ContinentChiSquare2i.pdf}
+	\includegraphics[width=0.50\textwidth]{ContinentChiSquare2.pdf}
 	\label{fig:Continent XChi-Square}
 \end{figure}
 
@@ -128,7 +128,13 @@ If there is an assumption that the probability of each region being represented 
 	\label{fig:Region XChi-Square}
 \end{figure}
 
-Looking into the Pearson residuals notice that North West has the most positive residula this showing that the observed frequency exceeds the expected frequency. 
+Looking into the Pearson residuals notice that North West has the most positive residual thus showing that the observed frequency exceeds the expected frequency. Through visual representation, figure *#* clarifies this idea. The bar graph on the left is the number of journals one expects to see given each region's square mileage. The bar graph on the right is what was observed using the counts from the data set. Also, due to unidentifiable region we couldn't locate square mileage for Mid-South. Due to this, we redid some data cleaning to remove this region. So our results do not include this specific region.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.50\textwidth]{Regions2BarGraph.pdf}
+	\label{fig:Continent Bar Graph}
+\end{figure}
 
 
 
