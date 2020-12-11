@@ -115,13 +115,23 @@ Asia is the continent with the largest square mileage in comparison to the other
 
 The variable country accounted for how many of these published articles completed the work done for the study in a particular country. Thus, we can see how many published articles from this collection of data have ecology work done in countries. To better model this, a contingency table was made to depict how frequently work done in a particular country was represented in the data set.
 
-*insert figure*
+\begin{figure}
+	\centering
+	\includegraphics[width=0.50\textwidth]{country_contingency.pdf}
+	\caption{This contingency table shows the frequency of countries in journal articles. Not all countries are represented because there were not journal articles that had work done in every country in the data set.}
+	\label{fig:Contingency Table for Country}
+\end{figure}
 
 From the figure above, an be seen that the country where the study was done, that had the highest frequency of articles was the United States. There were 68 journal articles where the work was in the United States. This is different from the number of articles with work done in other countries, it was more common that each only had one or two journal articles. 
 
 Using a chi squared test, we analyzed whether the probability of each country being represented in a journal article is the same. This test was run with the assumption that every country had an equal chance.
 
-*insert figure*
+\begin{figure}
+	\centering
+	\includegraphics[width=0.50\textwidth]{xchisq_country.pdf}
+	\caption{The xchi-square test above is analyzing whether the probability of each country in a  journal article is equal. The expected numer of journal articles for each country is approximately 4. The expected values are in parentheses and the observed values are just above it.}
+	\label{fig:Chi Square for Country}
+\end{figure}
 
 From the figure above, the expected number of articles from each country is approximately 4. Yet from the observed frequencies above, we can see that many countries only have 1 or two articles with work done there, but the United States has 68. Therefore, we can say that the probability of each country being represented in a journal article might not be the same.
 
