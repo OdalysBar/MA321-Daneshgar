@@ -24,7 +24,7 @@ Being that the data consists of predominantly categorical variables, some additi
 
 ## a. Continent
 The continent category demonstrated if any or the amount of published articles completed their study in a particular continent. This allowed us to see which continent were more or less commonly seen for ecology work. The following contingency table counts the number of times a continent was represented in the data set.
-<<<<<<< Updated upstream
+
 
 \begin{figure}
 	\centering
@@ -61,9 +61,6 @@ If there is an assumption that the probability of each continent being represent
 
 Looking into the Pearson residuals notice that North America has the most positive residual thus showing that the observed frequency exceeds the expected frequency. Through visual representation, figure *#* clarifies this idea. The bar graph on the left is the number of journals one expects to see given each continent's square mileage. The bar graph on the right is what was observed using the counts from the data set.
 
-\begin{figure}
-	\centering
-=======
 
 \begin{figure}
 	\centering
@@ -102,7 +99,6 @@ Looking into the Pearson residuals notice that North America has the most positi
 
 \begin{figure}
 	\centering
->>>>>>> Stashed changes
 	\includegraphics[width=0.50\textwidth]{Continent2BarGraph.pdf}
 	\label{fig:Continent Bar Graph}
 \end{figure}
@@ -172,7 +168,7 @@ If there is an assumption that the probability of each region being represented 
 	\includegraphics[width=0.50\textwidth]{RegionChiSquare2.pdf}
 	\label{fig:Region XChi-Square}
 \end{figure}
->>>>>>> Stashed changes
+
 
 Looking into the Pearson residuals notice that North West has the most positive residula this showing that the observed frequency exceeds the expected frequency. 
 
