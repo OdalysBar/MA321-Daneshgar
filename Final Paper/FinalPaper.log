@@ -1,0 +1,488 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  15 DEC 2020 23:18
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**FinalPaper.tex
+(./FinalPaper.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen137
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen138
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks19
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks20
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count187
+\l__pdf_internal_box=\box47
+)
+(./FinalPaper.aux
+
+LaTeX Warning: Label `fig: Continent Bar Graph' multiply defined.
+
+
+LaTeX Warning: Label `fig: Chi-Square Test: Ecosystem' multiply defined.
+
+
+LaTeX Warning: Label `fig: Expected Frequency based on Square Mileage vs Observ
+ed Frequency' multiply defined.
+
+)
+\openout1 = `FinalPaper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count188
+\scratchdimen=\dimen146
+\scratchbox=\box48
+\nofMPsegments=\count189
+\nofMParguments=\count190
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count191
+\MPscratchDim=\dimen147
+\MPnumerator=\count192
+\makeMPintoPDFobject=\count193
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+[1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<ContinentChiSqaure1.pdf, id=9, 794.97pt x 614.295pt>
+File: ContinentChiSqaure1.pdf Graphic file (type pdf)
+<use ContinentChiSqaure1.pdf>
+Package pdftex.def Info: ContinentChiSqaure1.pdf  used on input line 65.
+(pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
+
+[2]
+! You can't use `macro parameter character #' in horizontal mode.
+l.71 .... Through visual representation, figure *#
+                                                  * clarifies this idea. The...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+<ContinentPieChart.pdf, id=14, 614.295pt x 794.97pt>
+File: ContinentPieChart.pdf Graphic file (type pdf)
+<use ContinentPieChart.pdf>
+Package pdftex.def Info: ContinentPieChart.pdf  used on input line 74.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<ContinentChiSquare2.pdf, id=15, 794.97pt x 614.295pt>
+File: ContinentChiSquare2.pdf Graphic file (type pdf)
+<use ContinentChiSquare2.pdf>
+Package pdftex.def Info: ContinentChiSquare2.pdf  used on input line 86.
+(pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
+[3 <./ContinentChiSqaure1.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.92 .... Through visual representation, figure *#
+                                                  * clarifies this idea. The...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+<Continent2BarGraph.pdf, id=27, 614.295pt x 794.97pt>
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.95 ...aphics[width=0.10]{Continent2BarGraph.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.95 ...aphics[width=0.10]{Continent2BarGraph.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+File: Continent2BarGraph.pdf Graphic file (type pdf)
+<use Continent2BarGraph.pdf>
+Package pdftex.def Info: Continent2BarGraph.pdf  used on input line 95.
+(pdftex.def)             Requested size: 0.1pt x 0.12129pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 <./ContinentPieChart.pdf>] [6 <./ContinentChiSquare2.pdf> <./Continent2B
+arGraph.pdf>]
+
+LaTeX Warning: Float too large for page by 51.66606pt on input line 151.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<xchisq_country.pdf, id=61, 614.295pt x 794.97pt>
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.159 ...egraphics[width=0.10]{xchisq_country.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.159 ...egraphics[width=0.10]{xchisq_country.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+File: xchisq_country.pdf Graphic file (type pdf)
+<use xchisq_country.pdf>
+Package pdftex.def Info: xchisq_country.pdf  used on input line 159.
+(pdftex.def)             Requested size: 0.1pt x 0.12129pt.
+[7
+
+ <./xchisq_country.pdf>] [8]
+
+LaTeX Warning: File `RegionsChiSquare1.pdf' not found on input line 197.
+
+
+! Package pdftex.def Error: File `RegionsChiSquare1.pdf' not found: using draft
+ setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.197 ...aphics[width=0.10]{RegionsChiSquare1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.197 ...aphics[width=0.10]{RegionsChiSquare1.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.197 ...aphics[width=0.10]{RegionsChiSquare1.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.203 ... Through visual representation, figure *#
+                                                  * clarifies this idea. The...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: File `RegionsPieChart.pdf' not found on input line 207.
+
+
+! Package pdftex.def Error: File `RegionsPieChart.pdf' not found: using draft s
+etting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+[9
+
+]
+<RegionChiSquare2.pdf, id=88, 794.97pt x 614.295pt>
+File: RegionChiSquare2.pdf Graphic file (type pdf)
+<use RegionChiSquare2.pdf>
+Package pdftex.def Info: RegionChiSquare2.pdf  used on input line 221.
+(pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.227 ... Through visual representation, figure *#
+                                                  * clarifies this idea. The...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[10 <./RegionChiSquare2.pdf>]
+<Regions2BarGraph.pdf, id=100, 794.97pt x 614.295pt>
+File: Regions2BarGraph.pdf Graphic file (type pdf)
+<use Regions2BarGraph.pdf>
+Package pdftex.def Info: Regions2BarGraph.pdf  used on input line 231.
+(pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
+ [11 <./Regions2BarGraph.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chi-state.pdf, id=112, 845.1575pt x 597.23125pt>
+File: chi-state.pdf Graphic file (type pdf)
+<use chi-state.pdf>
+Package pdftex.def Info: chi-state.pdf  used on input line 283.
+(pdftex.def)             Requested size: 284.52756pt x 201.06018pt.
+<maps.pdf, id=113, 845.1575pt x 597.23125pt>
+File: maps.pdf Graphic file (type pdf)
+<use maps.pdf>
+Package pdftex.def Info: maps.pdf  used on input line 292.
+(pdftex.def)             Requested size: 199.16928pt x 140.74121pt.
+<observed-map.pdf, id=114, 614.295pt x 794.97pt>
+File: observed-map.pdf Graphic file (type pdf)
+<use observed-map.pdf>
+Package pdftex.def Info: observed-map.pdf  used on input line 293.
+(pdftex.def)             Requested size: 199.16928pt x 257.74355pt.
+
+Overfull \hbox (10.94965pt too wide) in paragraph at lines 292--295
+[][] []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12 <./chi-state.pdf>] [13 <./maps.pdf> <./observed-map.pdf>] [14]
+<chi-eco-1.pdf, id=132, 614.295pt x 794.97pt>
+File: chi-eco-1.pdf Graphic file (type pdf)
+<use chi-eco-1.pdf>
+Package pdftex.def Info: chi-eco-1.pdf  used on input line 322.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<pie-eco-1.pdf, id=133, 614.295pt x 794.97pt>
+File: pie-eco-1.pdf Graphic file (type pdf)
+<use pie-eco-1.pdf>
+Package pdftex.def Info: pie-eco-1.pdf  used on input line 332.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chi-eco-2.pdf, id=134, 614.295pt x 794.97pt>
+File: chi-eco-2.pdf Graphic file (type pdf)
+<use chi-eco-2.pdf>
+Package pdftex.def Info: chi-eco-2.pdf  used on input line 344.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15
+
+]
+<pie-eco-2.pdf, id=138, 614.295pt x 794.97pt>
+File: pie-eco-2.pdf Graphic file (type pdf)
+<use pie-eco-2.pdf>
+Package pdftex.def Info: pie-eco-2.pdf  used on input line 354.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17] [18 <./chi-eco-1.pdf>] [19 <./pie-eco-1.pdf>] [20 <./chi-eco-2.pdf>]
+[21 <./pie-eco-2.pdf>] (./FinalPaper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1963 strings out of 480608
+ 28426 string characters out of 5903631
+ 273397 words of memory out of 5000000
+ 17839 multiletter control sequences out of 15000+600000
+ 538800 words of font info for 47 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,9n,25p,846b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on FinalPaper.pdf (21 pages, 2298300 bytes).
+PDF statistics:
+ 200 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+
