@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  15 DEC 2020 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  16 DEC 2020 09:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -212,46 +212,22 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 <Continent2BarGraph.pdf, id=27, 614.295pt x 794.97pt>
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.95 ...aphics[width=0.10]{Continent2BarGraph.pdf}
-                                                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.95 ...aphics[width=0.10]{Continent2BarGraph.pdf}
-                                                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 File: Continent2BarGraph.pdf Graphic file (type pdf)
 <use Continent2BarGraph.pdf>
 Package pdftex.def Info: Continent2BarGraph.pdf  used on input line 95.
-(pdftex.def)             Requested size: 0.1pt x 0.12129pt.
+(pdftex.def)             Requested size: 284.52756pt x 368.21373pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./ContinentPieChart.pdf>] [6 <./ContinentChiSquare2.pdf> <./Continent2B
-arGraph.pdf>]
+[4] [5 <./ContinentPieChart.pdf>] [6 <./ContinentChiSquare2.pdf>] [7 <./Contine
+nt2BarGraph.pdf>]
 
 LaTeX Warning: Float too large for page by 51.66606pt on input line 151.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<xchisq_country.pdf, id=61, 614.295pt x 794.97pt>
+<xchisq_country.pdf, id=65, 614.295pt x 794.97pt>
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
@@ -280,9 +256,9 @@ File: xchisq_country.pdf Graphic file (type pdf)
 <use xchisq_country.pdf>
 Package pdftex.def Info: xchisq_country.pdf  used on input line 159.
 (pdftex.def)             Requested size: 0.1pt x 0.12129pt.
-[7
+[8
 
- <./xchisq_country.pdf>] [8]
+ <./xchisq_country.pdf>] [9]
 
 LaTeX Warning: File `RegionsChiSquare1.pdf' not found on input line 197.
 
@@ -342,43 +318,22 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
+l.207 ...graphics[width=10cm]{RegionsPieChart.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
-                                                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.207 ...graphics[width=0.10]{RegionsPieChart.pdf}
-                                                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[9
+[10
 
 ]
-<RegionChiSquare2.pdf, id=88, 794.97pt x 614.295pt>
+<RegionChiSquare2.pdf, id=91, 794.97pt x 614.295pt>
 File: RegionChiSquare2.pdf Graphic file (type pdf)
 <use RegionChiSquare2.pdf>
 Package pdftex.def Info: RegionChiSquare2.pdf  used on input line 221.
 (pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 ! You can't use `macro parameter character #' in horizontal mode.
 l.227 ... Through visual representation, figure *#
@@ -388,27 +343,34 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[10 <./RegionChiSquare2.pdf>]
-<Regions2BarGraph.pdf, id=100, 794.97pt x 614.295pt>
+[11]
+<Regions2BarGraph.pdf, id=95, 794.97pt x 614.295pt>
 File: Regions2BarGraph.pdf Graphic file (type pdf)
 <use Regions2BarGraph.pdf>
 Package pdftex.def Info: Regions2BarGraph.pdf  used on input line 231.
 (pdftex.def)             Requested size: 284.52756pt x 219.86188pt.
- [11 <./Regions2BarGraph.pdf>]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<chi-state.pdf, id=112, 845.1575pt x 597.23125pt>
+[12 <./RegionChiSquare2.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chi-state.pdf, id=107, 845.1575pt x 597.23125pt>
 File: chi-state.pdf Graphic file (type pdf)
 <use chi-state.pdf>
 Package pdftex.def Info: chi-state.pdf  used on input line 283.
 (pdftex.def)             Requested size: 284.52756pt x 201.06018pt.
-<maps.pdf, id=113, 845.1575pt x 597.23125pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<maps.pdf, id=108, 845.1575pt x 597.23125pt>
 File: maps.pdf Graphic file (type pdf)
 <use maps.pdf>
 Package pdftex.def Info: maps.pdf  used on input line 292.
 (pdftex.def)             Requested size: 199.16928pt x 140.74121pt.
-<observed-map.pdf, id=114, 614.295pt x 794.97pt>
+<observed-map.pdf, id=109, 614.295pt x 794.97pt>
 File: observed-map.pdf Graphic file (type pdf)
 <use observed-map.pdf>
 Package pdftex.def Info: observed-map.pdf  used on input line 293.
@@ -418,11 +380,12 @@ Overfull \hbox (10.94965pt too wide) in paragraph at lines 292--295
 [][] []
  []
 
+[13 <./Regions2BarGraph.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12 <./chi-state.pdf>] [13 <./maps.pdf> <./observed-map.pdf>] [14]
-<chi-eco-1.pdf, id=132, 614.295pt x 794.97pt>
+[14 <./chi-state.pdf>] [15 <./maps.pdf> <./observed-map.pdf>] [16]
+<chi-eco-1.pdf, id=138, 614.295pt x 794.97pt>
 File: chi-eco-1.pdf Graphic file (type pdf)
 <use chi-eco-1.pdf>
 Package pdftex.def Info: chi-eco-1.pdf  used on input line 322.
@@ -431,7 +394,7 @@ Package pdftex.def Info: chi-eco-1.pdf  used on input line 322.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pie-eco-1.pdf, id=133, 614.295pt x 794.97pt>
+<pie-eco-1.pdf, id=139, 614.295pt x 794.97pt>
 File: pie-eco-1.pdf Graphic file (type pdf)
 <use pie-eco-1.pdf>
 Package pdftex.def Info: pie-eco-1.pdf  used on input line 332.
@@ -439,7 +402,7 @@ Package pdftex.def Info: pie-eco-1.pdf  used on input line 332.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<chi-eco-2.pdf, id=134, 614.295pt x 794.97pt>
+<chi-eco-2.pdf, id=140, 614.295pt x 794.97pt>
 File: chi-eco-2.pdf Graphic file (type pdf)
 <use chi-eco-2.pdf>
 Package pdftex.def Info: chi-eco-2.pdf  used on input line 344.
@@ -447,10 +410,10 @@ Package pdftex.def Info: chi-eco-2.pdf  used on input line 344.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15
+[17
 
 ]
-<pie-eco-2.pdf, id=138, 614.295pt x 794.97pt>
+<pie-eco-2.pdf, id=144, 614.295pt x 794.97pt>
 File: pie-eco-2.pdf Graphic file (type pdf)
 <use pie-eco-2.pdf>
 Package pdftex.def Info: pie-eco-2.pdf  used on input line 354.
@@ -459,8 +422,8 @@ Package pdftex.def Info: pie-eco-2.pdf  used on input line 354.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17] [18 <./chi-eco-1.pdf>] [19 <./pie-eco-1.pdf>] [20 <./chi-eco-2.pdf>]
-[21 <./pie-eco-2.pdf>] (./FinalPaper.aux)
+[18] [19] [20 <./chi-eco-1.pdf>] [21 <./pie-eco-1.pdf>] [22 <./chi-eco-2.pdf>]
+[23 <./pie-eco-2.pdf>] (./FinalPaper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -468,7 +431,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  1963 strings out of 480608
  28426 string characters out of 5903631
- 273397 words of memory out of 5000000
+ 273399 words of memory out of 5000000
  17839 multiletter control sequences out of 15000+600000
  538800 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -479,10 +442,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on FinalPaper.pdf (21 pages, 2298300 bytes).
+Output written on FinalPaper.pdf (23 pages, 2298651 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 206 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
