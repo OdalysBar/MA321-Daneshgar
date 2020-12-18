@@ -147,7 +147,7 @@ If there is an assumption that the probability of each region being represented 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.50\textwidth]{RegionsChiSquare1.pdf}
+	\includegraphics[width=0.50\textwidth]{RegionChiSquare1.pdf}
 	\label{fig:Region XChi-Square}
 \end{figure}
 
@@ -189,7 +189,7 @@ If there is an assumption that the probability of each region being represented 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.50\textwidth]{RegionsChiSquare1.pdf}
+	\includegraphics[width=0.50\textwidth]{RegionChiSquare1.pdf}
 	\label{fig:Region XChi-Square}
 \end{figure}
 
