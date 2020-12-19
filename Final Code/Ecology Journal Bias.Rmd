@@ -247,14 +247,14 @@ xchisq.test(tally(continent.work),p=prop.cont )
 USA has the most positive residual thus the observed frequency of journal articles exceeded the expected frequency. While, Belgium, Bermuda, Britain, Cambodia, England, French Guiana, Galapagos, Greece, Italy, Papua New Guinea , Portugal, Republic of Congo, Singapore, St. John, Svalbard had the most negative residual thus the observed frequency of journal articles did not meet the expected frequency.
 
 ```{r}
-par(mfrow=c(2,1))
-E <- c(35.26, 51.73, 8.93, 11.82, 28.67 ,9.89 ,20.70)
+par(mfrow=c(1,2))
+E <- c(35.26, 51.73, 8.93, 11.82, 28.67, 9.89, 20.70)
 CS <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(E, names.arg = CS, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Expected # of Journals in each Continent based on the Sq. Mileage", border = "black")
+barplot(E, names.arg = CS, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Expected # Journals in Continent w/ Sq. Mileage", border = "black")
 
 O <- c(5,14,2,34,94,5,13)
 C <- c("Africa", "Asia", "Aust", "Europe", "NA", "Oceania", "SA")
-barplot(O, names.arg = C, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Observed # of Journals in each Continent based on Sqr. Mileage", border = "black")
+barplot(O, names.arg = C, xlab ="Continent", ylab = " # of Journals", col = "grey", main = "Observed # Journals in Continent w/ Sq. Mileage", border = "black")
 ```
 
 
